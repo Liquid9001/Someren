@@ -42,6 +42,28 @@ namespace SomerenUI
             }
         }
 
+        private void ShowActivitiesPanel()
+        {
+            // hide all other panels
+            pnlStudents.Hide();
+            pnlDashboard.Hide();
+
+            // show dashboard
+            pnlActivities.Show();
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                DisplayActivities(activities);
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+        }
+
         private List<Student> GetStudents()
         {
             StudentService studentService = new StudentService();
@@ -64,6 +86,28 @@ namespace SomerenUI
             }
         }
 
+        private List<Activities> GetActivities()
+        {
+            ActivitiesService activitiesService = new ActivitiesService();
+            List<Activities> activities = activitiesService.GetActivities();
+            return activities;
+        }
+
+        private void DisplayActivities(List<Activities> activities)
+        {
+            // clear the listview before filling it
+            listViewActivities.Clear();
+
+            foreach (Activities activity in activities)
+            {
+                ListViewItem li = new ListViewItem(activity.Activity);
+                ListViewItem dt = new ListViewItem(activity.dateTime.ToString());
+                li.Tag = activity;   // link activity object to listview item
+                listViewActivities.Items.Add(li);
+                listViewActivities.Items.Add(dt);
+            }
+        }
+
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -77,6 +121,11 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitiesPanel();
         }
     }
 }
