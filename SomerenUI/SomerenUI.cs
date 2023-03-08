@@ -98,7 +98,7 @@ namespace SomerenUI
                 firstnameTeacher.Tag = teacher;   // link teacher object to listview item
                 listViewStudents.Items.Add(firstnameTeacher);
                 listViewStudents.Items.Add(lastnameTeacher);
-                Console.WriteLine();
+                
             }
         }
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
