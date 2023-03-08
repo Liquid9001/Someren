@@ -29,7 +29,7 @@ namespace SomerenUI
 
             // show students
             pnlStudents.Show();
-
+            
             try
             {
                 // get and display all students
@@ -41,14 +41,37 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
+        private void ShowTeachersPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
 
+            // show students
+            pnlStudents.Show();
+
+            try
+            {
+                // get and display all students
+                List<Teacher> teachers = GetTeachers();
+                DisplayTeachers(teachers);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the teachers: " + e.Message);
+            }
+        }
         private List<Student> GetStudents()
         {
             StudentService studentService = new StudentService();
             List<Student> students = studentService.GetStudents();
             return students;
         }
-
+        private List<Teacher> GetTeachers()
+        {
+            TeacherService teacherService = new TeacherService();
+            List<Teacher> teachers = teacherService.GetTeachers();
+            return teachers;
+        }
         private void DisplayStudents(List<Student> students)
         {
             // clear the listview before filling it
@@ -63,7 +86,21 @@ namespace SomerenUI
                 listViewStudents.Items.Add(lin);
             }
         }
+        private void DisplayTeachers(List<Teacher> teachers)
+        {
+            // clear the listview before filling it
+            listViewStudents.Clear();
 
+            foreach (Teacher teacher in teachers)
+            {
+                ListViewItem firstnameTeacher = new ListViewItem(teacher.FName);
+                ListViewItem lastnameTeacher = new ListViewItem(teacher.LName);
+                firstnameTeacher.Tag = teacher;   // link teacher object to listview item
+                listViewStudents.Items.Add(firstnameTeacher);
+                listViewStudents.Items.Add(lastnameTeacher);
+                Console.WriteLine();
+            }
+        }
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -77,6 +114,12 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
+        }
+
+        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowTeachersPanel();
+            label1.Text = "Lecturers";
         }
     }
 }
