@@ -41,20 +41,26 @@
             pnlDashboard = new System.Windows.Forms.Panel();
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            label1 = new System.Windows.Forms.Label();
             dataGridViewTeacher = new System.Windows.Forms.DataGridView();
             idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             teacherBindingSource = new System.Windows.Forms.BindingSource(components);
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            listViewStudents = new System.Windows.Forms.ListView();
-            label1 = new System.Windows.Forms.Label();
+            pnlTeachers = new System.Windows.Forms.Panel();
+            label2 = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            dataGridViewStudents = new System.Windows.Forms.DataGridView();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlTeachers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -135,57 +141,15 @@
             // 
             // pnlStudents
             // 
-            pnlStudents.Controls.Add(dataGridViewTeacher);
+            pnlStudents.Controls.Add(dataGridViewStudents);
             pnlStudents.Controls.Add(pictureBox1);
-            pnlStudents.Controls.Add(listViewStudents);
             pnlStudents.Controls.Add(label1);
             pnlStudents.Location = new System.Drawing.Point(14, 36);
             pnlStudents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pnlStudents.Name = "pnlStudents";
             pnlStudents.Size = new System.Drawing.Size(1072, 621);
             pnlStudents.TabIndex = 2;
-            // 
-            // dataGridViewTeacher
-            // 
-            dataGridViewTeacher.AutoGenerateColumns = false;
-            dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn });
-            dataGridViewTeacher.DataSource = teacherBindingSource;
-            dataGridViewTeacher.Location = new System.Drawing.Point(18, 56);
-            dataGridViewTeacher.Name = "dataGridViewTeacher";
-            dataGridViewTeacher.RowHeadersWidth = 51;
-            dataGridViewTeacher.RowTemplate.Height = 29;
-            dataGridViewTeacher.Size = new System.Drawing.Size(728, 309);
-            dataGridViewTeacher.TabIndex = 3;
-            dataGridViewTeacher.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn.HeaderText = "First Name";
-            fNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            fNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
-            lNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            lNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // teacherBindingSource
-            // 
-            teacherBindingSource.DataSource = typeof(SomerenModel.Teacher);
+            pnlStudents.Paint += pnlStudents_Paint;
             // 
             // pictureBox1
             // 
@@ -197,15 +161,6 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // listViewStudents
-            // 
-            listViewStudents.Location = new System.Drawing.Point(18, 56);
-            listViewStudents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            listViewStudents.Name = "listViewStudents";
-            listViewStudents.Size = new System.Drawing.Size(875, 408);
-            listViewStudents.TabIndex = 1;
-            listViewStudents.UseCompatibleStateImageBehavior = false;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -216,14 +171,104 @@
             label1.TabIndex = 0;
             label1.Text = "Students";
             // 
+            // dataGridViewTeacher
+            // 
+            dataGridViewTeacher.AutoGenerateColumns = false;
+            dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn });
+            dataGridViewTeacher.DataSource = teacherBindingSource;
+            dataGridViewTeacher.Location = new System.Drawing.Point(3, 44);
+            dataGridViewTeacher.Name = "dataGridViewTeacher";
+            dataGridViewTeacher.ReadOnly = true;
+            dataGridViewTeacher.RowHeadersWidth = 51;
+            dataGridViewTeacher.RowTemplate.Height = 29;
+            dataGridViewTeacher.Size = new System.Drawing.Size(846, 346);
+            dataGridViewTeacher.TabIndex = 3;
+            dataGridViewTeacher.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fNameDataGridViewTextBoxColumn
+            // 
+            fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            fNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            fNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            fNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lNameDataGridViewTextBoxColumn
+            // 
+            lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            lNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            lNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            lNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teacherBindingSource
+            // 
+            teacherBindingSource.DataSource = typeof(SomerenModel.Teacher);
+            // 
+            // pnlTeachers
+            // 
+            pnlTeachers.Controls.Add(label2);
+            pnlTeachers.Controls.Add(dataGridViewTeacher);
+            pnlTeachers.Controls.Add(pictureBox2);
+            pnlTeachers.Location = new System.Drawing.Point(14, 36);
+            pnlTeachers.Name = "pnlTeachers";
+            pnlTeachers.Size = new System.Drawing.Size(1070, 471);
+            pnlTeachers.TabIndex = 4;
+            pnlTeachers.Paint += pnlTeachers_Paint;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(3, 4);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(128, 41);
+            label2.TabIndex = 6;
+            label2.Text = "Lectures";
+            label2.Click += label2_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new System.Drawing.Point(921, 0);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(149, 164);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            // 
+            // dataGridViewStudents
+            // 
+            dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewStudents.Location = new System.Drawing.Point(15, 53);
+            dataGridViewStudents.Name = "dataGridViewStudents";
+            dataGridViewStudents.RowHeadersWidth = 51;
+            dataGridViewStudents.RowTemplate.Height = 29;
+            dataGridViewStudents.Size = new System.Drawing.Size(900, 370);
+            dataGridViewStudents.TabIndex = 7;
+            // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1099, 673);
-            Controls.Add(menuStrip1);
             Controls.Add(pnlStudents);
             Controls.Add(pnlDashboard);
+            Controls.Add(pnlTeachers);
+            Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "SomerenUI";
@@ -234,9 +279,13 @@
             pnlDashboard.PerformLayout();
             pnlStudents.ResumeLayout(false);
             pnlStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).EndInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlTeachers.ResumeLayout(false);
+            pnlTeachers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -255,12 +304,15 @@
         private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Panel pnlStudents;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListView listViewStudents;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewTeacher;
         private System.Windows.Forms.BindingSource teacherBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel pnlTeachers;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dataGridViewStudents;
     }
 }

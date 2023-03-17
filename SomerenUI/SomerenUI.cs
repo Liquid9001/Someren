@@ -17,7 +17,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
-
+            pnlTeachers.Hide();
             // show dashboard
             pnlDashboard.Show();
         }
@@ -26,7 +26,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
-
+            pnlTeachers.Hide();
             // show students
             pnlStudents.Show();
 
@@ -45,9 +45,9 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
-
+            pnlStudents.Hide();
             // show teachers
-            pnlStudents.Show();
+            pnlTeachers.Show();
 
             try
             {
@@ -75,16 +75,7 @@ namespace SomerenUI
         private void DisplayStudents(List<Student> students)
         {
             // clear the listview before filling it
-            listViewStudents.Clear();
-
-            foreach (Student student in students)
-            {
-                ListViewItem li = new ListViewItem(student.FName);
-                ListViewItem lin = new ListViewItem(student.LName);
-                li.Tag = student;   // link student object to listview item
-                listViewStudents.Items.Add(li);
-                listViewStudents.Items.Add(lin);
-            }
+            dataGridViewStudents.DataSource = students;
         }
         private void DisplayTeachers(List<Teacher> teachers)
         {
@@ -109,10 +100,25 @@ namespace SomerenUI
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowTeachersPanel();
-            label1.Text = "Lecturers";
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnlStudents_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlTeachers_Paint(object sender, PaintEventArgs e)
         {
 
         }
