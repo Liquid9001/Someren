@@ -29,7 +29,7 @@ namespace SomerenUI
 
             // show students
             pnlStudents.Show();
-            
+
             try
             {
                 // get and display all students
@@ -46,12 +46,12 @@ namespace SomerenUI
             // hide all other panels
             pnlDashboard.Hide();
 
-            // show students
+            // show teachers
             pnlStudents.Show();
 
             try
             {
-                // get and display all students
+                // get and display all teachers
                 List<Teacher> teachers = GetTeachers();
                 DisplayTeachers(teachers);
             }
@@ -89,17 +89,7 @@ namespace SomerenUI
         private void DisplayTeachers(List<Teacher> teachers)
         {
             // clear the listview before filling it
-            listViewStudents.Clear();
-
-            foreach (Teacher teacher in teachers)
-            {
-                ListViewItem firstnameTeacher = new ListViewItem(teacher.FName);
-                ListViewItem lastnameTeacher = new ListViewItem(teacher.LName);
-                firstnameTeacher.Tag = teacher;   // link teacher object to listview item
-                listViewStudents.Items.Add(firstnameTeacher);
-                listViewStudents.Items.Add(lastnameTeacher);
-                
-            }
+            dataGridViewTeacher.DataSource = teachers;
         }
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
@@ -120,6 +110,11 @@ namespace SomerenUI
         {
             ShowTeachersPanel();
             label1.Text = "Lecturers";
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
