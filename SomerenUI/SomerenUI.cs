@@ -17,9 +17,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
-
             pnlActivities.Hide();
-
             pnlRooms.Hide();
 
 
@@ -31,9 +29,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
-
             pnlActivities.Hide();
-
             pnlRooms.Hide();
 
 
@@ -57,6 +53,7 @@ namespace SomerenUI
             // hide all other panels
             pnlStudents.Hide();
             pnlDashboard.Hide();
+            pnlRooms.Hide();
 
             // show dashboard
             pnlActivities.Show();
@@ -118,6 +115,7 @@ namespace SomerenUI
         {
             pnlDashboard.Hide();
             pnlStudents.Hide();
+            pnlActivities.Hide();
 
             pnlRooms.Show();
             
@@ -144,19 +142,7 @@ namespace SomerenUI
         {
             
             dataGridViewRooms.DataSource = rooms;
-            /*foreach (DataGridViewRow row in dataGridViewRooms.Rows)
-            {
-                if (row.Cells[3].Value.ToString() == "1")
-                {
-                    row.Cells[3].Value = "Teacher";
-                }
-                else
-                {
-                    row.Cells[3].Value = "Student";
-                }
-            }*/
 
-            
         }
 
 
@@ -179,7 +165,7 @@ namespace SomerenUI
         private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowActivitiesPanel();
-
+        }
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowRoomsPanel();
