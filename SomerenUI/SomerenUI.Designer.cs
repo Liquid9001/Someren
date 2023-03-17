@@ -41,6 +41,7 @@
             pnlDashboard = new System.Windows.Forms.Panel();
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
+            dataGridViewStudents = new System.Windows.Forms.DataGridView();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label1 = new System.Windows.Forms.Label();
             dataGridViewTeacher = new System.Windows.Forms.DataGridView();
@@ -51,16 +52,15 @@
             pnlTeachers = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
-            dataGridViewStudents = new System.Windows.Forms.DataGridView();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
             pnlTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -150,6 +150,16 @@
             pnlStudents.Size = new System.Drawing.Size(1072, 621);
             pnlStudents.TabIndex = 2;
             pnlStudents.Paint += pnlStudents_Paint;
+            // 
+            // dataGridViewStudents
+            // 
+            dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewStudents.Location = new System.Drawing.Point(15, 53);
+            dataGridViewStudents.Name = "dataGridViewStudents";
+            dataGridViewStudents.RowHeadersWidth = 51;
+            dataGridViewStudents.RowTemplate.Height = 29;
+            dataGridViewStudents.Size = new System.Drawing.Size(900, 370);
+            dataGridViewStudents.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -250,23 +260,13 @@
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
-            // dataGridViewStudents
-            // 
-            dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudents.Location = new System.Drawing.Point(15, 53);
-            dataGridViewStudents.Name = "dataGridViewStudents";
-            dataGridViewStudents.RowHeadersWidth = 51;
-            dataGridViewStudents.RowTemplate.Height = 29;
-            dataGridViewStudents.Size = new System.Drawing.Size(900, 370);
-            dataGridViewStudents.TabIndex = 7;
-            // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1099, 673);
-            Controls.Add(pnlStudents);
             Controls.Add(pnlDashboard);
+            Controls.Add(pnlStudents);
             Controls.Add(pnlTeachers);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -279,13 +279,13 @@
             pnlDashboard.PerformLayout();
             pnlStudents.ResumeLayout(false);
             pnlStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).EndInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
             pnlTeachers.ResumeLayout(false);
             pnlTeachers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
