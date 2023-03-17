@@ -19,6 +19,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlActivities.Hide();
             pnlRooms.Hide();
+            pnlTeacher.Hide();
 
 
             // show dashboard
@@ -31,6 +32,7 @@ namespace SomerenUI
             pnlDashboard.Hide();
             pnlActivities.Hide();
             pnlRooms.Hide();
+            pnlTeacher.Hide();
 
 
             // show students
@@ -54,6 +56,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlDashboard.Hide();
             pnlRooms.Hide();
+            pnlTeacher.Hide();
 
             // show dashboard
             pnlActivities.Show();
@@ -108,24 +111,25 @@ namespace SomerenUI
         }
 
 
-    
-               
-        
+
+
+
         private void ShowRoomsPanel()
         {
             pnlDashboard.Hide();
             pnlStudents.Hide();
             pnlActivities.Hide();
+            pnlTeacher.Hide();
 
             pnlRooms.Show();
-            
+
 
             try
             {
                 List<Room> rooms = GetRooms();
                 DisplayRooms(rooms);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("Something went wrong while loading the rooms: " + e.Message);
             }
@@ -140,12 +144,41 @@ namespace SomerenUI
 
         private void DisplayRooms(List<Room> rooms)
         {
-            
+
             dataGridViewRooms.DataSource = rooms;
 
         }
+        private void ShowTeachersPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            // show teachers
+            pnlTeacher.Show();
 
-
+            try
+            {
+                // get and display all teachers
+                List<Teacher> teachers = GetTeachers();
+                DisplayTeachers(teachers);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the teachers: " + e.Message);
+            }
+        }
+        private List<Teacher> GetTeachers()
+        {
+            TeacherService teacherService = new TeacherService();
+            List<Teacher> teachers = teacherService.GetTeachers();
+            return teachers;
+        }
+        private void DisplayTeachers(List<Teacher> teachers)
+        {
+            dataGridViewTeacher.DataSource = teachers;
+        }
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -179,6 +212,11 @@ namespace SomerenUI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowTeachersPanel();
         }
     }
 }
