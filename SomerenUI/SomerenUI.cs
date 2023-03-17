@@ -16,6 +16,7 @@ namespace SomerenUI
         private void ShowDashboardPanel()
         {
             // hide all other panels
+            //ttttt
             pnlStudents.Hide();
             pnlActivities.Hide();
 
