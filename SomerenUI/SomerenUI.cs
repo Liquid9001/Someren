@@ -17,6 +17,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
+            pnlRooms.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -26,6 +27,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
+            pnlRooms.Hide();
 
             // show students
             pnlStudents.Show();
@@ -71,6 +73,9 @@ namespace SomerenUI
         private void ShowRoomsPanel()
         {
             pnlDashboard.Hide();
+            pnlStudents.Hide();
+
+            pnlRooms.Show();
             
 
             try
