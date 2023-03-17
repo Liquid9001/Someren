@@ -17,6 +17,10 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+
 
             // show dashboard
             pnlDashboard.Show();
@@ -26,6 +30,10 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+
 
             // show students
             pnlStudents.Show();
@@ -42,6 +50,30 @@ namespace SomerenUI
             }
         }
 
+        private void ShowActivitiesPanel()
+        {
+            // hide all other panels
+            pnlStudents.Hide();
+            pnlDashboard.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+
+            // show dashboard
+            pnlActivities.Show();
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                DisplayActivities(activities);
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+        }
+
         private List<Student> GetStudents()
         {
             StudentService studentService = new StudentService();
@@ -51,19 +83,94 @@ namespace SomerenUI
 
         private void DisplayStudents(List<Student> students)
         {
-            // clear the listview before filling it
-            listViewStudents.Clear();
 
-            foreach (Student student in students)
+            dataGridViewStudents.DataSource = students;
+
+        }
+
+
+        private List<Activities> GetActivities()
+        {
+            ActivitiesService activitiesService = new ActivitiesService();
+            List<Activities> activities = activitiesService.GetActivities();
+            return activities;
+        }
+
+        private void DisplayActivities(List<Activities> activities)
+        {
+            // clear the listview before filling it
+            dataGridViewActivities.DataSource = activities;
+        }
+
+
+
+
+
+        private void ShowRoomsPanel()
+        {
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlTeacher.Hide();
+
+            pnlRooms.Show();
+
+
+            try
             {
-                ListViewItem li = new ListViewItem(student.FName);
-                ListViewItem lin = new ListViewItem(student.LName);
-                li.Tag = student;   // link student object to listview item
-                listViewStudents.Items.Add(li);
-                listViewStudents.Items.Add(lin);
+                List<Room> rooms = GetRooms();
+                DisplayRooms(rooms);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the rooms: " + e.Message);
             }
         }
 
+        private List<Room> GetRooms()
+        {
+            RoomService roomService = new RoomService();
+            List<Room> rooms = roomService.GetAllRooms();
+            return rooms;
+        }
+
+        private void DisplayRooms(List<Room> rooms)
+        {
+
+            dataGridViewRooms.DataSource = rooms;
+
+        }
+        private void ShowTeachersPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            // show teachers
+            pnlTeacher.Show();
+
+            try
+            {
+                // get and display all teachers
+                List<Teacher> teachers = GetTeachers();
+                DisplayTeachers(teachers);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the teachers: " + e.Message);
+            }
+        }
+        private List<Teacher> GetTeachers()
+        {
+            TeacherService teacherService = new TeacherService();
+            List<Teacher> teachers = teacherService.GetTeachers();
+            return teachers;
+        }
+        private void DisplayTeachers(List<Teacher> teachers)
+        {
+            dataGridViewTeacher.DataSource = teachers;
+        }
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -77,6 +184,31 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
+        }
+
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitiesPanel();
+        }
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowRoomsPanel();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowTeachersPanel();
         }
     }
 }
