@@ -18,6 +18,9 @@ namespace SomerenUI
             // hide all other panels
             pnlStudents.Hide();
             pnlTeachers.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+
             // show dashboard
             pnlDashboard.Show();
         }
@@ -27,6 +30,10 @@ namespace SomerenUI
             // hide all other panels
             pnlDashboard.Hide();
             pnlTeachers.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+
+
             // show students
             pnlStudents.Show();
 
@@ -47,8 +54,10 @@ namespace SomerenUI
             // hide all other panels
             pnlDashboard.Hide();
             pnlStudents.Hide();
+           
             // show teachers
             pnlTeachers.Show();
+
 
             try
             {
@@ -61,6 +70,31 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the teachers: " + e.Message);
             }
         }
+
+        private void ShowActivitiesPanel()
+        {
+            // hide all other panels
+            pnlStudents.Hide();
+            pnlDashboard.Hide();
+            pnlRooms.Hide();
+
+            // show dashboard
+            pnlActivities.Show();
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                DisplayActivities(activities);
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+        }
+
+
         private List<Student> GetStudents()
         {
             StudentService studentService = new StudentService();
@@ -83,6 +117,72 @@ namespace SomerenUI
             // clear the listview before filling it
             dataGridViewTeacher.DataSource = teachers;
         }
+
+        private List<Activities> GetActivities()
+        {
+            ActivitiesService activitiesService = new ActivitiesService();
+            List<Activities> activities = activitiesService.GetActivities();
+            return activities;
+        }
+
+        private void DisplayActivities(List<Activities> activities)
+        {
+            // clear the listview before filling it
+            dataGridViewActivities.DataSource = activities;
+        }
+
+
+    
+               
+        
+        private void ShowRoomsPanel()
+        {
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            
+
+            pnlRooms.Show();
+            
+
+            try
+            {
+                List<Room> rooms = GetRooms();
+                DisplayRooms(rooms);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the rooms: " + e.Message);
+            }
+        }
+
+        private List<Room> GetRooms()
+        {
+            RoomService roomService = new RoomService();
+            List<Room> rooms = roomService.GetAllRooms();
+            return rooms;
+        }
+
+        private void DisplayRooms(List<Room> rooms)
+        {
+            
+            dataGridViewRooms.DataSource = rooms;
+            /*foreach (DataGridViewRow row in dataGridViewRooms.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "1")
+                {
+                    row.Cells[3].Value = "Teacher";
+                }
+                else
+                {
+                    row.Cells[3].Value = "Student";
+                }
+            }*/
+
+            
+        }
+
+
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -97,6 +197,7 @@ namespace SomerenUI
         {
             ShowStudentsPanel();
         }
+
 
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,11 +216,29 @@ namespace SomerenUI
         }
 
         private void label2_Click(object sender, EventArgs e)
+
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitiesPanel();
+        }
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowRoomsPanel();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
+
         private void pnlTeachers_Paint(object sender, PaintEventArgs e)
+        {
+        
+        }
+        private void label2_Click(object sender, EventArgs e)
+
         {
 
         }
