@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,13 +41,21 @@
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlStudents = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listViewStudents = new System.Windows.Forms.ListView();
+            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -130,13 +139,71 @@
             // 
             // pnlStudents
             // 
+            this.pnlStudents.Controls.Add(this.dataGridViewStudents);
             this.pnlStudents.Controls.Add(this.pictureBox1);
-            this.pnlStudents.Controls.Add(this.listViewStudents);
             this.pnlStudents.Controls.Add(this.label1);
             this.pnlStudents.Location = new System.Drawing.Point(12, 27);
             this.pnlStudents.Name = "pnlStudents";
             this.pnlStudents.Size = new System.Drawing.Size(938, 466);
             this.pnlStudents.TabIndex = 2;
+            // 
+            // dataGridViewStudents
+            // 
+            this.dataGridViewStudents.AllowUserToAddRows = false;
+            this.dataGridViewStudents.AllowUserToDeleteRows = false;
+            this.dataGridViewStudents.AutoGenerateColumns = false;
+            this.dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.fNameDataGridViewTextBoxColumn,
+            this.lNameDataGridViewTextBoxColumn});
+            this.dataGridViewStudents.DataSource = this.studentBindingSource1;
+            this.dataGridViewStudents.Location = new System.Drawing.Point(13, 42);
+            this.dataGridViewStudents.Name = "dataGridViewStudents";
+            this.dataGridViewStudents.ReadOnly = true;
+            this.dataGridViewStudents.RowTemplate.Height = 25;
+            this.dataGridViewStudents.ShowEditingIcon = false;
+            this.dataGridViewStudents.ShowRowErrors = false;
+            this.dataGridViewStudents.Size = new System.Drawing.Size(765, 307);
+            this.dataGridViewStudents.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Student Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // fNameDataGridViewTextBoxColumn
+            // 
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "First Name";
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fNameDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // lNameDataGridViewTextBoxColumn
+            // 
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "Last Name";
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lNameDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // studentBindingSource1
+            // 
+            this.studentBindingSource1.DataSource = typeof(SomerenModel.Student);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(805, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(130, 123);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -148,22 +215,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Students";
             // 
-            // listViewStudents
+            // studentBindingSource
             // 
-            this.listViewStudents.Location = new System.Drawing.Point(16, 42);
-            this.listViewStudents.Name = "listViewStudents";
-            this.listViewStudents.Size = new System.Drawing.Size(766, 307);
-            this.listViewStudents.TabIndex = 1;
-            this.listViewStudents.UseCompatibleStateImageBehavior = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(805, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 123);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.studentBindingSource.DataSource = typeof(SomerenModel.Student);
             // 
             // SomerenUI
             // 
@@ -171,8 +225,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlStudents);
             this.Controls.Add(this.pnlDashboard);
+            this.Controls.Add(this.pnlStudents);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
             this.Text = "SomerenApp";
@@ -182,7 +236,10 @@
             this.pnlDashboard.PerformLayout();
             this.pnlStudents.ResumeLayout(false);
             this.pnlStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,7 +259,12 @@
         private System.Windows.Forms.Label lblDashboard;
         private System.Windows.Forms.Panel pnlStudents;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListView listViewStudents;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource studentBindingSource1;
     }
 }
