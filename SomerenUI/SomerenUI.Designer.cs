@@ -551,8 +551,8 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1099, 663);
-            Controls.Add(pnlStudents);
             Controls.Add(pnlDashboard);
+            Controls.Add(pnlStudents);
             Controls.Add(pnlRooms);
             Controls.Add(pnlActivities);
             Controls.Add(pnlTeacher);
