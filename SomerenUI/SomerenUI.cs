@@ -17,7 +17,11 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
+
+            pnlActivities.Hide();
+
             pnlRooms.Hide();
+
 
             // show dashboard
             pnlDashboard.Show();
@@ -27,7 +31,11 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
+
+            pnlActivities.Hide();
+
             pnlRooms.Hide();
+
 
             // show students
             pnlStudents.Show();
@@ -41,6 +49,28 @@ namespace SomerenUI
             catch (Exception e)
             {
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+        private void ShowActivitiesPanel()
+        {
+            // hide all other panels
+            pnlStudents.Hide();
+            pnlDashboard.Hide();
+
+            // show dashboard
+            pnlActivities.Show();
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                DisplayActivities(activities);
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
             }
         }
 
@@ -64,6 +94,20 @@ namespace SomerenUI
                 listViewStudents.Items.Add(li);
                 listViewStudents.Items.Add(lin);
             }
+        }
+
+
+        private List<Activities> GetActivities()
+        {
+            ActivitiesService activitiesService = new ActivitiesService();
+            List<Activities> activities = activitiesService.GetActivities();
+            return activities;
+        }
+
+        private void DisplayActivities(List<Activities> activities)
+        {
+            // clear the listview before filling it
+            dataGridViewActivities.DataSource = activities;
         }
 
 
@@ -116,8 +160,6 @@ namespace SomerenUI
         }
 
 
-       
-
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -132,6 +174,11 @@ namespace SomerenUI
         {
             ShowStudentsPanel();
         }
+
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitiesPanel();
 
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
