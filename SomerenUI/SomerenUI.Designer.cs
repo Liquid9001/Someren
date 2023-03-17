@@ -42,6 +42,10 @@
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
             dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            fNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            lNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            numberDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             studentBindingSource = new System.Windows.Forms.BindingSource(components);
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label1 = new System.Windows.Forms.Label();
@@ -77,10 +81,6 @@
             teacherBindingSource = new System.Windows.Forms.BindingSource(components);
             labelTeacher = new System.Windows.Forms.Label();
             pictureBoxTeachers = new System.Windows.Forms.PictureBox();
-            idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            lNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -197,6 +197,7 @@
             // 
             dataGridViewStudents.AllowUserToDeleteRows = false;
             dataGridViewStudents.AutoGenerateColumns = false;
+            dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn4, fNameDataGridViewTextBoxColumn1, lNameDataGridViewTextBoxColumn1, numberDataGridViewTextBoxColumn4 });
             dataGridViewStudents.DataSource = studentBindingSource;
@@ -205,8 +206,44 @@
             dataGridViewStudents.ReadOnly = true;
             dataGridViewStudents.RowHeadersWidth = 51;
             dataGridViewStudents.RowTemplate.Height = 29;
-            dataGridViewStudents.Size = new System.Drawing.Size(699, 288);
+            dataGridViewStudents.Size = new System.Drawing.Size(823, 382);
             dataGridViewStudents.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn4.HeaderText = "Id";
+            idDataGridViewTextBoxColumn4.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            idDataGridViewTextBoxColumn4.ReadOnly = true;
+            idDataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // fNameDataGridViewTextBoxColumn1
+            // 
+            fNameDataGridViewTextBoxColumn1.DataPropertyName = "FName";
+            fNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
+            fNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            fNameDataGridViewTextBoxColumn1.Name = "fNameDataGridViewTextBoxColumn1";
+            fNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            fNameDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // lNameDataGridViewTextBoxColumn1
+            // 
+            lNameDataGridViewTextBoxColumn1.DataPropertyName = "LName";
+            lNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
+            lNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            lNameDataGridViewTextBoxColumn1.Name = "lNameDataGridViewTextBoxColumn1";
+            lNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            lNameDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // numberDataGridViewTextBoxColumn4
+            // 
+            numberDataGridViewTextBoxColumn4.DataPropertyName = "Number";
+            numberDataGridViewTextBoxColumn4.HeaderText = "Number";
+            numberDataGridViewTextBoxColumn4.MinimumWidth = 6;
+            numberDataGridViewTextBoxColumn4.Name = "numberDataGridViewTextBoxColumn4";
+            numberDataGridViewTextBoxColumn4.ReadOnly = true;
+            numberDataGridViewTextBoxColumn4.Width = 150;
             // 
             // studentBindingSource
             // 
@@ -508,42 +545,6 @@
             pictureBoxTeachers.Size = new System.Drawing.Size(150, 163);
             pictureBoxTeachers.TabIndex = 3;
             pictureBoxTeachers.TabStop = false;
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn4.HeaderText = "Id";
-            idDataGridViewTextBoxColumn4.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            idDataGridViewTextBoxColumn4.ReadOnly = true;
-            idDataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // fNameDataGridViewTextBoxColumn1
-            // 
-            fNameDataGridViewTextBoxColumn1.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
-            fNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            fNameDataGridViewTextBoxColumn1.Name = "fNameDataGridViewTextBoxColumn1";
-            fNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            fNameDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // lNameDataGridViewTextBoxColumn1
-            // 
-            lNameDataGridViewTextBoxColumn1.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
-            lNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            lNameDataGridViewTextBoxColumn1.Name = "lNameDataGridViewTextBoxColumn1";
-            lNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            lNameDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // numberDataGridViewTextBoxColumn4
-            // 
-            numberDataGridViewTextBoxColumn4.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn4.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn4.MinimumWidth = 6;
-            numberDataGridViewTextBoxColumn4.Name = "numberDataGridViewTextBoxColumn4";
-            numberDataGridViewTextBoxColumn4.ReadOnly = true;
-            numberDataGridViewTextBoxColumn4.Width = 150;
             // 
             // SomerenUI
             // 
