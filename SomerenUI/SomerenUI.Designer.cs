@@ -50,8 +50,8 @@
             lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             teacherBindingSource = new System.Windows.Forms.BindingSource(components);
             pnlTeachers = new System.Windows.Forms.Panel();
-            label2 = new System.Windows.Forms.Label();
-            pictureBox2 = new System.Windows.Forms.PictureBox();
+            labelTeacher = new System.Windows.Forms.Label();
+            pictureBoxTeacher = new System.Windows.Forms.PictureBox();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -60,7 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
             pnlTeachers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacher).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -230,44 +230,44 @@
             // 
             // pnlTeachers
             // 
-            pnlTeachers.Controls.Add(label2);
+            pnlTeachers.Controls.Add(labelTeacher);
             pnlTeachers.Controls.Add(dataGridViewTeacher);
-            pnlTeachers.Controls.Add(pictureBox2);
+            pnlTeachers.Controls.Add(pictureBoxTeacher);
             pnlTeachers.Location = new System.Drawing.Point(14, 36);
             pnlTeachers.Name = "pnlTeachers";
             pnlTeachers.Size = new System.Drawing.Size(1070, 471);
             pnlTeachers.TabIndex = 4;
             pnlTeachers.Paint += pnlTeachers_Paint;
             // 
-            // label2
+            // labelTeacher
             // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(3, 4);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(128, 41);
-            label2.TabIndex = 6;
-            label2.Text = "Lectures";
-            label2.Click += label2_Click;
+            labelTeacher.AutoSize = true;
+            labelTeacher.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelTeacher.Location = new System.Drawing.Point(3, 4);
+            labelTeacher.Name = "labelTeacher";
+            labelTeacher.Size = new System.Drawing.Size(128, 41);
+            labelTeacher.TabIndex = 6;
+            labelTeacher.Text = "Lectures";
+            labelTeacher.Click += label2_Click;
             // 
-            // pictureBox2
+            // pictureBoxTeacher
             // 
-            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(921, 0);
-            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(149, 164);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
+            pictureBoxTeacher.Image = (System.Drawing.Image)resources.GetObject("pictureBoxTeacher.Image");
+            pictureBoxTeacher.Location = new System.Drawing.Point(921, 0);
+            pictureBoxTeacher.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBoxTeacher.Name = "pictureBoxTeacher";
+            pictureBoxTeacher.Size = new System.Drawing.Size(149, 164);
+            pictureBoxTeacher.TabIndex = 5;
+            pictureBoxTeacher.TabStop = false;
             // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1099, 673);
+            Controls.Add(pnlTeachers);
             Controls.Add(pnlDashboard);
             Controls.Add(pnlStudents);
-            Controls.Add(pnlTeachers);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -285,7 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
             pnlTeachers.ResumeLayout(false);
             pnlTeachers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeacher).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -311,8 +311,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel pnlTeachers;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelTeacher;
+        private System.Windows.Forms.PictureBox pictureBoxTeacher;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
     }
 }
