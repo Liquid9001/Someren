@@ -17,6 +17,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
+            pnlActivities.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -26,6 +27,7 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
+            pnlActivities.Hide();
 
             // show students
             pnlStudents.Show();
@@ -96,16 +98,7 @@ namespace SomerenUI
         private void DisplayActivities(List<Activities> activities)
         {
             // clear the listview before filling it
-            listViewActivities.Clear();
-
-            foreach (Activities activity in activities)
-            {
-                ListViewItem li = new ListViewItem(activity.Activity);
-                ListViewItem dt = new ListViewItem(activity.dateTime.ToString());
-                li.Tag = activity;   // link activity object to listview item
-                listViewActivities.Items.Add(li);
-                listViewActivities.Items.Add(dt);
-            }
+            dataGridViewActivities.DataSource = activities;
         }
 
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
