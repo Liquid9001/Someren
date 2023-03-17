@@ -52,7 +52,7 @@
             this.typeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.RoomLabel = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxRooms = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +63,7 @@
             this.pnlRooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -196,7 +196,7 @@
             // 
             this.pnlRooms.Controls.Add(this.dataGridViewRooms);
             this.pnlRooms.Controls.Add(this.RoomLabel);
-            this.pnlRooms.Controls.Add(this.pictureBox2);
+            this.pnlRooms.Controls.Add(this.pictureBoxRooms);
             this.pnlRooms.Location = new System.Drawing.Point(22, 58);
             this.pnlRooms.Name = "pnlRooms";
             this.pnlRooms.Size = new System.Drawing.Size(1742, 980);
@@ -273,16 +273,16 @@
             this.RoomLabel.Text = "Rooms";
             this.RoomLabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // pictureBox2
+            // pictureBoxRooms
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1498, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(241, 261);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxRooms.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRooms.Image")));
+            this.pictureBoxRooms.Location = new System.Drawing.Point(1498, 0);
+            this.pictureBoxRooms.Margin = new System.Windows.Forms.Padding(6);
+            this.pictureBoxRooms.Name = "pictureBoxRooms";
+            this.pictureBoxRooms.Size = new System.Drawing.Size(241, 261);
+            this.pictureBoxRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRooms.TabIndex = 5;
+            this.pictureBoxRooms.TabStop = false;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -332,7 +332,7 @@
             this.pnlRooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +358,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label RoomLabel;
         private System.Windows.Forms.DataGridView dataGridViewRooms;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxRooms;
         private System.Windows.Forms.BindingSource roomBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
