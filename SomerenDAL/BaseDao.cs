@@ -35,7 +35,7 @@ namespace SomerenDAL
             }
             return conn;
         }
-
+        // haaha
         private void CloseConnection()
         {
             conn.Close();
