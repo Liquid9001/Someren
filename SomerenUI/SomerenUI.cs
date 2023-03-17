@@ -64,6 +64,55 @@ namespace SomerenUI
             }
         }
 
+
+    
+               
+        
+        private void ShowRoomsPanel()
+        {
+            pnlDashboard.Hide();
+            
+
+            try
+            {
+                List<Room> rooms = GetRooms();
+                DisplayRooms(rooms);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the rooms: " + e.Message);
+            }
+        }
+
+        private List<Room> GetRooms()
+        {
+            RoomService roomService = new RoomService();
+            List<Room> rooms = roomService.GetAllRooms();
+            return rooms;
+        }
+
+        private void DisplayRooms(List<Room> rooms)
+        {
+            
+            dataGridViewRooms.DataSource = rooms;
+            /*foreach (DataGridViewRow row in dataGridViewRooms.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "1")
+                {
+                    row.Cells[3].Value = "Teacher";
+                }
+                else
+                {
+                    row.Cells[3].Value = "Student";
+                }
+            }*/
+
+            
+        }
+
+
+       
+
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -77,6 +126,21 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowRoomsPanel();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
