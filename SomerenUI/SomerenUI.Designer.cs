@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,14 +46,20 @@
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlActivities = new System.Windows.Forms.Panel();
+            this.dataGridViewActivities = new System.Windows.Forms.DataGridView();
+            this.activityIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.listViewActivities = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlActivities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,13 +182,58 @@
             // 
             // pnlActivities
             // 
+            this.pnlActivities.Controls.Add(this.dataGridViewActivities);
             this.pnlActivities.Controls.Add(this.pictureBox2);
-            this.pnlActivities.Controls.Add(this.listViewActivities);
             this.pnlActivities.Controls.Add(this.label2);
             this.pnlActivities.Location = new System.Drawing.Point(12, 27);
             this.pnlActivities.Name = "pnlActivities";
             this.pnlActivities.Size = new System.Drawing.Size(938, 466);
             this.pnlActivities.TabIndex = 3;
+            // 
+            // dataGridViewActivities
+            // 
+            this.dataGridViewActivities.AllowUserToAddRows = false;
+            this.dataGridViewActivities.AllowUserToDeleteRows = false;
+            this.dataGridViewActivities.AutoGenerateColumns = false;
+            this.dataGridViewActivities.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewActivities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.activityIdDataGridViewTextBoxColumn,
+            this.activityDataGridViewTextBoxColumn,
+            this.dateTimeDataGridViewTextBoxColumn});
+            this.dataGridViewActivities.DataSource = this.activitiesBindingSource;
+            this.dataGridViewActivities.Location = new System.Drawing.Point(16, 42);
+            this.dataGridViewActivities.Name = "dataGridViewActivities";
+            this.dataGridViewActivities.RowTemplate.Height = 25;
+            this.dataGridViewActivities.Size = new System.Drawing.Size(766, 307);
+            this.dataGridViewActivities.TabIndex = 3;
+            // 
+            // activityIdDataGridViewTextBoxColumn
+            // 
+            this.activityIdDataGridViewTextBoxColumn.DataPropertyName = "activityId";
+            this.activityIdDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.activityIdDataGridViewTextBoxColumn.Name = "activityIdDataGridViewTextBoxColumn";
+            this.activityIdDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // activityDataGridViewTextBoxColumn
+            // 
+            this.activityDataGridViewTextBoxColumn.DataPropertyName = "Activity";
+            this.activityDataGridViewTextBoxColumn.HeaderText = "Activity";
+            this.activityDataGridViewTextBoxColumn.Name = "activityDataGridViewTextBoxColumn";
+            this.activityDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "dateTime";
+            dataGridViewCellStyle1.Format = "dd MMMM yyyy HH:mm";
+            this.dateTimeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Start Time";
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // activitiesBindingSource
+            // 
+            this.activitiesBindingSource.DataSource = typeof(SomerenModel.Activities);
             // 
             // pictureBox2
             // 
@@ -190,14 +243,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(130, 123);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            // 
-            // listViewActivities
-            // 
-            this.listViewActivities.Location = new System.Drawing.Point(16, 42);
-            this.listViewActivities.Name = "listViewActivities";
-            this.listViewActivities.Size = new System.Drawing.Size(766, 307);
-            this.listViewActivities.TabIndex = 1;
-            this.listViewActivities.UseCompatibleStateImageBehavior = false;
             // 
             // label2
             // 
@@ -214,10 +259,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.pnlActivities);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnlStudents);
             this.Controls.Add(this.pnlDashboard);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlActivities);
+            this.Controls.Add(this.pnlStudents);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
             this.Text = "SomerenApp";
@@ -230,6 +275,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlActivities.ResumeLayout(false);
             this.pnlActivities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,7 +301,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlActivities;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListView listViewActivities;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridViewActivities;
+        private System.Windows.Forms.BindingSource activitiesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activityIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
     }
 }
