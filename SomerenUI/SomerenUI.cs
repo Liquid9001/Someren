@@ -53,6 +53,7 @@ namespace SomerenUI
 
             // show dashboard
             pnlActivities.Show();
+            //testtt
 
             try
             {
