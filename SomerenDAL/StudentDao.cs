@@ -12,6 +12,7 @@ namespace SomerenDAL
             string query = "SELECT StudentId, FirstName, LastName FROM [Student]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+            //blaat
         }
 
         private List<Student> ReadTables(DataTable dataTable)
