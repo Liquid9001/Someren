@@ -41,6 +41,7 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
+        // hoe
         private void ShowTeachersPanel()
         {
             // hide all other panels
