@@ -41,6 +41,8 @@
             pnlDashboard = new System.Windows.Forms.Panel();
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
+            dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            studentBindingSource = new System.Windows.Forms.BindingSource(components);
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label1 = new System.Windows.Forms.Label();
             pnlActivities = new System.Windows.Forms.Panel();
@@ -75,16 +77,15 @@
             teacherBindingSource = new System.Windows.Forms.BindingSource(components);
             labelTeacher = new System.Windows.Forms.Label();
             pictureBoxTeachers = new System.Windows.Forms.PictureBox();
-            dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            studentBindingSource = new System.Windows.Forms.BindingSource(components);
             idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             fNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             lNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             numberDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            birthDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlActivities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewActivities).BeginInit();
@@ -101,8 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -193,6 +192,25 @@
             pnlStudents.Name = "pnlStudents";
             pnlStudents.Size = new System.Drawing.Size(1072, 621);
             pnlStudents.TabIndex = 2;
+            // 
+            // dataGridViewStudents
+            // 
+            dataGridViewStudents.AllowUserToDeleteRows = false;
+            dataGridViewStudents.AutoGenerateColumns = false;
+            dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn4, fNameDataGridViewTextBoxColumn1, lNameDataGridViewTextBoxColumn1, numberDataGridViewTextBoxColumn4 });
+            dataGridViewStudents.DataSource = studentBindingSource;
+            dataGridViewStudents.Location = new System.Drawing.Point(7, 55);
+            dataGridViewStudents.Name = "dataGridViewStudents";
+            dataGridViewStudents.ReadOnly = true;
+            dataGridViewStudents.RowHeadersWidth = 51;
+            dataGridViewStudents.RowTemplate.Height = 29;
+            dataGridViewStudents.Size = new System.Drawing.Size(699, 288);
+            dataGridViewStudents.TabIndex = 3;
+            // 
+            // studentBindingSource
+            // 
+            studentBindingSource.DataSource = typeof(SomerenModel.Student);
             // 
             // pictureBox1
             // 
@@ -491,25 +509,6 @@
             pictureBoxTeachers.TabIndex = 3;
             pictureBoxTeachers.TabStop = false;
             // 
-            // dataGridViewStudents
-            // 
-            dataGridViewStudents.AllowUserToDeleteRows = false;
-            dataGridViewStudents.AutoGenerateColumns = false;
-            dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn4, fNameDataGridViewTextBoxColumn1, lNameDataGridViewTextBoxColumn1, numberDataGridViewTextBoxColumn4, birthDateDataGridViewTextBoxColumn });
-            dataGridViewStudents.DataSource = studentBindingSource;
-            dataGridViewStudents.Location = new System.Drawing.Point(7, 55);
-            dataGridViewStudents.Name = "dataGridViewStudents";
-            dataGridViewStudents.ReadOnly = true;
-            dataGridViewStudents.RowHeadersWidth = 51;
-            dataGridViewStudents.RowTemplate.Height = 29;
-            dataGridViewStudents.Size = new System.Drawing.Size(699, 288);
-            dataGridViewStudents.TabIndex = 3;
-            // 
-            // studentBindingSource
-            // 
-            studentBindingSource.DataSource = typeof(SomerenModel.Student);
-            // 
             // idDataGridViewTextBoxColumn4
             // 
             idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
@@ -517,25 +516,25 @@
             idDataGridViewTextBoxColumn4.MinimumWidth = 6;
             idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
             idDataGridViewTextBoxColumn4.ReadOnly = true;
-            idDataGridViewTextBoxColumn4.Width = 125;
+            idDataGridViewTextBoxColumn4.Width = 150;
             // 
             // fNameDataGridViewTextBoxColumn1
             // 
             fNameDataGridViewTextBoxColumn1.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn1.HeaderText = "FName";
+            fNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
             fNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
             fNameDataGridViewTextBoxColumn1.Name = "fNameDataGridViewTextBoxColumn1";
             fNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            fNameDataGridViewTextBoxColumn1.Width = 125;
+            fNameDataGridViewTextBoxColumn1.Width = 150;
             // 
             // lNameDataGridViewTextBoxColumn1
             // 
             lNameDataGridViewTextBoxColumn1.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn1.HeaderText = "LName";
+            lNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
             lNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
             lNameDataGridViewTextBoxColumn1.Name = "lNameDataGridViewTextBoxColumn1";
             lNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            lNameDataGridViewTextBoxColumn1.Width = 125;
+            lNameDataGridViewTextBoxColumn1.Width = 150;
             // 
             // numberDataGridViewTextBoxColumn4
             // 
@@ -544,16 +543,7 @@
             numberDataGridViewTextBoxColumn4.MinimumWidth = 6;
             numberDataGridViewTextBoxColumn4.Name = "numberDataGridViewTextBoxColumn4";
             numberDataGridViewTextBoxColumn4.ReadOnly = true;
-            numberDataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // birthDateDataGridViewTextBoxColumn
-            // 
-            birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
-            birthDateDataGridViewTextBoxColumn.HeaderText = "BirthDate";
-            birthDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
-            birthDateDataGridViewTextBoxColumn.ReadOnly = true;
-            birthDateDataGridViewTextBoxColumn.Width = 125;
+            numberDataGridViewTextBoxColumn4.Width = 150;
             // 
             // SomerenUI
             // 
@@ -576,6 +566,8 @@
             pnlDashboard.PerformLayout();
             pnlStudents.ResumeLayout(false);
             pnlStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlActivities.ResumeLayout(false);
             pnlActivities.PerformLayout();
@@ -595,8 +587,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).EndInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
-            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -662,11 +652,10 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.BindingSource roomBindingSource1;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
+        private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource studentBindingSource;
     }
 }
