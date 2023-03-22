@@ -28,568 +28,635 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
-            menuStrip1 = new System.Windows.Forms.MenuStrip();
-            dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            dashboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            pnlDashboard = new System.Windows.Forms.Panel();
-            lblDashboard = new System.Windows.Forms.Label();
-            pnlStudents = new System.Windows.Forms.Panel();
-            dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            lNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            studentBindingSource = new System.Windows.Forms.BindingSource(components);
-            pictureBox1 = new System.Windows.Forms.PictureBox();
-            label1 = new System.Windows.Forms.Label();
-            pnlActivities = new System.Windows.Forms.Panel();
-            dataGridViewActivities = new System.Windows.Forms.DataGridView();
-            dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            activitiesBindingSource2 = new System.Windows.Forms.BindingSource(components);
-            pictureBoxActivities = new System.Windows.Forms.PictureBox();
-            lblActivities = new System.Windows.Forms.Label();
-            activitiesBindingSource1 = new System.Windows.Forms.BindingSource(components);
-            activitiesBindingSource = new System.Windows.Forms.BindingSource(components);
-            pnlRooms = new System.Windows.Forms.Panel();
-            dataGridViewRooms = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            roomBindingSource1 = new System.Windows.Forms.BindingSource(components);
-            RoomLabel = new System.Windows.Forms.Label();
-            pictureBoxRooms = new System.Windows.Forms.PictureBox();
-            roomBindingSource = new System.Windows.Forms.BindingSource(components);
-            idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            pnlTeacher = new System.Windows.Forms.Panel();
-            dataGridViewTeacher = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            teacherBindingSource = new System.Windows.Forms.BindingSource(components);
-            labelTeacher = new System.Windows.Forms.Label();
-            pictureBoxTeachers = new System.Windows.Forms.PictureBox();
-            menuStrip1.SuspendLayout();
-            pnlDashboard.SuspendLayout();
-            pnlStudents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            pnlActivities.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewActivities).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxActivities).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource).BeginInit();
-            pnlRooms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewRooms).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRooms).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource).BeginInit();
-            pnlTeacher.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).BeginInit();
-            SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DrinkSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.lblDashboard = new System.Windows.Forms.Label();
+            this.pnlStudents = new System.Windows.Forms.Panel();
+            this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlActivities = new System.Windows.Forms.Panel();
+            this.dataGridViewActivities = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activitiesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBoxActivities = new System.Windows.Forms.PictureBox();
+            this.lblActivities = new System.Windows.Forms.Label();
+            this.activitiesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.activitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlRooms = new System.Windows.Forms.Panel();
+            this.dataGridViewRooms = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.roomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.RoomLabel = new System.Windows.Forms.Label();
+            this.pictureBoxRooms = new System.Windows.Forms.PictureBox();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTeacher = new System.Windows.Forms.Panel();
+            this.dataGridViewTeacher = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelTeacher = new System.Windows.Forms.Label();
+            this.pictureBoxTeachers = new System.Windows.Forms.PictureBox();
+            this.CashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RevenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.pnlDashboard.SuspendLayout();
+            this.pnlStudents.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlActivities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxActivities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource)).BeginInit();
+            this.pnlRooms.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
+            this.pnlTeacher.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeachers)).BeginInit();
+            this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem, studentsToolStripMenuItem, lecturersToolStripMenuItem, activitiesToolStripMenuItem, roomsToolStripMenuItem });
-            menuStrip1.Location = new System.Drawing.Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            menuStrip1.Size = new System.Drawing.Size(1099, 30);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem,
+            this.studentsToolStripMenuItem,
+            this.lecturersToolStripMenuItem,
+            this.activitiesToolStripMenuItem,
+            this.roomsToolStripMenuItem,
+            this.barServicesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(1786, 46);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // dashboardToolStripMenuItem
             // 
-            dashboardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem1, exitToolStripMenuItem });
-            dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            dashboardToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
-            dashboardToolStripMenuItem.Text = "Application";
+            this.dashboardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem1,
+            this.exitToolStripMenuItem});
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(154, 36);
+            this.dashboardToolStripMenuItem.Text = "Application";
             // 
             // dashboardToolStripMenuItem1
             // 
-            dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
-            dashboardToolStripMenuItem1.Text = "Dashboard";
-            dashboardToolStripMenuItem1.Click += dashboardToolStripMenuItem1_Click;
+            this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+            this.dashboardToolStripMenuItem1.Text = "Dashboard";
+            this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click_1);
             // 
             // exitToolStripMenuItem
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(262, 44);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
             // studentsToolStripMenuItem
             // 
-            studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            studentsToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            studentsToolStripMenuItem.Text = "Students";
-            studentsToolStripMenuItem.Click += studentsToolStripMenuItem_Click;
+            this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(127, 36);
+            this.studentsToolStripMenuItem.Text = "Students";
+            this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click_1);
             // 
             // lecturersToolStripMenuItem
             // 
-            lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            lecturersToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
-            lecturersToolStripMenuItem.Text = "Lecturers";
-            lecturersToolStripMenuItem.Click += lecturersToolStripMenuItem_Click;
+            this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(130, 36);
+            this.lecturersToolStripMenuItem.Text = "Lecturers";
+            this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click_1);
             // 
             // activitiesToolStripMenuItem
             // 
-            activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            activitiesToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            activitiesToolStripMenuItem.Text = "Activities";
-            activitiesToolStripMenuItem.Click += activitiesToolStripMenuItem_Click;
+            this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(129, 36);
+            this.activitiesToolStripMenuItem.Text = "Activities";
+            this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click_1);
             // 
             // roomsToolStripMenuItem
             // 
-            roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            roomsToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
-            roomsToolStripMenuItem.Text = "Rooms";
-            roomsToolStripMenuItem.Click += roomsToolStripMenuItem_Click;
+            this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(106, 36);
+            this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
+            // 
+            // barServicesToolStripMenuItem
+            // 
+            this.barServicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DrinkSuppliesToolStripMenuItem,
+            this.CashRegisterToolStripMenuItem,
+            this.RevenueReportToolStripMenuItem,
+            this.VATToolStripMenuItem});
+            this.barServicesToolStripMenuItem.Name = "barServicesToolStripMenuItem";
+            this.barServicesToolStripMenuItem.Size = new System.Drawing.Size(158, 36);
+            this.barServicesToolStripMenuItem.Text = "Bar services";
+            // 
+            // DrinkSuppliesToolStripMenuItem
+            // 
+            this.DrinkSuppliesToolStripMenuItem.Name = "DrinkSuppliesToolStripMenuItem";
+            this.DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.DrinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
             // 
             // pnlDashboard
             // 
-            pnlDashboard.Controls.Add(lblDashboard);
-            pnlDashboard.Location = new System.Drawing.Point(14, 36);
-            pnlDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pnlDashboard.Name = "pnlDashboard";
-            pnlDashboard.Size = new System.Drawing.Size(1072, 621);
-            pnlDashboard.TabIndex = 1;
+            this.pnlDashboard.Controls.Add(this.lblDashboard);
+            this.pnlDashboard.Location = new System.Drawing.Point(23, 58);
+            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlDashboard.Name = "pnlDashboard";
+            this.pnlDashboard.Size = new System.Drawing.Size(1742, 994);
+            this.pnlDashboard.TabIndex = 1;
             // 
             // lblDashboard
             // 
-            lblDashboard.AutoSize = true;
-            lblDashboard.Location = new System.Drawing.Point(15, 17);
-            lblDashboard.Name = "lblDashboard";
-            lblDashboard.Size = new System.Drawing.Size(262, 20);
-            lblDashboard.TabIndex = 0;
-            lblDashboard.Text = "Welcome to the Someren Application!";
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.Location = new System.Drawing.Point(24, 27);
+            this.lblDashboard.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(421, 32);
+            this.lblDashboard.TabIndex = 0;
+            this.lblDashboard.Text = "Welcome to the Someren Application!";
             // 
             // pnlStudents
             // 
-            pnlStudents.Controls.Add(dataGridViewStudents);
-            pnlStudents.Controls.Add(pictureBox1);
-            pnlStudents.Controls.Add(label1);
-            pnlStudents.Location = new System.Drawing.Point(14, 36);
-            pnlStudents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pnlStudents.Name = "pnlStudents";
-            pnlStudents.Size = new System.Drawing.Size(1072, 621);
-            pnlStudents.TabIndex = 2;
+            this.pnlStudents.Controls.Add(this.dataGridViewStudents);
+            this.pnlStudents.Controls.Add(this.pictureBox1);
+            this.pnlStudents.Controls.Add(this.label1);
+            this.pnlStudents.Location = new System.Drawing.Point(23, 58);
+            this.pnlStudents.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pnlStudents.Name = "pnlStudents";
+            this.pnlStudents.Size = new System.Drawing.Size(1742, 994);
+            this.pnlStudents.TabIndex = 2;
             // 
             // dataGridViewStudents
             // 
-            dataGridViewStudents.AllowUserToDeleteRows = false;
-            dataGridViewStudents.AutoGenerateColumns = false;
-            dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn4, fNameDataGridViewTextBoxColumn1, lNameDataGridViewTextBoxColumn1, numberDataGridViewTextBoxColumn4 });
-            dataGridViewStudents.DataSource = studentBindingSource;
-            dataGridViewStudents.Location = new System.Drawing.Point(7, 55);
-            dataGridViewStudents.Name = "dataGridViewStudents";
-            dataGridViewStudents.ReadOnly = true;
-            dataGridViewStudents.RowHeadersWidth = 51;
-            dataGridViewStudents.RowTemplate.Height = 29;
-            dataGridViewStudents.Size = new System.Drawing.Size(823, 382);
-            dataGridViewStudents.TabIndex = 3;
+            this.dataGridViewStudents.AllowUserToDeleteRows = false;
+            this.dataGridViewStudents.AutoGenerateColumns = false;
+            this.dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn4,
+            this.fNameDataGridViewTextBoxColumn1,
+            this.lNameDataGridViewTextBoxColumn1,
+            this.numberDataGridViewTextBoxColumn4});
+            this.dataGridViewStudents.DataSource = this.studentBindingSource;
+            this.dataGridViewStudents.Location = new System.Drawing.Point(11, 88);
+            this.dataGridViewStudents.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridViewStudents.Name = "dataGridViewStudents";
+            this.dataGridViewStudents.ReadOnly = true;
+            this.dataGridViewStudents.RowHeadersWidth = 51;
+            this.dataGridViewStudents.RowTemplate.Height = 29;
+            this.dataGridViewStudents.Size = new System.Drawing.Size(1337, 611);
+            this.dataGridViewStudents.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn4
             // 
-            idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn4.HeaderText = "Id";
-            idDataGridViewTextBoxColumn4.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            idDataGridViewTextBoxColumn4.ReadOnly = true;
-            idDataGridViewTextBoxColumn4.Width = 150;
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn4.Width = 150;
             // 
             // fNameDataGridViewTextBoxColumn1
             // 
-            fNameDataGridViewTextBoxColumn1.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
-            fNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            fNameDataGridViewTextBoxColumn1.Name = "fNameDataGridViewTextBoxColumn1";
-            fNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            fNameDataGridViewTextBoxColumn1.Width = 150;
+            this.fNameDataGridViewTextBoxColumn1.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
+            this.fNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.fNameDataGridViewTextBoxColumn1.Name = "fNameDataGridViewTextBoxColumn1";
+            this.fNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.fNameDataGridViewTextBoxColumn1.Width = 150;
             // 
             // lNameDataGridViewTextBoxColumn1
             // 
-            lNameDataGridViewTextBoxColumn1.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
-            lNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            lNameDataGridViewTextBoxColumn1.Name = "lNameDataGridViewTextBoxColumn1";
-            lNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            lNameDataGridViewTextBoxColumn1.Width = 150;
+            this.lNameDataGridViewTextBoxColumn1.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
+            this.lNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.lNameDataGridViewTextBoxColumn1.Name = "lNameDataGridViewTextBoxColumn1";
+            this.lNameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lNameDataGridViewTextBoxColumn1.Width = 150;
             // 
             // numberDataGridViewTextBoxColumn4
             // 
-            numberDataGridViewTextBoxColumn4.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn4.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn4.MinimumWidth = 6;
-            numberDataGridViewTextBoxColumn4.Name = "numberDataGridViewTextBoxColumn4";
-            numberDataGridViewTextBoxColumn4.ReadOnly = true;
-            numberDataGridViewTextBoxColumn4.Width = 150;
+            this.numberDataGridViewTextBoxColumn4.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn4.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.numberDataGridViewTextBoxColumn4.Name = "numberDataGridViewTextBoxColumn4";
+            this.numberDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.numberDataGridViewTextBoxColumn4.Width = 150;
             // 
             // studentBindingSource
             // 
-            studentBindingSource.DataSource = typeof(SomerenModel.Student);
+            this.studentBindingSource.DataSource = typeof(SomerenModel.Student);
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(920, 0);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(149, 163);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1495, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 261);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label1.Location = new System.Drawing.Point(15, 9);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(134, 41);
-            label1.TabIndex = 0;
-            label1.Text = "Students";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(24, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 65);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Students";
             // 
             // pnlActivities
             // 
-            pnlActivities.Controls.Add(dataGridViewActivities);
-            pnlActivities.Controls.Add(pictureBoxActivities);
-            pnlActivities.Controls.Add(lblActivities);
-            pnlActivities.Location = new System.Drawing.Point(13, 36);
-            pnlActivities.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            pnlActivities.Name = "pnlActivities";
-            pnlActivities.Size = new System.Drawing.Size(1072, 620);
-            pnlActivities.TabIndex = 3;
+            this.pnlActivities.Controls.Add(this.dataGridViewActivities);
+            this.pnlActivities.Controls.Add(this.pictureBoxActivities);
+            this.pnlActivities.Controls.Add(this.lblActivities);
+            this.pnlActivities.Location = new System.Drawing.Point(21, 58);
+            this.pnlActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlActivities.Name = "pnlActivities";
+            this.pnlActivities.Size = new System.Drawing.Size(1742, 992);
+            this.pnlActivities.TabIndex = 3;
             // 
             // dataGridViewActivities
             // 
-            dataGridViewActivities.AllowUserToAddRows = false;
-            dataGridViewActivities.AllowUserToDeleteRows = false;
-            dataGridViewActivities.AutoGenerateColumns = false;
-            dataGridViewActivities.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewActivities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
-            dataGridViewActivities.DataSource = activitiesBindingSource2;
-            dataGridViewActivities.Location = new System.Drawing.Point(16, 56);
-            dataGridViewActivities.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            dataGridViewActivities.Name = "dataGridViewActivities";
-            dataGridViewActivities.RowHeadersWidth = 51;
-            dataGridViewActivities.RowTemplate.Height = 25;
-            dataGridViewActivities.Size = new System.Drawing.Size(888, 467);
-            dataGridViewActivities.TabIndex = 3;
+            this.dataGridViewActivities.AllowUserToAddRows = false;
+            this.dataGridViewActivities.AllowUserToDeleteRows = false;
+            this.dataGridViewActivities.AutoGenerateColumns = false;
+            this.dataGridViewActivities.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewActivities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dataGridViewActivities.DataSource = this.activitiesBindingSource2;
+            this.dataGridViewActivities.Location = new System.Drawing.Point(26, 90);
+            this.dataGridViewActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewActivities.Name = "dataGridViewActivities";
+            this.dataGridViewActivities.RowHeadersWidth = 51;
+            this.dataGridViewActivities.RowTemplate.Height = 25;
+            this.dataGridViewActivities.Size = new System.Drawing.Size(1443, 747);
+            this.dataGridViewActivities.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "activityId";
-            dataGridViewTextBoxColumn4.HeaderText = "activityId";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.Width = 125;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "activityId";
+            this.dataGridViewTextBoxColumn4.HeaderText = "activityId";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewTextBoxColumn5.DataPropertyName = "Activity";
-            dataGridViewTextBoxColumn5.HeaderText = "Activity";
-            dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.Width = 125;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Activity";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Activity";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            dataGridViewTextBoxColumn6.DataPropertyName = "dateTime";
-            dataGridViewTextBoxColumn6.HeaderText = "dateTime";
-            dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            dataGridViewTextBoxColumn6.Width = 125;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "dateTime";
+            this.dataGridViewTextBoxColumn6.HeaderText = "dateTime";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // activitiesBindingSource2
             // 
-            activitiesBindingSource2.DataSource = typeof(SomerenModel.Activities);
+            this.activitiesBindingSource2.DataSource = typeof(SomerenModel.Activities);
             // 
             // pictureBoxActivities
             // 
-            pictureBoxActivities.Image = (System.Drawing.Image)resources.GetObject("pictureBoxActivities.Image");
-            pictureBoxActivities.Location = new System.Drawing.Point(920, 4);
-            pictureBoxActivities.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            pictureBoxActivities.Name = "pictureBoxActivities";
-            pictureBoxActivities.Size = new System.Drawing.Size(150, 163);
-            pictureBoxActivities.TabIndex = 2;
-            pictureBoxActivities.TabStop = false;
+            this.pictureBoxActivities.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxActivities.Image")));
+            this.pictureBoxActivities.Location = new System.Drawing.Point(1495, 6);
+            this.pictureBoxActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxActivities.Name = "pictureBoxActivities";
+            this.pictureBoxActivities.Size = new System.Drawing.Size(244, 261);
+            this.pictureBoxActivities.TabIndex = 2;
+            this.pictureBoxActivities.TabStop = false;
             // 
             // lblActivities
             // 
-            lblActivities.AutoSize = true;
-            lblActivities.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblActivities.Location = new System.Drawing.Point(8, 4);
-            lblActivities.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblActivities.Name = "lblActivities";
-            lblActivities.Size = new System.Drawing.Size(135, 41);
-            lblActivities.TabIndex = 0;
-            lblActivities.Text = "Activities";
+            this.lblActivities.AutoSize = true;
+            this.lblActivities.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblActivities.Location = new System.Drawing.Point(13, 6);
+            this.lblActivities.Name = "lblActivities";
+            this.lblActivities.Size = new System.Drawing.Size(217, 65);
+            this.lblActivities.TabIndex = 0;
+            this.lblActivities.Text = "Activities";
             // 
             // pnlRooms
             // 
-            pnlRooms.Controls.Add(dataGridViewRooms);
-            pnlRooms.Controls.Add(RoomLabel);
-            pnlRooms.Controls.Add(pictureBoxRooms);
-            pnlRooms.Location = new System.Drawing.Point(14, 36);
-            pnlRooms.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            pnlRooms.Name = "pnlRooms";
-            pnlRooms.Size = new System.Drawing.Size(1072, 612);
-            pnlRooms.TabIndex = 3;
+            this.pnlRooms.Controls.Add(this.dataGridViewRooms);
+            this.pnlRooms.Controls.Add(this.RoomLabel);
+            this.pnlRooms.Controls.Add(this.pictureBoxRooms);
+            this.pnlRooms.Location = new System.Drawing.Point(23, 58);
+            this.pnlRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlRooms.Name = "pnlRooms";
+            this.pnlRooms.Size = new System.Drawing.Size(1742, 979);
+            this.pnlRooms.TabIndex = 3;
             // 
             // dataGridViewRooms
             // 
-            dataGridViewRooms.AutoGenerateColumns = false;
-            dataGridViewRooms.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn3, numberDataGridViewTextBoxColumn3, dataGridViewTextBoxColumn7, dataGridViewCheckBoxColumn1 });
-            dataGridViewRooms.DataSource = roomBindingSource1;
-            dataGridViewRooms.Location = new System.Drawing.Point(18, 56);
-            dataGridViewRooms.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            dataGridViewRooms.Name = "dataGridViewRooms";
-            dataGridViewRooms.ReadOnly = true;
-            dataGridViewRooms.RowHeadersWidth = 82;
-            dataGridViewRooms.RowTemplate.Height = 41;
-            dataGridViewRooms.Size = new System.Drawing.Size(873, 407);
-            dataGridViewRooms.TabIndex = 3;
+            this.dataGridViewRooms.AutoGenerateColumns = false;
+            this.dataGridViewRooms.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn3,
+            this.numberDataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewCheckBoxColumn1});
+            this.dataGridViewRooms.DataSource = this.roomBindingSource1;
+            this.dataGridViewRooms.Location = new System.Drawing.Point(29, 90);
+            this.dataGridViewRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewRooms.Name = "dataGridViewRooms";
+            this.dataGridViewRooms.ReadOnly = true;
+            this.dataGridViewRooms.RowHeadersWidth = 82;
+            this.dataGridViewRooms.RowTemplate.Height = 41;
+            this.dataGridViewRooms.Size = new System.Drawing.Size(1419, 651);
+            this.dataGridViewRooms.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn3
             // 
-            idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn3.HeaderText = "Id";
-            idDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            idDataGridViewTextBoxColumn3.ReadOnly = true;
-            idDataGridViewTextBoxColumn3.Width = 125;
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn3.Width = 125;
             // 
             // numberDataGridViewTextBoxColumn3
             // 
-            numberDataGridViewTextBoxColumn3.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn3.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            numberDataGridViewTextBoxColumn3.Name = "numberDataGridViewTextBoxColumn3";
-            numberDataGridViewTextBoxColumn3.ReadOnly = true;
-            numberDataGridViewTextBoxColumn3.Width = 125;
+            this.numberDataGridViewTextBoxColumn3.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn3.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.numberDataGridViewTextBoxColumn3.Name = "numberDataGridViewTextBoxColumn3";
+            this.numberDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.numberDataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewTextBoxColumn7.DataPropertyName = "Capacity";
-            dataGridViewTextBoxColumn7.HeaderText = "Capacity";
-            dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            dataGridViewTextBoxColumn7.ReadOnly = true;
-            dataGridViewTextBoxColumn7.Width = 125;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Capacity";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Capacity";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // dataGridViewCheckBoxColumn1
             // 
-            dataGridViewCheckBoxColumn1.DataPropertyName = "Type";
-            dataGridViewCheckBoxColumn1.HeaderText = "Type";
-            dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            dataGridViewCheckBoxColumn1.ReadOnly = true;
-            dataGridViewCheckBoxColumn1.Width = 125;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Type";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Room for teacher";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 125;
             // 
             // roomBindingSource1
             // 
-            roomBindingSource1.DataSource = typeof(SomerenModel.Room);
+            this.roomBindingSource1.DataSource = typeof(SomerenModel.Room);
             // 
             // RoomLabel
             // 
-            RoomLabel.AutoSize = true;
-            RoomLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            RoomLabel.Location = new System.Drawing.Point(21, 9);
-            RoomLabel.Name = "RoomLabel";
-            RoomLabel.Size = new System.Drawing.Size(110, 41);
-            RoomLabel.TabIndex = 4;
-            RoomLabel.Text = "Rooms";
-            RoomLabel.Click += label2_Click;
+            this.RoomLabel.AutoSize = true;
+            this.RoomLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RoomLabel.Location = new System.Drawing.Point(34, 14);
+            this.RoomLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.RoomLabel.Name = "RoomLabel";
+            this.RoomLabel.Size = new System.Drawing.Size(173, 65);
+            this.RoomLabel.TabIndex = 4;
+            this.RoomLabel.Text = "Rooms";
             // 
             // pictureBoxRooms
             // 
-            pictureBoxRooms.Image = (System.Drawing.Image)resources.GetObject("pictureBoxRooms.Image");
-            pictureBoxRooms.Location = new System.Drawing.Point(922, 0);
-            pictureBoxRooms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            pictureBoxRooms.Name = "pictureBoxRooms";
-            pictureBoxRooms.Size = new System.Drawing.Size(149, 163);
-            pictureBoxRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBoxRooms.TabIndex = 5;
-            pictureBoxRooms.TabStop = false;
+            this.pictureBoxRooms.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRooms.Image")));
+            this.pictureBoxRooms.Location = new System.Drawing.Point(1498, 0);
+            this.pictureBoxRooms.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.pictureBoxRooms.Name = "pictureBoxRooms";
+            this.pictureBoxRooms.Size = new System.Drawing.Size(242, 261);
+            this.pictureBoxRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRooms.TabIndex = 5;
+            this.pictureBoxRooms.TabStop = false;
             // 
             // idDataGridViewTextBoxColumn
             // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 10;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.Width = 200;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 200;
             // 
             // numberDataGridViewTextBoxColumn
             // 
-            numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn.MinimumWidth = 10;
-            numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            numberDataGridViewTextBoxColumn.Width = 200;
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.Width = 200;
             // 
             // Capacity
             // 
-            Capacity.DataPropertyName = "Capacity";
-            Capacity.HeaderText = "Capacity";
-            Capacity.MinimumWidth = 10;
-            Capacity.Name = "Capacity";
-            Capacity.Width = 200;
+            this.Capacity.DataPropertyName = "Capacity";
+            this.Capacity.HeaderText = "Capacity";
+            this.Capacity.MinimumWidth = 10;
+            this.Capacity.Name = "Capacity";
+            this.Capacity.Width = 200;
             // 
             // pnlTeacher
             // 
-            pnlTeacher.Controls.Add(dataGridViewTeacher);
-            pnlTeacher.Controls.Add(labelTeacher);
-            pnlTeacher.Controls.Add(pictureBoxTeachers);
-            pnlTeacher.Location = new System.Drawing.Point(12, 36);
-            pnlTeacher.Name = "pnlTeacher";
-            pnlTeacher.Size = new System.Drawing.Size(1075, 523);
-            pnlTeacher.TabIndex = 4;
+            this.pnlTeacher.Controls.Add(this.dataGridViewTeacher);
+            this.pnlTeacher.Controls.Add(this.labelTeacher);
+            this.pnlTeacher.Controls.Add(this.pictureBoxTeachers);
+            this.pnlTeacher.Location = new System.Drawing.Point(20, 58);
+            this.pnlTeacher.Margin = new System.Windows.Forms.Padding(5);
+            this.pnlTeacher.Name = "pnlTeacher";
+            this.pnlTeacher.Size = new System.Drawing.Size(1747, 837);
+            this.pnlTeacher.TabIndex = 4;
             // 
             // dataGridViewTeacher
             // 
-            dataGridViewTeacher.AutoGenerateColumns = false;
-            dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn2, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn, numberDataGridViewTextBoxColumn2 });
-            dataGridViewTeacher.DataSource = teacherBindingSource;
-            dataGridViewTeacher.Location = new System.Drawing.Point(9, 56);
-            dataGridViewTeacher.Name = "dataGridViewTeacher";
-            dataGridViewTeacher.ReadOnly = true;
-            dataGridViewTeacher.RowHeadersWidth = 51;
-            dataGridViewTeacher.RowTemplate.Height = 29;
-            dataGridViewTeacher.Size = new System.Drawing.Size(846, 346);
-            dataGridViewTeacher.TabIndex = 5;
+            this.dataGridViewTeacher.AutoGenerateColumns = false;
+            this.dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.fNameDataGridViewTextBoxColumn,
+            this.lNameDataGridViewTextBoxColumn,
+            this.numberDataGridViewTextBoxColumn2});
+            this.dataGridViewTeacher.DataSource = this.teacherBindingSource;
+            this.dataGridViewTeacher.Location = new System.Drawing.Point(15, 90);
+            this.dataGridViewTeacher.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridViewTeacher.Name = "dataGridViewTeacher";
+            this.dataGridViewTeacher.ReadOnly = true;
+            this.dataGridViewTeacher.RowHeadersWidth = 51;
+            this.dataGridViewTeacher.RowTemplate.Height = 29;
+            this.dataGridViewTeacher.Size = new System.Drawing.Size(1375, 554);
+            this.dataGridViewTeacher.TabIndex = 5;
             // 
             // idDataGridViewTextBoxColumn2
             // 
-            idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn2.HeaderText = "Id";
-            idDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            idDataGridViewTextBoxColumn2.ReadOnly = true;
-            idDataGridViewTextBoxColumn2.Width = 125;
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn2.Width = 125;
             // 
             // fNameDataGridViewTextBoxColumn
             // 
-            fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn.HeaderText = "First name";
-            fNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            fNameDataGridViewTextBoxColumn.Width = 125;
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "First name";
+            this.fNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // lNameDataGridViewTextBoxColumn
             // 
-            lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn.HeaderText = "Last name";
-            lNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            lNameDataGridViewTextBoxColumn.Width = 125;
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "Last name";
+            this.lNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lNameDataGridViewTextBoxColumn.Width = 125;
             // 
             // numberDataGridViewTextBoxColumn2
             // 
-            numberDataGridViewTextBoxColumn2.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn2.HeaderText = "Lecture number";
-            numberDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            numberDataGridViewTextBoxColumn2.Name = "numberDataGridViewTextBoxColumn2";
-            numberDataGridViewTextBoxColumn2.ReadOnly = true;
-            numberDataGridViewTextBoxColumn2.Width = 125;
+            this.numberDataGridViewTextBoxColumn2.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn2.HeaderText = "Lecture number";
+            this.numberDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.numberDataGridViewTextBoxColumn2.Name = "numberDataGridViewTextBoxColumn2";
+            this.numberDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.numberDataGridViewTextBoxColumn2.Width = 125;
             // 
             // teacherBindingSource
             // 
-            teacherBindingSource.DataSource = typeof(SomerenModel.Teacher);
+            this.teacherBindingSource.DataSource = typeof(SomerenModel.Teacher);
             // 
             // labelTeacher
             // 
-            labelTeacher.AutoSize = true;
-            labelTeacher.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            labelTeacher.Location = new System.Drawing.Point(5, 11);
-            labelTeacher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            labelTeacher.Name = "labelTeacher";
-            labelTeacher.Size = new System.Drawing.Size(128, 41);
-            labelTeacher.TabIndex = 4;
-            labelTeacher.Text = "Lectures";
+            this.labelTeacher.AutoSize = true;
+            this.labelTeacher.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTeacher.Location = new System.Drawing.Point(8, 18);
+            this.labelTeacher.Name = "labelTeacher";
+            this.labelTeacher.Size = new System.Drawing.Size(203, 65);
+            this.labelTeacher.TabIndex = 4;
+            this.labelTeacher.Text = "Lectures";
             // 
             // pictureBoxTeachers
             // 
-            pictureBoxTeachers.Image = (System.Drawing.Image)resources.GetObject("pictureBoxTeachers.Image");
-            pictureBoxTeachers.Location = new System.Drawing.Point(921, 9);
-            pictureBoxTeachers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            pictureBoxTeachers.Name = "pictureBoxTeachers";
-            pictureBoxTeachers.Size = new System.Drawing.Size(150, 163);
-            pictureBoxTeachers.TabIndex = 3;
-            pictureBoxTeachers.TabStop = false;
+            this.pictureBoxTeachers.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxTeachers.Image")));
+            this.pictureBoxTeachers.Location = new System.Drawing.Point(1497, 14);
+            this.pictureBoxTeachers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxTeachers.Name = "pictureBoxTeachers";
+            this.pictureBoxTeachers.Size = new System.Drawing.Size(244, 261);
+            this.pictureBoxTeachers.TabIndex = 3;
+            this.pictureBoxTeachers.TabStop = false;
+            // 
+            // CashRegisterToolStripMenuItem
+            // 
+            this.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
+            this.CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.CashRegisterToolStripMenuItem.Text = "Cash register";
+            // 
+            // RevenueReportToolStripMenuItem
+            // 
+            this.RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
+            this.RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.RevenueReportToolStripMenuItem.Text = "Revenue report";
+            // 
+            // VATToolStripMenuItem
+            // 
+            this.VATToolStripMenuItem.Name = "VATToolStripMenuItem";
+            this.VATToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.VATToolStripMenuItem.Text = "VAT";
             // 
             // SomerenUI
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1099, 663);
-            Controls.Add(pnlDashboard);
-            Controls.Add(pnlStudents);
-            Controls.Add(pnlRooms);
-            Controls.Add(pnlActivities);
-            Controls.Add(pnlTeacher);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            Name = "SomerenUI";
-            Text = "SomerenApp";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            pnlDashboard.ResumeLayout(false);
-            pnlDashboard.PerformLayout();
-            pnlStudents.ResumeLayout(false);
-            pnlStudents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
-            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            pnlActivities.ResumeLayout(false);
-            pnlActivities.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewActivities).EndInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxActivities).EndInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource).EndInit();
-            pnlRooms.ResumeLayout(false);
-            pnlRooms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewRooms).EndInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRooms).EndInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource).EndInit();
-            pnlTeacher.ResumeLayout(false);
-            pnlTeacher.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).EndInit();
-            ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1786, 1061);
+            this.Controls.Add(this.pnlDashboard);
+            this.Controls.Add(this.pnlStudents);
+            this.Controls.Add(this.pnlRooms);
+            this.Controls.Add(this.pnlActivities);
+            this.Controls.Add(this.pnlTeacher);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Name = "SomerenUI";
+            this.Text = "SomerenApp";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.pnlDashboard.ResumeLayout(false);
+            this.pnlDashboard.PerformLayout();
+            this.pnlStudents.ResumeLayout(false);
+            this.pnlStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlActivities.ResumeLayout(false);
+            this.pnlActivities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewActivities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxActivities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activitiesBindingSource)).EndInit();
+            this.pnlRooms.ResumeLayout(false);
+            this.pnlRooms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRooms)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
+            this.pnlTeacher.ResumeLayout(false);
+            this.pnlTeacher.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeachers)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -647,10 +714,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.BindingSource activitiesBindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.BindingSource roomBindingSource1;
         private System.Windows.Forms.DataGridView dataGridViewStudents;
         private System.Windows.Forms.BindingSource studentBindingSource;
@@ -658,5 +721,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.ToolStripMenuItem barServicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DrinkSuppliesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CashRegisterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem RevenueReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem VATToolStripMenuItem;
     }
 }
