@@ -171,44 +171,45 @@ namespace SomerenUI
         {
             dataGridViewTeacher.DataSource = teachers;
         }
-        private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
+      
+       
+
+        
+
+        
+
+        
+
+        private void dashboardToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             ShowDashboardPanel();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void studentsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ShowStudentsPanel();
         }
 
+        private void lecturersToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ShowTeachersPanel();
+        }
 
-        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void activitiesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ShowActivitiesPanel();
         }
+
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowRoomsPanel();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowTeachersPanel();
-        }
+        
     }
 }
