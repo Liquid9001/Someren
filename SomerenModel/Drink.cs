@@ -11,6 +11,6 @@ namespace SomerenModel
         public int Id { get; set; }     // database id
         public string DrinkName { get; set; }
         public int Stock { get; set; }
-        public float Price { get; set; }
+        public double Price { get; set; }
     }
 }

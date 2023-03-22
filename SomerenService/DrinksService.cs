@@ -8,7 +8,7 @@ using SomerenModel;
 
 namespace SomerenService
 {
-    internal class DrinksService
+    public class DrinksService
     {
         private DrinksDao drinksdb;
         public DrinksService()
