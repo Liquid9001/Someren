@@ -249,5 +249,10 @@ namespace SomerenUI
         {
             ShowDrinksPanel();
         }
+
+        private void buttonUpdateDrink_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

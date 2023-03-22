@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -34,6 +35,16 @@ namespace SomerenDAL
                 drinks.Add(drink);
             }
             return drinks;
+        }
+        public void UpdateDrink(Drink drink)
+        {
+
+            SqlCommand command = new SqlCommand("UPDATE Drink SET DrinkName=@DrinkName, Stock=@Stock" +
+                "WHERE Id=@Id");
+            command.Parameters.AddWithValue("@DrinkName", drink.DrinkName);
+            command.Parameters.AddWithValue("@Stock", drink.Stock);
+            command.ExecuteNonQuery();
+
         }
     }
 }

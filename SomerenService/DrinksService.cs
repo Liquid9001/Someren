@@ -21,5 +21,9 @@ namespace SomerenService
             List<Drink> drinks = drinksdb.GetAllDrinks();
             return drinks;
         }
+        public void UpdateDrink(Drink drink)
+        {
+            DrinksDao.UpdateDrink(drink);
+        }
     }
 }

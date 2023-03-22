@@ -98,6 +98,7 @@
             stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             drinkBindingSource = new System.Windows.Forms.BindingSource(components);
+            buttonUpdateDrink = new System.Windows.Forms.Button();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -198,26 +199,26 @@
             // DrinkSuppliesToolStripMenuItem
             // 
             DrinkSuppliesToolStripMenuItem.Name = "DrinkSuppliesToolStripMenuItem";
-            DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             DrinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
             DrinkSuppliesToolStripMenuItem.Click += DrinkSuppliesToolStripMenuItem_Click;
             // 
             // CashRegisterToolStripMenuItem
             // 
             CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
-            CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             CashRegisterToolStripMenuItem.Text = "Cash register";
             // 
             // RevenueReportToolStripMenuItem
             // 
             RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
-            RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             RevenueReportToolStripMenuItem.Text = "Revenue report";
             // 
             // VATToolStripMenuItem
             // 
             VATToolStripMenuItem.Name = "VATToolStripMenuItem";
-            VATToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            VATToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             VATToolStripMenuItem.Text = "VAT";
             // 
             // pnlDashboard
@@ -612,6 +613,7 @@
             // 
             // pnlDrinks
             // 
+            pnlDrinks.Controls.Add(buttonUpdateDrink);
             pnlDrinks.Controls.Add(dataGridViewDrinks);
             pnlDrinks.Location = new System.Drawing.Point(12, 36);
             pnlDrinks.Name = "pnlDrinks";
@@ -628,7 +630,7 @@
             dataGridViewDrinks.Name = "dataGridViewDrinks";
             dataGridViewDrinks.RowHeadersWidth = 51;
             dataGridViewDrinks.RowTemplate.Height = 29;
-            dataGridViewDrinks.Size = new System.Drawing.Size(961, 426);
+            dataGridViewDrinks.Size = new System.Drawing.Size(553, 307);
             dataGridViewDrinks.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn8
@@ -637,6 +639,7 @@
             idDataGridViewTextBoxColumn8.HeaderText = "Id";
             idDataGridViewTextBoxColumn8.MinimumWidth = 6;
             idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
+            idDataGridViewTextBoxColumn8.ReadOnly = true;
             idDataGridViewTextBoxColumn8.Width = 125;
             // 
             // drinkNameDataGridViewTextBoxColumn
@@ -661,11 +664,22 @@
             priceDataGridViewTextBoxColumn.HeaderText = "Price";
             priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            priceDataGridViewTextBoxColumn.ReadOnly = true;
             priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // drinkBindingSource
             // 
             drinkBindingSource.DataSource = typeof(SomerenModel.Drink);
+            // 
+            // buttonUpdateDrink
+            // 
+            buttonUpdateDrink.Location = new System.Drawing.Point(603, 72);
+            buttonUpdateDrink.Name = "buttonUpdateDrink";
+            buttonUpdateDrink.Size = new System.Drawing.Size(94, 29);
+            buttonUpdateDrink.TabIndex = 1;
+            buttonUpdateDrink.Text = "&Update";
+            buttonUpdateDrink.UseVisualStyleBackColor = true;
+            buttonUpdateDrink.Click += buttonUpdateDrink_Click;
             // 
             // SomerenUI
             // 
@@ -814,10 +828,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn7;
         private System.Windows.Forms.BindingSource teacherBindingSource1;
+        private System.Windows.Forms.BindingSource drinkBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn drinkNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource drinkBindingSource;
+        private System.Windows.Forms.Button buttonUpdateDrink;
     }
 }
