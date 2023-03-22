@@ -245,6 +245,7 @@ namespace SomerenUI
             ShowRoomsPanel();
         }
 
+
         private void DrinkSuppliesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowDrinksPanel();

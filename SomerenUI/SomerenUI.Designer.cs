@@ -30,6 +30,20 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
+
+            this.VATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlVAT = new System.Windows.Forms.Panel();
+            this.VATSelectQuarterLabel = new System.Windows.Forms.Label();
+            this.VATLabel = new System.Windows.Forms.Label();
+            this.VATSelectQuartermenuStrip = new System.Windows.Forms.MenuStrip();
+            this.selectQuarterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q1VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q2VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q3VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q4VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlVAT.SuspendLayout();
+            this.VATSelectQuartermenuStrip.SuspendLayout();
+
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             dashboardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).BeginInit();
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource).BeginInit();
             SuspendLayout();
+
             // 
             // menuStrip1
             // 
@@ -198,6 +213,7 @@
             // 
             // DrinkSuppliesToolStripMenuItem
             // 
+
             DrinkSuppliesToolStripMenuItem.Name = "DrinkSuppliesToolStripMenuItem";
             DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             DrinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
@@ -220,6 +236,24 @@
             VATToolStripMenuItem.Name = "VATToolStripMenuItem";
             VATToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             VATToolStripMenuItem.Text = "VAT";
+            // 
+            // CashRegisterToolStripMenuItem
+            // 
+            this.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
+            this.CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
+            this.CashRegisterToolStripMenuItem.Text = "Cash register";
+            // 
+            // RevenueReportToolStripMenuItem
+            // 
+            this.RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
+            this.RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
+            this.RevenueReportToolStripMenuItem.Text = "Revenue report";
+            // 
+            // VATToolStripMenuItem
+            // 
+            this.VATToolStripMenuItem.Name = "VATToolStripMenuItem";
+            this.VATToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
+            this.VATToolStripMenuItem.Text = "VAT";
             // 
             // pnlDashboard
             // 
@@ -603,6 +637,89 @@
             // 
             // pictureBoxTeachers
             // 
+            // 
+            // pnlVAT
+            // 
+            this.pnlVAT.Controls.Add(this.VATSelectQuarterLabel);
+            this.pnlVAT.Controls.Add(this.VATLabel);
+            this.pnlVAT.Controls.Add(this.VATSelectQuartermenuStrip);
+            this.pnlVAT.Location = new System.Drawing.Point(18, 58);
+            this.pnlVAT.Name = "pnlVAT";
+            this.pnlVAT.Size = new System.Drawing.Size(1742, 994);
+            this.pnlVAT.TabIndex = 1;
+            // 
+            // VATSelectQuarterLabel
+            // 
+            this.VATSelectQuarterLabel.AutoSize = true;
+            this.VATSelectQuarterLabel.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.VATSelectQuarterLabel.Location = new System.Drawing.Point(56, 136);
+            this.VATSelectQuarterLabel.Name = "VATSelectQuarterLabel";
+            this.VATSelectQuarterLabel.Size = new System.Drawing.Size(417, 40);
+            this.VATSelectQuarterLabel.TabIndex = 8;
+            this.VATSelectQuarterLabel.Text = "Please select a quarter below";
+            // 
+            // VATLabel
+            // 
+            this.VATLabel.AutoSize = true;
+            this.VATLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VATLabel.Location = new System.Drawing.Point(29, 14);
+            this.VATLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.VATLabel.Name = "VATLabel";
+            this.VATLabel.Size = new System.Drawing.Size(108, 65);
+            this.VATLabel.TabIndex = 6;
+            this.VATLabel.Text = "VAT";
+            // 
+            // VATSelectQuartermenuStrip
+            // 
+            this.VATSelectQuartermenuStrip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VATSelectQuartermenuStrip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.VATSelectQuartermenuStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.VATSelectQuartermenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.VATSelectQuartermenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectQuarterToolStripMenuItem});
+            this.VATSelectQuartermenuStrip.Location = new System.Drawing.Point(56, 176);
+            this.VATSelectQuartermenuStrip.Name = "VATSelectQuartermenuStrip";
+            this.VATSelectQuartermenuStrip.Size = new System.Drawing.Size(194, 40);
+            this.VATSelectQuartermenuStrip.TabIndex = 7;
+            this.VATSelectQuartermenuStrip.Text = "Select Quarter";
+            // 
+            // selectQuarterToolStripMenuItem
+            // 
+            this.selectQuarterToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.selectQuarterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Q1VatToolStripMenuItem,
+            this.Q2VatToolStripMenuItem,
+            this.Q3VatToolStripMenuItem,
+            this.Q4VatToolStripMenuItem});
+            this.selectQuarterToolStripMenuItem.Name = "selectQuarterToolStripMenuItem";
+            this.selectQuarterToolStripMenuItem.Size = new System.Drawing.Size(186, 36);
+            this.selectQuarterToolStripMenuItem.Text = "Select Quarter";
+            // 
+            // Q1VatToolStripMenuItem
+            // 
+            this.Q1VatToolStripMenuItem.Name = "Q1VatToolStripMenuItem";
+            this.Q1VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q1VatToolStripMenuItem.Text = "Q1";
+            // 
+            // Q2VatToolStripMenuItem
+            // 
+            this.Q2VatToolStripMenuItem.Name = "Q2VatToolStripMenuItem";
+            this.Q2VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q2VatToolStripMenuItem.Text = "Q2";
+            // 
+            // Q3VatToolStripMenuItem
+            // 
+            this.Q3VatToolStripMenuItem.Name = "Q3VatToolStripMenuItem";
+            this.Q3VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q3VatToolStripMenuItem.Text = "Q3";
+            // 
+            // Q4VatToolStripMenuItem
+            // 
+            this.Q4VatToolStripMenuItem.Name = "Q4VatToolStripMenuItem";
+            this.Q4VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q4VatToolStripMenuItem.Text = "Q4";
+        
+
             pictureBoxTeachers.Image = (System.Drawing.Image)resources.GetObject("pictureBoxTeachers.Image");
             pictureBoxTeachers.Location = new System.Drawing.Point(921, 9);
             pictureBoxTeachers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -731,6 +848,11 @@
             pnlDrinks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).EndInit();
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource).EndInit();
+            this.Controls.Add(this.pnlVAT);
+            this.pnlVAT.ResumeLayout(false);
+            this.pnlVAT.PerformLayout();
+            this.VATSelectQuartermenuStrip.ResumeLayout(false);
+            this.VATSelectQuartermenuStrip.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -806,6 +928,15 @@
         private System.Windows.Forms.ToolStripMenuItem CashRegisterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RevenueReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VATToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlVAT;
+        private System.Windows.Forms.Label VATLabel;
+        private System.Windows.Forms.Label VATSelectQuarterLabel;
+        private System.Windows.Forms.MenuStrip VATSelectQuartermenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem selectQuarterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q1VatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q2VatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q3VatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q4VatToolStripMenuItem;
         private System.Windows.Forms.Panel pnlDrinks;
         private System.Windows.Forms.DataGridView dataGridViewDrinks;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
