@@ -40,22 +40,18 @@
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DrinkSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RevenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlStudents = new System.Windows.Forms.Panel();
             this.dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlActivities = new System.Windows.Forms.Panel();
             this.dataGridViewActivities = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activitiesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBoxActivities = new System.Windows.Forms.PictureBox();
             this.lblActivities = new System.Windows.Forms.Label();
@@ -63,10 +59,6 @@
             this.activitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlRooms = new System.Windows.Forms.Panel();
             this.dataGridViewRooms = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.roomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.RoomLabel = new System.Windows.Forms.Label();
             this.pictureBoxRooms = new System.Windows.Forms.PictureBox();
@@ -76,16 +68,18 @@
             this.Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTeacher = new System.Windows.Forms.Panel();
             this.dataGridViewTeacher = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelTeacher = new System.Windows.Forms.Label();
             this.pictureBoxTeachers = new System.Windows.Forms.PictureBox();
-            this.CashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RevenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.VATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlVAT = new System.Windows.Forms.Panel();
+            this.VATSelectQuarterLabel = new System.Windows.Forms.Label();
+            this.VATLabel = new System.Windows.Forms.Label();
+            this.VATSelectQuartermenuStrip = new System.Windows.Forms.MenuStrip();
+            this.selectQuarterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q1VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q2VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q3VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Q4VatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlDashboard.SuspendLayout();
             this.pnlStudents.SuspendLayout();
@@ -107,6 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeachers)).BeginInit();
+            this.pnlVAT.SuspendLayout();
+            this.VATSelectQuartermenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -191,8 +187,26 @@
             // DrinkSuppliesToolStripMenuItem
             // 
             this.DrinkSuppliesToolStripMenuItem.Name = "DrinkSuppliesToolStripMenuItem";
-            this.DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
             this.DrinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
+            // 
+            // CashRegisterToolStripMenuItem
+            // 
+            this.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
+            this.CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
+            this.CashRegisterToolStripMenuItem.Text = "Cash register";
+            // 
+            // RevenueReportToolStripMenuItem
+            // 
+            this.RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
+            this.RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
+            this.RevenueReportToolStripMenuItem.Text = "Revenue report";
+            // 
+            // VATToolStripMenuItem
+            // 
+            this.VATToolStripMenuItem.Name = "VATToolStripMenuItem";
+            this.VATToolStripMenuItem.Size = new System.Drawing.Size(311, 44);
+            this.VATToolStripMenuItem.Text = "VAT";
             // 
             // pnlDashboard
             // 
@@ -230,11 +244,6 @@
             this.dataGridViewStudents.AutoGenerateColumns = false;
             this.dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn4,
-            this.fNameDataGridViewTextBoxColumn1,
-            this.lNameDataGridViewTextBoxColumn1,
-            this.numberDataGridViewTextBoxColumn4});
             this.dataGridViewStudents.DataSource = this.studentBindingSource;
             this.dataGridViewStudents.Location = new System.Drawing.Point(11, 88);
             this.dataGridViewStudents.Margin = new System.Windows.Forms.Padding(5);
@@ -244,46 +253,6 @@
             this.dataGridViewStudents.RowTemplate.Height = 29;
             this.dataGridViewStudents.Size = new System.Drawing.Size(1337, 611);
             this.dataGridViewStudents.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // fNameDataGridViewTextBoxColumn1
-            // 
-            this.fNameDataGridViewTextBoxColumn1.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn1.HeaderText = "First Name";
-            this.fNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.fNameDataGridViewTextBoxColumn1.Name = "fNameDataGridViewTextBoxColumn1";
-            this.fNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fNameDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // lNameDataGridViewTextBoxColumn1
-            // 
-            this.lNameDataGridViewTextBoxColumn1.DataPropertyName = "LName";
-            this.lNameDataGridViewTextBoxColumn1.HeaderText = "Last Name";
-            this.lNameDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.lNameDataGridViewTextBoxColumn1.Name = "lNameDataGridViewTextBoxColumn1";
-            this.lNameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.lNameDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // numberDataGridViewTextBoxColumn4
-            // 
-            this.numberDataGridViewTextBoxColumn4.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn4.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.numberDataGridViewTextBoxColumn4.Name = "numberDataGridViewTextBoxColumn4";
-            this.numberDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.numberDataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(SomerenModel.Student);
             // 
             // pictureBox1
             // 
@@ -325,10 +294,6 @@
             this.dataGridViewActivities.AutoGenerateColumns = false;
             this.dataGridViewActivities.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewActivities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
             this.dataGridViewActivities.DataSource = this.activitiesBindingSource2;
             this.dataGridViewActivities.Location = new System.Drawing.Point(26, 90);
             this.dataGridViewActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -337,34 +302,6 @@
             this.dataGridViewActivities.RowTemplate.Height = 25;
             this.dataGridViewActivities.Size = new System.Drawing.Size(1443, 747);
             this.dataGridViewActivities.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "activityId";
-            this.dataGridViewTextBoxColumn4.HeaderText = "activityId";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Activity";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Activity";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "dateTime";
-            this.dataGridViewTextBoxColumn6.HeaderText = "dateTime";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // activitiesBindingSource2
-            // 
-            this.activitiesBindingSource2.DataSource = typeof(SomerenModel.Activities);
             // 
             // pictureBoxActivities
             // 
@@ -402,11 +339,6 @@
             this.dataGridViewRooms.AutoGenerateColumns = false;
             this.dataGridViewRooms.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn3,
-            this.numberDataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewCheckBoxColumn1});
             this.dataGridViewRooms.DataSource = this.roomBindingSource1;
             this.dataGridViewRooms.Location = new System.Drawing.Point(29, 90);
             this.dataGridViewRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -416,46 +348,6 @@
             this.dataGridViewRooms.RowTemplate.Height = 41;
             this.dataGridViewRooms.Size = new System.Drawing.Size(1419, 651);
             this.dataGridViewRooms.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // numberDataGridViewTextBoxColumn3
-            // 
-            this.numberDataGridViewTextBoxColumn3.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn3.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.numberDataGridViewTextBoxColumn3.Name = "numberDataGridViewTextBoxColumn3";
-            this.numberDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.numberDataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Capacity";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Capacity";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Type";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Room for teacher";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
-            // 
-            // roomBindingSource1
-            // 
-            this.roomBindingSource1.DataSource = typeof(SomerenModel.Room);
             // 
             // RoomLabel
             // 
@@ -519,11 +411,6 @@
             this.dataGridViewTeacher.AutoGenerateColumns = false;
             this.dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.fNameDataGridViewTextBoxColumn,
-            this.lNameDataGridViewTextBoxColumn,
-            this.numberDataGridViewTextBoxColumn2});
             this.dataGridViewTeacher.DataSource = this.teacherBindingSource;
             this.dataGridViewTeacher.Location = new System.Drawing.Point(15, 90);
             this.dataGridViewTeacher.Margin = new System.Windows.Forms.Padding(5);
@@ -533,46 +420,6 @@
             this.dataGridViewTeacher.RowTemplate.Height = 29;
             this.dataGridViewTeacher.Size = new System.Drawing.Size(1375, 554);
             this.dataGridViewTeacher.TabIndex = 5;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "First name";
-            this.fNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            this.lNameDataGridViewTextBoxColumn.HeaderText = "Last name";
-            this.lNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // numberDataGridViewTextBoxColumn2
-            // 
-            this.numberDataGridViewTextBoxColumn2.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn2.HeaderText = "Lecture number";
-            this.numberDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.numberDataGridViewTextBoxColumn2.Name = "numberDataGridViewTextBoxColumn2";
-            this.numberDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.numberDataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // teacherBindingSource
-            // 
-            this.teacherBindingSource.DataSource = typeof(SomerenModel.Teacher);
             // 
             // labelTeacher
             // 
@@ -594,29 +441,93 @@
             this.pictureBoxTeachers.TabIndex = 3;
             this.pictureBoxTeachers.TabStop = false;
             // 
-            // CashRegisterToolStripMenuItem
+            // pnlVAT
             // 
-            this.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
-            this.CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.CashRegisterToolStripMenuItem.Text = "Cash register";
+            this.pnlVAT.Controls.Add(this.VATSelectQuarterLabel);
+            this.pnlVAT.Controls.Add(this.VATLabel);
+            this.pnlVAT.Controls.Add(this.VATSelectQuartermenuStrip);
+            this.pnlVAT.Location = new System.Drawing.Point(18, 58);
+            this.pnlVAT.Name = "pnlVAT";
+            this.pnlVAT.Size = new System.Drawing.Size(1742, 994);
+            this.pnlVAT.TabIndex = 1;
             // 
-            // RevenueReportToolStripMenuItem
+            // VATSelectQuarterLabel
             // 
-            this.RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
-            this.RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.RevenueReportToolStripMenuItem.Text = "Revenue report";
+            this.VATSelectQuarterLabel.AutoSize = true;
+            this.VATSelectQuarterLabel.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.VATSelectQuarterLabel.Location = new System.Drawing.Point(56, 136);
+            this.VATSelectQuarterLabel.Name = "VATSelectQuarterLabel";
+            this.VATSelectQuarterLabel.Size = new System.Drawing.Size(417, 40);
+            this.VATSelectQuarterLabel.TabIndex = 8;
+            this.VATSelectQuarterLabel.Text = "Please select a quarter below";
             // 
-            // VATToolStripMenuItem
+            // VATLabel
             // 
-            this.VATToolStripMenuItem.Name = "VATToolStripMenuItem";
-            this.VATToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.VATToolStripMenuItem.Text = "VAT";
+            this.VATLabel.AutoSize = true;
+            this.VATLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.VATLabel.Location = new System.Drawing.Point(29, 14);
+            this.VATLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.VATLabel.Name = "VATLabel";
+            this.VATLabel.Size = new System.Drawing.Size(108, 65);
+            this.VATLabel.TabIndex = 6;
+            this.VATLabel.Text = "VAT";
+            // 
+            // VATSelectQuartermenuStrip
+            // 
+            this.VATSelectQuartermenuStrip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.VATSelectQuartermenuStrip.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.VATSelectQuartermenuStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.VATSelectQuartermenuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.VATSelectQuartermenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectQuarterToolStripMenuItem});
+            this.VATSelectQuartermenuStrip.Location = new System.Drawing.Point(56, 176);
+            this.VATSelectQuartermenuStrip.Name = "VATSelectQuartermenuStrip";
+            this.VATSelectQuartermenuStrip.Size = new System.Drawing.Size(194, 40);
+            this.VATSelectQuartermenuStrip.TabIndex = 7;
+            this.VATSelectQuartermenuStrip.Text = "Select Quarter";
+            // 
+            // selectQuarterToolStripMenuItem
+            // 
+            this.selectQuarterToolStripMenuItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.selectQuarterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Q1VatToolStripMenuItem,
+            this.Q2VatToolStripMenuItem,
+            this.Q3VatToolStripMenuItem,
+            this.Q4VatToolStripMenuItem});
+            this.selectQuarterToolStripMenuItem.Name = "selectQuarterToolStripMenuItem";
+            this.selectQuarterToolStripMenuItem.Size = new System.Drawing.Size(186, 36);
+            this.selectQuarterToolStripMenuItem.Text = "Select Quarter";
+            // 
+            // Q1VatToolStripMenuItem
+            // 
+            this.Q1VatToolStripMenuItem.Name = "Q1VatToolStripMenuItem";
+            this.Q1VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q1VatToolStripMenuItem.Text = "Q1";
+            // 
+            // Q2VatToolStripMenuItem
+            // 
+            this.Q2VatToolStripMenuItem.Name = "Q2VatToolStripMenuItem";
+            this.Q2VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q2VatToolStripMenuItem.Text = "Q2";
+            // 
+            // Q3VatToolStripMenuItem
+            // 
+            this.Q3VatToolStripMenuItem.Name = "Q3VatToolStripMenuItem";
+            this.Q3VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q3VatToolStripMenuItem.Text = "Q3";
+            // 
+            // Q4VatToolStripMenuItem
+            // 
+            this.Q4VatToolStripMenuItem.Name = "Q4VatToolStripMenuItem";
+            this.Q4VatToolStripMenuItem.Size = new System.Drawing.Size(178, 44);
+            this.Q4VatToolStripMenuItem.Text = "Q4";
             // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1786, 1061);
+            this.Controls.Add(this.pnlVAT);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlStudents);
             this.Controls.Add(this.pnlRooms);
@@ -654,6 +565,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeacher)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTeachers)).EndInit();
+            this.pnlVAT.ResumeLayout(false);
+            this.pnlVAT.PerformLayout();
+            this.VATSelectQuartermenuStrip.ResumeLayout(false);
+            this.VATSelectQuartermenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -730,5 +645,14 @@
         private System.Windows.Forms.ToolStripMenuItem CashRegisterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RevenueReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VATToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlVAT;
+        private System.Windows.Forms.Label VATLabel;
+        private System.Windows.Forms.Label VATSelectQuarterLabel;
+        private System.Windows.Forms.MenuStrip VATSelectQuartermenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem selectQuarterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q1VatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q2VatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q3VatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Q4VatToolStripMenuItem;
     }
 }
