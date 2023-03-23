@@ -21,6 +21,7 @@ namespace SomerenUI
             pnlRooms.Hide();
             pnlTeacher.Hide();
             pnlDrinks.Hide();
+            pnlCashRegister.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -34,6 +35,7 @@ namespace SomerenUI
             pnlRooms.Hide();
             pnlTeacher.Hide();
             pnlDrinks.Hide();
+            pnlCashRegister.Hide();
 
             // show students
             pnlStudents.Show();
@@ -58,6 +60,8 @@ namespace SomerenUI
             pnlRooms.Hide();
             pnlTeacher.Hide();
             pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+
             // show dashboard
             pnlActivities.Show();
 
@@ -113,6 +117,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlTeacher.Hide();
             pnlDrinks.Hide();
+            pnlCashRegister.Hide();
 
             pnlRooms.Show();
 
@@ -149,6 +154,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlRooms.Hide();
             pnlDrinks.Hide();
+            pnlCashRegister.Hide();
             // show teachers
             pnlTeacher.Show();
 
@@ -182,6 +188,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlRooms.Hide();
             pnlTeacher.Hide();
+            pnlCashRegister.Hide();
             // show drinks
             pnlDrinks.Show();
 
@@ -210,8 +217,67 @@ namespace SomerenUI
         }
 
 
+        private void ShowCashRegisterPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlStudents.Hide();
+            pnlVAT.Hide();
+            pnlDrinks.Hide();
+
+            // show Cash Register panel
+            pnlCashRegister.Show();
+
+            try
+            {
+                // get and display all students
+                List<Student> students = GetStudents();
+                StudentsDisplay(students);
+
+                // get and display all Drinks
+                List<Drink> drinks = GetDrinks();
+                DrinksDisplay(drinks);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+        private void StudentsDisplay(List<Student> students)
+        {
+            // clear the listview items before filling it
+            listViewStudents.Items.Clear();
+
+            foreach (Student student in students)
+            {
+                ListViewItem li = new ListViewItem(student.Id.ToString());
+                li.SubItems.Add(student.FullName);
+                li.Tag = student;   // link student object to listview item
+                listViewStudents.Items.Add(li);
+            }
+        }
 
 
+        private void DrinksDisplay(List<Drink> drinks)
+        {
+            // clear the listview items before filling it
+            listViewDrinks.Items.Clear();
+
+            foreach (Drink drink in drinks)
+            {
+                ListViewItem li = new ListViewItem(drink.Id.ToString());
+                li.SubItems.Add(drink.DrinkName);
+                li.SubItems.Add("€ " + drink.Price.ToString());
+                li.SubItems.Add(drink.Stock.ToString());
+                li.Tag = drink;   // link student object to listview item
+                listViewDrinks.Items.Add(li);
+            }
+        }
 
 
 
@@ -254,6 +320,11 @@ namespace SomerenUI
         private void buttonUpdateDrink_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowCashRegisterPanel();
         }
     }
 }
