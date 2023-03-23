@@ -116,5 +116,36 @@ namespace SomerenDAL
 
             return dataTable;
         }
+
+        protected DataTable ExecuteSelectQueryWithValues(string query, string st, object value, string st1, object value1, params SqlParameter[] sqlParameters)
+        {
+            SqlCommand command = new SqlCommand();
+            DataTable dataTable;
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                command.Connection = OpenConnection();
+                command.CommandText = query;
+                command.Parameters.AddWithValue(st, value);
+                command.Parameters.AddWithValue(st1, value1);
+                command.Parameters.AddRange(sqlParameters);
+                command.ExecuteNonQuery();
+                adapter.SelectCommand = command;
+                adapter.Fill(dataSet);
+                dataTable = dataSet.Tables[0];
+            }
+            catch (SqlException e)
+            {
+                // Print.ErrorLog(e);
+                throw;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return dataTable;
+        }
     }
 }
