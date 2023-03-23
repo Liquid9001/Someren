@@ -233,7 +233,7 @@ namespace SomerenUI
             List<Revenue> revenues = revenueService.GetRangeDate(startDatum, eindDatum);
             return revenues;
         }
-        
+
         private void displayRev(List<Revenue> Sales)
         {
 
@@ -260,7 +260,7 @@ namespace SomerenUI
             lvRev.Show();
 
         }
-        
+
         private void ShowCashRegisterPanel()
         {
             // hide all other panels
@@ -272,6 +272,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlVAT.Hide();
             pnlDrinks.Hide();
+            pnlRevRepo.Hide();
 
             // show Cash Register panel
             pnlCashRegister.Show();
@@ -316,7 +317,7 @@ namespace SomerenUI
             {
                 ListViewItem li = new ListViewItem(drink.Id.ToString());
                 li.SubItems.Add(drink.DrinkName);
-                li.SubItems.Add("� " + drink.Price.ToString());
+                li.SubItems.Add("\u20AC " + drink.Price.ToString());
                 li.SubItems.Add(drink.Stock.ToString());
                 li.Tag = drink;   // link student object to listview item
                 listViewDrinks.Items.Add(li);
@@ -356,10 +357,7 @@ namespace SomerenUI
 
         }
 
-        private void CashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowCashRegisterPanel();
-        }
+
 
         private void RevenueReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -370,6 +368,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlDrinks.Hide();
             pnlVAT.Hide();
+            pnlCashRegister.Hide();
 
             pnlRevRepo.Show();
 
@@ -383,6 +382,11 @@ namespace SomerenUI
         {
             submitDate();
 
+        }
+
+        private void CashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowCashRegisterPanel();
         }
     }
 }
