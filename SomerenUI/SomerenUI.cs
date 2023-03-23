@@ -88,7 +88,6 @@ namespace SomerenUI
 
         }
 
-
         private List<Activities> GetActivities()
         {
             ActivitiesService activitiesService = new ActivitiesService();
@@ -101,10 +100,6 @@ namespace SomerenUI
             // clear the listview before filling it
             dataGridViewActivities.DataSource = activities;
         }
-
-
-
-
 
         private void ShowRoomsPanel()
         {
