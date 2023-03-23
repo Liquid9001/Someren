@@ -20,7 +20,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlRooms.Hide();
             pnlTeacher.Hide();
-
+            pnlDrinks.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -33,7 +33,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlRooms.Hide();
             pnlTeacher.Hide();
-
+            pnlDrinks.Hide();
 
             // show students
             pnlStudents.Show();
@@ -57,7 +57,7 @@ namespace SomerenUI
             pnlDashboard.Hide();
             pnlRooms.Hide();
             pnlTeacher.Hide();
-
+            pnlDrinks.Hide();
             // show dashboard
             pnlActivities.Show();
 
@@ -107,6 +107,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlActivities.Hide();
             pnlTeacher.Hide();
+            pnlDrinks.Hide();
 
             pnlRooms.Show();
 
@@ -142,6 +143,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlActivities.Hide();
             pnlRooms.Hide();
+            pnlDrinks.Hide();
             // show teachers
             pnlTeacher.Show();
 
@@ -166,14 +168,47 @@ namespace SomerenUI
         {
             dataGridViewTeacher.DataSource = teachers;
         }
-      
-       
 
-        
+        private void ShowDrinksPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            // show drinks
+            pnlDrinks.Show();
 
-        
+            try
+            {
+                // get and display all Drinks
+                List<Drink> drinks = GetDrinks();
+                DisplayDrinks(drinks);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the drinks: " + e.Message);
+            }
+        }
 
-        
+        private List<Drink> GetDrinks()
+        {
+            DrinksService drinkService = new DrinksService();
+            List<Drink> drinks = drinkService.GetDrinks();
+            return drinks;
+        }
+
+        private void DisplayDrinks(List<Drink> drinks)
+        {
+            dataGridViewDrinks.DataSource = drinks;
+        }
+
+
+
+
+
+
 
         private void dashboardToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
@@ -205,6 +240,15 @@ namespace SomerenUI
             ShowRoomsPanel();
         }
 
-        
+
+        private void DrinkSuppliesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowDrinksPanel();
+        }
+
+        private void buttonUpdateDrink_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
