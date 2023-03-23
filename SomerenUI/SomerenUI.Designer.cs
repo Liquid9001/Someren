@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SomerenUI));
+
             this.VATToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlVAT = new System.Windows.Forms.Panel();
             this.VATSelectQuarterLabel = new System.Windows.Forms.Label();
@@ -119,6 +120,19 @@
             this.Startdate = new System.Windows.Forms.MonthCalendar();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
+            pnlCashRegister = new System.Windows.Forms.Panel();
+            CheckOutButton = new System.Windows.Forms.Button();
+            PriceLabelPlaceholder = new System.Windows.Forms.Label();
+            TotalPriceTextBox = new System.Windows.Forms.TextBox();
+            labelKassa = new System.Windows.Forms.Label();
+            listViewDrinks = new System.Windows.Forms.ListView();
+            DrinkId = new System.Windows.Forms.ColumnHeader();
+            DrinkName = new System.Windows.Forms.ColumnHeader();
+            DrinkPrice = new System.Windows.Forms.ColumnHeader();
+            StockAmount = new System.Windows.Forms.ColumnHeader();
+            listViewStudents = new System.Windows.Forms.ListView();
+            StudentId = new System.Windows.Forms.ColumnHeader();
+            StudentName = new System.Windows.Forms.ColumnHeader();
             this.pnlVAT.SuspendLayout();
             this.VATSelectQuartermenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -387,6 +401,7 @@
             this.dataGridViewStudents.RowTemplate.Height = 29;
             this.dataGridViewStudents.Size = new System.Drawing.Size(720, 286);
             this.dataGridViewStudents.TabIndex = 3;
+
             // 
             // idDataGridViewTextBoxColumn5
             // 
@@ -439,6 +454,7 @@
             // 
             // pictureBox1
             // 
+
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(805, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -610,6 +626,7 @@
             // 
             // RoomLabel
             // 
+
             this.RoomLabel.AutoSize = true;
             this.RoomLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoomLabel.Location = new System.Drawing.Point(18, 7);
@@ -627,6 +644,7 @@
             this.pictureBoxRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxRooms.TabIndex = 5;
             this.pictureBoxRooms.TabStop = false;
+
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -654,6 +672,7 @@
             // 
             // pnlTeacher
             // 
+
             this.pnlTeacher.Controls.Add(this.dataGridViewTeacher);
             this.pnlTeacher.Controls.Add(this.labelTeacher);
             this.pnlTeacher.Controls.Add(this.pictureBoxTeachers);
@@ -682,6 +701,7 @@
             this.dataGridViewTeacher.RowTemplate.Height = 29;
             this.dataGridViewTeacher.Size = new System.Drawing.Size(740, 260);
             this.dataGridViewTeacher.TabIndex = 5;
+
             // 
             // idDataGridViewTextBoxColumn7
             // 
@@ -725,6 +745,7 @@
             // 
             // labelTeacher
             // 
+
             this.labelTeacher.AutoSize = true;
             this.labelTeacher.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTeacher.Location = new System.Drawing.Point(4, 8);
@@ -834,9 +855,11 @@
             this.pnlRevRepo.Name = "pnlRevRepo";
             this.pnlRevRepo.Size = new System.Drawing.Size(941, 462);
             this.pnlRevRepo.TabIndex = 5;
+
             // 
             // Submit
             // 
+
             this.Submit.Location = new System.Drawing.Point(560, 116);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(75, 23);
@@ -887,6 +910,167 @@
             this.endDate.Name = "endDate";
             this.endDate.TabIndex = 3;
             // 
+
+            // pnlCashRegister
+            // 
+            pnlCashRegister.Controls.Add(CheckOutButton);
+            pnlCashRegister.Controls.Add(PriceLabelPlaceholder);
+            pnlCashRegister.Controls.Add(TotalPriceTextBox);
+            pnlCashRegister.Controls.Add(labelKassa);
+            pnlCashRegister.Controls.Add(listViewDrinks);
+            pnlCashRegister.Controls.Add(listViewStudents);
+            pnlCashRegister.Location = new System.Drawing.Point(10, 27);
+            pnlCashRegister.Name = "pnlCashRegister";
+            pnlCashRegister.Size = new System.Drawing.Size(941, 466);
+            pnlCashRegister.TabIndex = 5;
+            // 
+            // CheckOutButton
+            // 
+            CheckOutButton.Location = new System.Drawing.Point(734, 296);
+            CheckOutButton.Name = "CheckOutButton";
+            CheckOutButton.Size = new System.Drawing.Size(189, 62);
+            CheckOutButton.TabIndex = 5;
+            CheckOutButton.Text = "&Check Out";
+            CheckOutButton.UseVisualStyleBackColor = true;
+            // 
+            // PriceLabelPlaceholder
+            // 
+            PriceLabelPlaceholder.AutoSize = true;
+            PriceLabelPlaceholder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            PriceLabelPlaceholder.Location = new System.Drawing.Point(699, 119);
+            PriceLabelPlaceholder.Name = "PriceLabelPlaceholder";
+            PriceLabelPlaceholder.Size = new System.Drawing.Size(83, 21);
+            PriceLabelPlaceholder.TabIndex = 4;
+            PriceLabelPlaceholder.Text = "Total Price:";
+            // 
+            // TotalPriceTextBox
+            // 
+            TotalPriceTextBox.Location = new System.Drawing.Point(797, 107);
+            TotalPriceTextBox.Multiline = true;
+            TotalPriceTextBox.Name = "TotalPriceTextBox";
+            TotalPriceTextBox.Size = new System.Drawing.Size(104, 51);
+            TotalPriceTextBox.TabIndex = 3;
+            // 
+            // labelKassa
+            // 
+            labelKassa.AutoSize = true;
+            labelKassa.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelKassa.Location = new System.Drawing.Point(31, 17);
+            labelKassa.Name = "labelKassa";
+            labelKassa.Size = new System.Drawing.Size(128, 28);
+            labelKassa.TabIndex = 2;
+            labelKassa.Text = "Cash Register";
+            // 
+            // listViewDrinks
+            // 
+            listViewDrinks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { DrinkId, DrinkName, DrinkPrice, StockAmount });
+            listViewDrinks.FullRowSelect = true;
+            listViewDrinks.Location = new System.Drawing.Point(313, 107);
+            listViewDrinks.Name = "listViewDrinks";
+            listViewDrinks.Size = new System.Drawing.Size(345, 317);
+            listViewDrinks.TabIndex = 1;
+            listViewDrinks.UseCompatibleStateImageBehavior = false;
+            listViewDrinks.View = System.Windows.Forms.View.Details;
+            // 
+            // DrinkId
+            // 
+            DrinkId.Text = "Drink Id";
+            // 
+            // DrinkName
+            // 
+            DrinkName.Text = "Drink Name";
+            DrinkName.Width = 120;
+            // 
+            // DrinkPrice
+            // 
+            DrinkPrice.Text = "Drink Price";
+            DrinkPrice.Width = 100;
+            // 
+            // StockAmount
+            // 
+            StockAmount.Text = "Stock";
+            // 
+            // listViewStudents
+            // 
+            listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { StudentId, StudentName });
+            listViewStudents.FullRowSelect = true;
+            listViewStudents.Location = new System.Drawing.Point(31, 107);
+            listViewStudents.Name = "listViewStudents";
+            listViewStudents.Size = new System.Drawing.Size(254, 317);
+            listViewStudents.TabIndex = 0;
+            listViewStudents.UseCompatibleStateImageBehavior = false;
+            listViewStudents.View = System.Windows.Forms.View.Details;
+            // 
+            // StudentId
+            // 
+            StudentId.Text = "Student Id";
+            StudentId.Width = 100;
+            // 
+            // StudentName
+            // 
+            StudentName.Text = "Student Name";
+            StudentName.Width = 150;
+            // 
+            // SomerenUI
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(962, 494);
+            Controls.Add(pnlCashRegister);
+            Controls.Add(pnlDashboard);
+            Controls.Add(pnlDrinks);
+            Controls.Add(pnlTeacher);
+            Controls.Add(pnlActivities);
+            Controls.Add(pnlRooms);
+            Controls.Add(pnlStudents);
+            Controls.Add(menuStrip1);
+            Controls.Add(pnlVAT);
+            MainMenuStrip = menuStrip1;
+            Name = "SomerenUI";
+            Text = "SomerenApp";
+            pnlVAT.ResumeLayout(false);
+            pnlVAT.PerformLayout();
+            VATSelectQuartermenuStrip.ResumeLayout(false);
+            VATSelectQuartermenuStrip.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            pnlDashboard.ResumeLayout(false);
+            pnlDashboard.PerformLayout();
+            pnlStudents.ResumeLayout(false);
+            pnlStudents.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentBindingSource).EndInit();
+            pnlActivities.ResumeLayout(false);
+            pnlActivities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewActivities).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxActivities).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource).EndInit();
+            pnlRooms.ResumeLayout(false);
+            pnlRooms.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewRooms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRooms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource).EndInit();
+            pnlTeacher.ResumeLayout(false);
+            pnlTeacher.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teacherBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
+            pnlDrinks.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).EndInit();
+            ((System.ComponentModel.ISupportInitialize)drinkBindingSource).EndInit();
+            pnlCashRegister.ResumeLayout(false);
+            pnlCashRegister.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+
             // Startdate
             // 
             this.Startdate.Location = new System.Drawing.Point(15, 44);
@@ -1086,6 +1270,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button buttonUpdateDrink;
+        private System.Windows.Forms.Panel pnlCashRegister;
+        private System.Windows.Forms.Button CheckOutButton;
+        private System.Windows.Forms.Label PriceLabelPlaceholder;
+        private System.Windows.Forms.TextBox TotalPriceTextBox;
+        private System.Windows.Forms.Label labelKassa;
+        private System.Windows.Forms.ListView listViewDrinks;
+        private System.Windows.Forms.ColumnHeader DrinkId;
+        private System.Windows.Forms.ColumnHeader DrinkName;
+        private System.Windows.Forms.ColumnHeader DrinkPrice;
+        private System.Windows.Forms.ColumnHeader StockAmount;
+        private System.Windows.Forms.ListView listViewStudents;
+        private System.Windows.Forms.ColumnHeader StudentId;
+        private System.Windows.Forms.ColumnHeader StudentName;
         private System.Windows.Forms.Panel pnlRevRepo;
         private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.ListView lvRev;
@@ -1097,5 +1294,6 @@
         private System.Windows.Forms.MonthCalendar Startdate;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Label lblStartDate;
+
     }
 }

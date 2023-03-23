@@ -9,5 +9,7 @@ namespace SomerenModel
         public string LName { get; set; }
         public int Number { get; set; } // StudentNumber, e.g. 474791
         public DateTime BirthDate { get; set; }
+
+        public string FullName { get { return $"{FName} {LName}";} }
     }
 }
