@@ -3,6 +3,7 @@ using SomerenModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System;
+using Microsoft.VisualBasic;
 
 namespace SomerenUI
 {
@@ -293,7 +294,7 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
-
+        // adds students to a listview
         private void StudentsDisplay(List<Student> students)
         {
             // clear the listview items before filling it
@@ -308,7 +309,7 @@ namespace SomerenUI
             }
         }
 
-
+        //adds drinks to a listview
         private void DrinksDisplay(List<Drink> drinks)
         {
             // clear the listview items before filling it
@@ -318,7 +319,7 @@ namespace SomerenUI
             {
                 ListViewItem li = new ListViewItem(drink.Id.ToString());
                 li.SubItems.Add(drink.DrinkName);
-                li.SubItems.Add("\u20AC " + drink.Price.ToString());
+                li.SubItems.Add(drink.Price.ToString());
                 li.SubItems.Add(drink.Stock.ToString());
                 li.Tag = drink;   // link student object to listview item
                 listViewDrinks.Items.Add(li);
@@ -394,6 +395,45 @@ namespace SomerenUI
             ShowCashRegisterPanel();
         }
 
+
+        private void CheckOutButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DrinkOrderService drinkOrderService = new DrinkOrderService();
+                DrinkOrder drinkOrder = new DrinkOrder();
+                if (listViewStudents.SelectedItems.Count == 0 && listViewDrinks.SelectedItems.Count == 0)
+                {
+                    return;
+                }
+                ListViewItem student = listViewStudents.SelectedItems[0];
+                drinkOrder.StudentId = int.Parse(student.Text);
+                foreach (ListViewItem drink in listViewDrinks.SelectedItems)
+                {
+                    drinkOrder.DrinkId = drink.Text;
+                    drinkOrderService.AddOrder(drinkOrder);
+                    drinkOrderService.UpdateStock(drinkOrder);
+                }
+                List<Drink> drinks = GetDrinks();
+                DrinksDisplay(drinks);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went Wrong " + ex);
+                throw;
+            }
+        }
+
+        private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            double total = 0;
+            foreach (ListViewItem SelectedDrink in listViewDrinks.SelectedItems)
+            {
+                total += int.Parse(SelectedDrink.SubItems[2].Text);
+            }
+            TotalPriceTextBox.Text = total.ToString("\u20AC 0.00");
+
         private void dataGridViewDrinks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -401,6 +441,7 @@ namespace SomerenUI
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
 
         }
     }

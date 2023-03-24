@@ -128,11 +128,13 @@
             listViewStudents = new System.Windows.Forms.ListView();
             StudentId = new System.Windows.Forms.ColumnHeader();
             StudentName = new System.Windows.Forms.ColumnHeader();
+
             idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             drinkNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -171,7 +173,9 @@
             // VATToolStripMenuItem
             // 
             VATToolStripMenuItem.Name = "VATToolStripMenuItem";
+
             VATToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+
             VATToolStripMenuItem.Text = "VAT";
             // 
             // pnlVAT
@@ -321,21 +325,27 @@
             // DrinkSuppliesToolStripMenuItem
             // 
             DrinkSuppliesToolStripMenuItem.Name = "DrinkSuppliesToolStripMenuItem";
+
             DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+
             DrinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
             DrinkSuppliesToolStripMenuItem.Click += DrinkSuppliesToolStripMenuItem_Click;
             // 
             // CashRegisterToolStripMenuItem
             // 
             CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
+
             CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+
             CashRegisterToolStripMenuItem.Text = "Cash register";
             CashRegisterToolStripMenuItem.Click += CashRegisterToolStripMenuItem_Click;
             // 
             // RevenueReportToolStripMenuItem
             // 
             RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
+
             RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
+
             RevenueReportToolStripMenuItem.Text = "Revenue report";
             RevenueReportToolStripMenuItem.Click += RevenueReportToolStripMenuItem_Click;
             // 
@@ -876,6 +886,7 @@
             CheckOutButton.TabIndex = 5;
             CheckOutButton.Text = "&Check Out";
             CheckOutButton.UseVisualStyleBackColor = true;
+            CheckOutButton.Click += CheckOutButton_Click;
             // 
             // PriceLabelPlaceholder
             // 
@@ -889,12 +900,14 @@
             // 
             // TotalPriceTextBox
             // 
-            TotalPriceTextBox.Location = new System.Drawing.Point(911, 143);
-            TotalPriceTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            TotalPriceTextBox.Multiline = true;
+
+            TotalPriceTextBox.Location = new System.Drawing.Point(796, 121);
             TotalPriceTextBox.Name = "TotalPriceTextBox";
-            TotalPriceTextBox.Size = new System.Drawing.Size(118, 67);
+            TotalPriceTextBox.ReadOnly = true;
+            TotalPriceTextBox.Size = new System.Drawing.Size(104, 23);
+
             TotalPriceTextBox.TabIndex = 3;
+            TotalPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelKassa
             // 
@@ -917,6 +930,7 @@
             listViewDrinks.TabIndex = 1;
             listViewDrinks.UseCompatibleStateImageBehavior = false;
             listViewDrinks.View = System.Windows.Forms.View.Details;
+            listViewDrinks.SelectedIndexChanged += listViewDrinks_SelectedIndexChanged;
             // 
             // DrinkId
             // 
@@ -940,8 +954,10 @@
             // 
             listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { StudentId, StudentName });
             listViewStudents.FullRowSelect = true;
-            listViewStudents.Location = new System.Drawing.Point(35, 143);
-            listViewStudents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            listViewStudents.Location = new System.Drawing.Point(31, 107);
+            listViewStudents.MultiSelect = false;
+
             listViewStudents.Name = "listViewStudents";
             listViewStudents.Size = new System.Drawing.Size(290, 421);
             listViewStudents.TabIndex = 0;
@@ -958,6 +974,7 @@
             StudentName.Text = "Student Name";
             StudentName.Width = 150;
             // 
+
             // idDataGridViewTextBoxColumn8
             // 
             idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
