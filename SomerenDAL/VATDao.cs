@@ -37,6 +37,17 @@ namespace SomerenDAL
             }
             return VATInformations;
         }
+        
+
+        
+
+        
+
+
+
+
+
+
 
     }
 }

@@ -3,14 +3,20 @@ using SomerenModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System;
+using System.Text;
+using SomerenDAL;
+using System.Security.Cryptography.Pkcs;
 using Microsoft.VisualBasic;
+
 
 namespace SomerenUI
 {
     public partial class SomerenUI : Form
     {
+
         DateTime startDatum;
         DateTime eindDatum;
+        VATService VATService = new VATService();
         public SomerenUI()
         {
             InitializeComponent();
@@ -398,6 +404,79 @@ namespace SomerenUI
         }
 
 
+
+        private void VATToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlRevRepo.Hide();
+            pnlCashRegister.Hide();
+
+            pnlVAT.Show();
+
+
+        }
+
+        private void Q1VatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VATData VAT = VATService.getVATData(1);
+            VATLabel.Text = "Q1 VAT";
+            VATSelectQuarterLabel.Text = "Quarter runs from: 01/01 to: 31/03 for year: 2023";
+
+
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: �{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: �{VAT.High.ToString("0.00")}\nTotal VAT amount payable: �{(VAT.Low + VAT.High).ToString("0.00")}";
+
+
+        }
+
+        private void Q2VatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VATData VAT = VATService.getVATData(2);
+            VATLabel.Text = "Q2 VAT";
+            VATSelectQuarterLabel.Text = "Quarter runs from: 01/04 to: 30/06 for year: 2023";
+
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: �{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: �{VAT.High.ToString("0.00")}\nTotal VAT amount payable: �{(VAT.Low + VAT.High).ToString("0.00")}";
+
+        }
+
+        private void Q3VatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VATData VAT = VATService.getVATData(3);
+            VATLabel.Text = "Q3 VAT";
+            VATSelectQuarterLabel.Text = "Quarter runs from: 01/07 to: 31/10 for year: 2023";
+
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: �{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: �{VAT.High.ToString("0.00")}\nTotal VAT amount payable: �{(VAT.Low + VAT.High).ToString("0.00")}";
+        }
+
+        private void Q4VatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VATData VAT = VATService.getVATData(4);
+            VATLabel.Text = "Q4 VAT";
+            VATSelectQuarterLabel.Text = "Quarter runs from: 01/10 to: 31/12 for year: 2023";
+
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: �{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: �{VAT.High.ToString("0.00")}\nTotal VAT amount payable: �{(VAT.Low + VAT.High).ToString("0.00")}";
+        }
+
+
+        private List<VATInformation> GetAllVATInformation()
+        {
+
+            List<VATInformation> VATInformation = VATService.GetAllVATInformation();
+
+            return VATInformation;
+
+        }
+
+
+
+        private void pnlVAT_Paint(object sender, PaintEventArgs e)
+        {
+         }
+
         private void CheckOutButton_Click(object sender, EventArgs e)
         {
 
@@ -451,6 +530,7 @@ namespace SomerenUI
             DrinkOrderService drinkOrderService = new DrinkOrderService();
             List<Drink> drinks = drinkOrderService.CollectDrinks();
             return drinks;
+
         }
     }
 }
