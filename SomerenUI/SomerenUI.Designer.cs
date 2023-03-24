@@ -73,17 +73,26 @@
             studentBindingSource = new System.Windows.Forms.BindingSource(components);
             pnlActivities = new System.Windows.Forms.Panel();
             dataGridViewActivities = new System.Windows.Forms.DataGridView();
-            activitiesBindingSource3 = new System.Windows.Forms.BindingSource(components);
+            dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            activitiesBindingSource4 = new System.Windows.Forms.BindingSource(components);
             pictureBoxActivities = new System.Windows.Forms.PictureBox();
             lblActivities = new System.Windows.Forms.Label();
+            activitiesBindingSource3 = new System.Windows.Forms.BindingSource(components);
             activitiesBindingSource2 = new System.Windows.Forms.BindingSource(components);
             activitiesBindingSource1 = new System.Windows.Forms.BindingSource(components);
             activitiesBindingSource = new System.Windows.Forms.BindingSource(components);
             pnlRooms = new System.Windows.Forms.Panel();
             dataGridViewRooms = new System.Windows.Forms.DataGridView();
-            roomBindingSource2 = new System.Windows.Forms.BindingSource(components);
+            idDataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            numberDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            roomBindingSource3 = new System.Windows.Forms.BindingSource(components);
             RoomLabel = new System.Windows.Forms.Label();
             pictureBoxRooms = new System.Windows.Forms.PictureBox();
+            roomBindingSource2 = new System.Windows.Forms.BindingSource(components);
             roomBindingSource1 = new System.Windows.Forms.BindingSource(components);
             roomBindingSource = new System.Windows.Forms.BindingSource(components);
             idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,9 +100,14 @@
             Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pnlTeacher = new System.Windows.Forms.Panel();
             dataGridViewTeacher = new System.Windows.Forms.DataGridView();
-            teacherBindingSource1 = new System.Windows.Forms.BindingSource(components);
+            idDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            fNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            lNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            numberDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            teacherBindingSource2 = new System.Windows.Forms.BindingSource(components);
             labelTeacher = new System.Windows.Forms.Label();
             pictureBoxTeachers = new System.Windows.Forms.PictureBox();
+            teacherBindingSource1 = new System.Windows.Forms.BindingSource(components);
             teacherBindingSource = new System.Windows.Forms.BindingSource(components);
             pnlDrinks = new System.Windows.Forms.Panel();
             buttonUpdateDrink = new System.Windows.Forms.Button();
@@ -129,20 +143,6 @@
             listViewStudents = new System.Windows.Forms.ListView();
             StudentId = new System.Windows.Forms.ColumnHeader();
             StudentName = new System.Windows.Forms.ColumnHeader();
-            teacherBindingSource2 = new System.Windows.Forms.BindingSource(components);
-            idDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            lNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            roomBindingSource3 = new System.Windows.Forms.BindingSource(components);
-            idDataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            activitiesBindingSource4 = new System.Windows.Forms.BindingSource(components);
-            dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -154,21 +154,24 @@
             ((System.ComponentModel.ISupportInitialize)studentBindingSource).BeginInit();
             pnlActivities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewActivities).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxActivities).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)activitiesBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)activitiesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)activitiesBindingSource).BeginInit();
             pnlRooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRooms).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRooms).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)roomBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)roomBindingSource).BeginInit();
             pnlTeacher.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)teacherBindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teacherBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)teacherBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
             pnlDrinks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).BeginInit();
@@ -176,9 +179,6 @@
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource1).BeginInit();
             pnlRevRepo.SuspendLayout();
             pnlCashRegister.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)teacherBindingSource2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource4).BeginInit();
             SuspendLayout();
             // 
             // VATToolStripMenuItem
@@ -543,6 +543,28 @@
             dataGridViewActivities.Size = new System.Drawing.Size(777, 350);
             dataGridViewActivities.TabIndex = 3;
             // 
+            // dataGridViewTextBoxColumn17
+            // 
+            dataGridViewTextBoxColumn17.DataPropertyName = "activityId";
+            dataGridViewTextBoxColumn17.HeaderText = "activityId";
+            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            dataGridViewTextBoxColumn18.DataPropertyName = "Activity";
+            dataGridViewTextBoxColumn18.HeaderText = "Activity";
+            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            dataGridViewTextBoxColumn19.DataPropertyName = "dateTime";
+            dataGridViewTextBoxColumn19.HeaderText = "dateTime";
+            dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // activitiesBindingSource4
+            // 
+            activitiesBindingSource4.DataSource = typeof(SomerenModel.Activities);
+            // 
             // pictureBoxActivities
             // 
             pictureBoxActivities.Image = (System.Drawing.Image)resources.GetObject("pictureBoxActivities.Image");
@@ -590,6 +612,38 @@
             dataGridViewRooms.RowTemplate.Height = 41;
             dataGridViewRooms.Size = new System.Drawing.Size(764, 305);
             dataGridViewRooms.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn10
+            // 
+            idDataGridViewTextBoxColumn10.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn10.HeaderText = "Id";
+            idDataGridViewTextBoxColumn10.Name = "idDataGridViewTextBoxColumn10";
+            idDataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // numberDataGridViewTextBoxColumn9
+            // 
+            numberDataGridViewTextBoxColumn9.DataPropertyName = "Number";
+            numberDataGridViewTextBoxColumn9.HeaderText = "Number";
+            numberDataGridViewTextBoxColumn9.Name = "numberDataGridViewTextBoxColumn9";
+            numberDataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            dataGridViewTextBoxColumn16.DataPropertyName = "Capacity";
+            dataGridViewTextBoxColumn16.HeaderText = "Capacity";
+            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            dataGridViewCheckBoxColumn3.DataPropertyName = "Type";
+            dataGridViewCheckBoxColumn3.HeaderText = "Type";
+            dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            dataGridViewCheckBoxColumn3.ReadOnly = true;
+            // 
+            // roomBindingSource3
+            // 
+            roomBindingSource3.DataSource = typeof(SomerenModel.Room);
             // 
             // RoomLabel
             // 
@@ -661,6 +715,38 @@
             dataGridViewTeacher.RowTemplate.Height = 29;
             dataGridViewTeacher.Size = new System.Drawing.Size(740, 260);
             dataGridViewTeacher.TabIndex = 5;
+            // 
+            // idDataGridViewTextBoxColumn9
+            // 
+            idDataGridViewTextBoxColumn9.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn9.HeaderText = "Id";
+            idDataGridViewTextBoxColumn9.Name = "idDataGridViewTextBoxColumn9";
+            idDataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // fNameDataGridViewTextBoxColumn2
+            // 
+            fNameDataGridViewTextBoxColumn2.DataPropertyName = "FName";
+            fNameDataGridViewTextBoxColumn2.HeaderText = "FName";
+            fNameDataGridViewTextBoxColumn2.Name = "fNameDataGridViewTextBoxColumn2";
+            fNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // lNameDataGridViewTextBoxColumn2
+            // 
+            lNameDataGridViewTextBoxColumn2.DataPropertyName = "LName";
+            lNameDataGridViewTextBoxColumn2.HeaderText = "LName";
+            lNameDataGridViewTextBoxColumn2.Name = "lNameDataGridViewTextBoxColumn2";
+            lNameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // numberDataGridViewTextBoxColumn8
+            // 
+            numberDataGridViewTextBoxColumn8.DataPropertyName = "Number";
+            numberDataGridViewTextBoxColumn8.HeaderText = "Number";
+            numberDataGridViewTextBoxColumn8.Name = "numberDataGridViewTextBoxColumn8";
+            numberDataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // teacherBindingSource2
+            // 
+            teacherBindingSource2.DataSource = typeof(SomerenModel.Teacher);
             // 
             // labelTeacher
             // 
@@ -963,97 +1049,12 @@
             StudentName.Text = "Student Name";
             StudentName.Width = 150;
             // 
-            // teacherBindingSource2
-            // 
-            teacherBindingSource2.DataSource = typeof(SomerenModel.Teacher);
-            // 
-            // idDataGridViewTextBoxColumn9
-            // 
-            idDataGridViewTextBoxColumn9.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn9.HeaderText = "Id";
-            idDataGridViewTextBoxColumn9.Name = "idDataGridViewTextBoxColumn9";
-            idDataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // fNameDataGridViewTextBoxColumn2
-            // 
-            fNameDataGridViewTextBoxColumn2.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn2.HeaderText = "FName";
-            fNameDataGridViewTextBoxColumn2.Name = "fNameDataGridViewTextBoxColumn2";
-            fNameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // lNameDataGridViewTextBoxColumn2
-            // 
-            lNameDataGridViewTextBoxColumn2.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn2.HeaderText = "LName";
-            lNameDataGridViewTextBoxColumn2.Name = "lNameDataGridViewTextBoxColumn2";
-            lNameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn8
-            // 
-            numberDataGridViewTextBoxColumn8.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn8.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn8.Name = "numberDataGridViewTextBoxColumn8";
-            numberDataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // roomBindingSource3
-            // 
-            roomBindingSource3.DataSource = typeof(SomerenModel.Room);
-            // 
-            // idDataGridViewTextBoxColumn10
-            // 
-            idDataGridViewTextBoxColumn10.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn10.HeaderText = "Id";
-            idDataGridViewTextBoxColumn10.Name = "idDataGridViewTextBoxColumn10";
-            idDataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn9
-            // 
-            numberDataGridViewTextBoxColumn9.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn9.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn9.Name = "numberDataGridViewTextBoxColumn9";
-            numberDataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            dataGridViewTextBoxColumn16.DataPropertyName = "Capacity";
-            dataGridViewTextBoxColumn16.HeaderText = "Capacity";
-            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            dataGridViewCheckBoxColumn3.DataPropertyName = "Type";
-            dataGridViewCheckBoxColumn3.HeaderText = "Type";
-            dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            dataGridViewCheckBoxColumn3.ReadOnly = true;
-            // 
-            // activitiesBindingSource4
-            // 
-            activitiesBindingSource4.DataSource = typeof(SomerenModel.Activities);
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            dataGridViewTextBoxColumn17.DataPropertyName = "activityId";
-            dataGridViewTextBoxColumn17.HeaderText = "activityId";
-            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            dataGridViewTextBoxColumn18.DataPropertyName = "Activity";
-            dataGridViewTextBoxColumn18.HeaderText = "Activity";
-            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            dataGridViewTextBoxColumn19.DataPropertyName = "dateTime";
-            dataGridViewTextBoxColumn19.HeaderText = "dateTime";
-            dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(973, 508);
+            Controls.Add(pnlDashboard);
             Controls.Add(pnlActivities);
             Controls.Add(pnlRooms);
             Controls.Add(pnlTeacher);
@@ -1061,7 +1062,6 @@
             Controls.Add(pnlVAT);
             Controls.Add(pnlCashRegister);
             Controls.Add(pnlStudents);
-            Controls.Add(pnlDashboard);
             Controls.Add(menuStrip1);
             Controls.Add(pnlRevRepo);
             MainMenuStrip = menuStrip1;
@@ -1084,23 +1084,26 @@
             pnlActivities.ResumeLayout(false);
             pnlActivities.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewActivities).EndInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxActivities).EndInit();
+            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource3).EndInit();
             ((System.ComponentModel.ISupportInitialize)activitiesBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)activitiesBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)activitiesBindingSource).EndInit();
             pnlRooms.ResumeLayout(false);
             pnlRooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewRooms).EndInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRooms).EndInit();
+            ((System.ComponentModel.ISupportInitialize)roomBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)roomBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)roomBindingSource).EndInit();
             pnlTeacher.ResumeLayout(false);
             pnlTeacher.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTeacher).EndInit();
-            ((System.ComponentModel.ISupportInitialize)teacherBindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teacherBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTeachers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)teacherBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
             pnlDrinks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).EndInit();
@@ -1110,9 +1113,6 @@
             pnlRevRepo.PerformLayout();
             pnlCashRegister.ResumeLayout(false);
             pnlCashRegister.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)teacherBindingSource2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)roomBindingSource3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)activitiesBindingSource4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
