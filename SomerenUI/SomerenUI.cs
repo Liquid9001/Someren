@@ -31,6 +31,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
+            pnlVAT.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -44,6 +45,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
+            pnlVAT.Hide();
 
             // show students
             pnlStudents.Show();
@@ -68,6 +70,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
+            pnlVAT.Hide();
 
 
             // show dashboard
@@ -116,6 +119,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
+            pnlVAT.Hide();
 
             pnlRooms.Show();
 
@@ -151,6 +155,7 @@ namespace SomerenUI
             pnlRooms.Hide();
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
+            pnlVAT.Hide();
             // show teachers
             pnlTeacher.Show();
 
@@ -184,6 +189,7 @@ namespace SomerenUI
             pnlRooms.Hide();
             pnlTeacher.Hide();
             pnlCashRegister.Hide();
+            pnlVAT.Hide();
             // show drinks
             pnlDrinks.Show();
 
@@ -272,7 +278,7 @@ namespace SomerenUI
 
         private void ShowCashRegisterPanel()
         {
-            
+
             // hide all other panels
             pnlDashboard.Hide();
             pnlActivities.Hide();
@@ -475,7 +481,7 @@ namespace SomerenUI
 
         private void pnlVAT_Paint(object sender, PaintEventArgs e)
         {
-         }
+        }
 
         private void CheckOutButton_Click(object sender, EventArgs e)
         {
