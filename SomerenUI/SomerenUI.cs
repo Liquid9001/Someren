@@ -63,6 +63,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
 
+
             // show dashboard
             pnlActivities.Show();
 
@@ -200,7 +201,7 @@ namespace SomerenUI
         private void DisplayDrinks(List<Drink> drinks)
         {
             dataGridViewDrinks.DataSource = drinks;
-          
+
         }
         private void submitDate()
         {
@@ -265,6 +266,7 @@ namespace SomerenUI
 
         private void ShowCashRegisterPanel()
         {
+            
             // hide all other panels
             pnlDashboard.Hide();
             pnlActivities.Hide();
@@ -286,7 +288,7 @@ namespace SomerenUI
                 StudentsDisplay(students);
 
                 // get and display all Drinks
-                List<Drink> drinks = GetDrinks();
+                List<Drink> drinks = CollectDrinks();
                 DrinksDisplay(drinks);
             }
             catch (Exception e)
@@ -415,7 +417,7 @@ namespace SomerenUI
                     drinkOrderService.AddOrder(drinkOrder);
                     drinkOrderService.UpdateStock(drinkOrder);
                 }
-                List<Drink> drinks = GetDrinks();
+                List<Drink> drinks = CollectDrinks();
                 DrinksDisplay(drinks);
             }
             catch (Exception ex)
@@ -433,7 +435,7 @@ namespace SomerenUI
                 total += int.Parse(SelectedDrink.SubItems[2].Text);
             }
             TotalPriceTextBox.Text = total.ToString("\u20AC 0.00");
-
+        }
         private void dataGridViewDrinks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -443,6 +445,12 @@ namespace SomerenUI
         {
 
 
+        }
+        private List<Drink> CollectDrinks()
+        {
+            DrinkOrderService drinkOrderService = new DrinkOrderService();
+            List<Drink> drinks = drinkOrderService.CollectDrinks();
+            return drinks;
         }
     }
 }

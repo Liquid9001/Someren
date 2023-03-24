@@ -27,6 +27,32 @@ namespace SomerenDAL
             ExecuteEditQuery(querry, sqlParameters);
 
         }
+        //this method collects drinks for drinkorder signed by Enes
+        public List<Drink> CollectAllDrinks()
+        {
+            string query = "SELECT DrinkId, Drinkname, Stock, Price FROM [Drink] WHERE Stock > 1";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+        //reads drinks
+        private List<Drink> ReadTables(DataTable dataTable)
+        {
+            List<Drink> drinks = new List<Drink>();
+
+            foreach (DataRow dr in dataTable.Rows)
+            {
+                Drink drink = new Drink()
+                {
+                    Id = (int)dr["DrinkId"],
+                    DrinkName = dr["DrinkName"].ToString(),
+                    Stock = (int)dr["Stock"],
+                    Price = (double)dr["Price"]
+                };
+
+                drinks.Add(drink);
+            }
+            return drinks;
+        }
 
         public void UpdateStock(DrinkOrder drinkOrder)
         {

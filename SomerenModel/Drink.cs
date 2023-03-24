@@ -14,6 +14,8 @@ namespace SomerenModel
         public double Price { get; set; }
         public int Token {get; set; }
 
+        public Drink()
+        { }
         public Drink(int id, string drinkName, int stock, double price, int token)
         {
             Id = id;
