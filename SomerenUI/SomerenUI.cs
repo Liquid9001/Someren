@@ -199,6 +199,7 @@ namespace SomerenUI
         private void DisplayDrinks(List<Drink> drinks)
         {
             dataGridViewDrinks.DataSource = drinks;
+          
         }
         private void submitDate()
         {
@@ -354,7 +355,11 @@ namespace SomerenUI
         }
         private void buttonUpdateDrink_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow drinksRow = dataGridViewDrinks.SelectedCells[0].OwningRow;
+            Drink drink = new Drink((int)drinksRow.Cells[0].Value, (string)drinksRow.Cells[1].Value, (int)drinksRow.Cells[2].Value, (double)drinksRow.Cells[3].Value, (int)drinksRow.Cells[4].Value);
+            DrinksService drinksService = new DrinksService();
+            drinksService.UpdateDrink(drink);
+            ShowDrinksPanel();
         }
 
 
@@ -387,6 +392,16 @@ namespace SomerenUI
         private void CashRegisterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowCashRegisterPanel();
+        }
+
+        private void dataGridViewDrinks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

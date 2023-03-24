@@ -23,7 +23,8 @@ namespace SomerenService
         }
         public void UpdateDrink(Drink drink)
         {
-          /*  DrinksDao.UpdateDrink(drink);*/
+            drinksdb.UpdateDrink(drink);
         }
+
     }
 }
