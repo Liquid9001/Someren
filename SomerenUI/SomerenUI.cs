@@ -6,6 +6,8 @@ using System;
 using System.Text;
 using SomerenDAL;
 using System.Security.Cryptography.Pkcs;
+using Microsoft.VisualBasic;
+
 
 namespace SomerenUI
 {
@@ -66,6 +68,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
+
 
             // show dashboard
             pnlActivities.Show();
@@ -204,6 +207,7 @@ namespace SomerenUI
         private void DisplayDrinks(List<Drink> drinks)
         {
             dataGridViewDrinks.DataSource = drinks;
+
         }
         private void submitDate()
         {
@@ -268,6 +272,7 @@ namespace SomerenUI
 
         private void ShowCashRegisterPanel()
         {
+            
             // hide all other panels
             pnlDashboard.Hide();
             pnlActivities.Hide();
@@ -289,7 +294,7 @@ namespace SomerenUI
                 StudentsDisplay(students);
 
                 // get and display all Drinks
-                List<Drink> drinks = GetDrinks();
+                List<Drink> drinks = CollectDrinks();
                 DrinksDisplay(drinks);
             }
             catch (Exception e)
@@ -297,7 +302,7 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
-
+        // adds students to a listview
         private void StudentsDisplay(List<Student> students)
         {
             // clear the listview items before filling it
@@ -312,7 +317,7 @@ namespace SomerenUI
             }
         }
 
-
+        //adds drinks to a listview
         private void DrinksDisplay(List<Drink> drinks)
         {
             // clear the listview items before filling it
@@ -322,7 +327,7 @@ namespace SomerenUI
             {
                 ListViewItem li = new ListViewItem(drink.Id.ToString());
                 li.SubItems.Add(drink.DrinkName);
-                li.SubItems.Add("\u20AC " + drink.Price.ToString());
+                li.SubItems.Add(drink.Price.ToString());
                 li.SubItems.Add(drink.Stock.ToString());
                 li.Tag = drink;   // link student object to listview item
                 listViewDrinks.Items.Add(li);
@@ -359,7 +364,11 @@ namespace SomerenUI
         }
         private void buttonUpdateDrink_Click(object sender, EventArgs e)
         {
-
+            DataGridViewRow drinksRow = dataGridViewDrinks.SelectedCells[0].OwningRow;
+            Drink drink = new Drink((int)drinksRow.Cells[0].Value, (string)drinksRow.Cells[1].Value, (int)drinksRow.Cells[2].Value, (double)drinksRow.Cells[3].Value, (int)drinksRow.Cells[4].Value);
+            DrinksService drinksService = new DrinksService();
+            drinksService.UpdateDrink(drink);
+            ShowDrinksPanel();
         }
 
 
@@ -395,6 +404,7 @@ namespace SomerenUI
         }
 
 
+
         private void VATToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlDashboard.Hide();
@@ -418,7 +428,7 @@ namespace SomerenUI
             VATSelectQuarterLabel.Text = "Quarter runs from: 01/01 to: 31/03 for year: 2023";
 
 
-            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: €{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: €{VAT.High.ToString("0.00")}\nTotal VAT amount payable: €{(VAT.Low + VAT.High).ToString("0.00")}";
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: ï¿½{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: ï¿½{VAT.High.ToString("0.00")}\nTotal VAT amount payable: ï¿½{(VAT.Low + VAT.High).ToString("0.00")}";
 
 
         }
@@ -429,7 +439,7 @@ namespace SomerenUI
             VATLabel.Text = "Q2 VAT";
             VATSelectQuarterLabel.Text = "Quarter runs from: 01/04 to: 30/06 for year: 2023";
 
-            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: €{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: €{VAT.High.ToString("0.00")}\nTotal VAT amount payable: €{(VAT.Low + VAT.High).ToString("0.00")}";
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: ï¿½{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: ï¿½{VAT.High.ToString("0.00")}\nTotal VAT amount payable: ï¿½{(VAT.Low + VAT.High).ToString("0.00")}";
 
         }
 
@@ -439,7 +449,7 @@ namespace SomerenUI
             VATLabel.Text = "Q3 VAT";
             VATSelectQuarterLabel.Text = "Quarter runs from: 01/07 to: 31/10 for year: 2023";
 
-            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: €{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: €{VAT.High.ToString("0.00")}\nTotal VAT amount payable: €{(VAT.Low + VAT.High).ToString("0.00")}";
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: ï¿½{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: ï¿½{VAT.High.ToString("0.00")}\nTotal VAT amount payable: ï¿½{(VAT.Low + VAT.High).ToString("0.00")}";
         }
 
         private void Q4VatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -448,7 +458,7 @@ namespace SomerenUI
             VATLabel.Text = "Q4 VAT";
             VATSelectQuarterLabel.Text = "Quarter runs from: 01/10 to: 31/12 for year: 2023";
 
-            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: €{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: €{VAT.High.ToString("0.00")}\nTotal VAT amount payable: €{(VAT.Low + VAT.High).ToString("0.00")}";
+            VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: ï¿½{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: ï¿½{VAT.High.ToString("0.00")}\nTotal VAT amount payable: ï¿½{(VAT.Low + VAT.High).ToString("0.00")}";
         }
 
 
@@ -465,6 +475,61 @@ namespace SomerenUI
 
         private void pnlVAT_Paint(object sender, PaintEventArgs e)
         {
+         }
+
+        private void CheckOutButton_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DrinkOrderService drinkOrderService = new DrinkOrderService();
+                DrinkOrder drinkOrder = new DrinkOrder();
+                if (listViewStudents.SelectedItems.Count == 0 && listViewDrinks.SelectedItems.Count == 0)
+                {
+                    return;
+                }
+                ListViewItem student = listViewStudents.SelectedItems[0];
+                drinkOrder.StudentId = int.Parse(student.Text);
+                foreach (ListViewItem drink in listViewDrinks.SelectedItems)
+                {
+                    drinkOrder.DrinkId = drink.Text;
+                    drinkOrderService.AddOrder(drinkOrder);
+                    drinkOrderService.UpdateStock(drinkOrder);
+                }
+                List<Drink> drinks = CollectDrinks();
+                DrinksDisplay(drinks);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went Wrong " + ex);
+                throw;
+            }
+        }
+
+        private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            double total = 0;
+            foreach (ListViewItem SelectedDrink in listViewDrinks.SelectedItems)
+            {
+                total += int.Parse(SelectedDrink.SubItems[2].Text);
+            }
+            TotalPriceTextBox.Text = total.ToString("\u20AC 0.00");
+        }
+        private void dataGridViewDrinks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+        private List<Drink> CollectDrinks()
+        {
+            DrinkOrderService drinkOrderService = new DrinkOrderService();
+            List<Drink> drinks = drinkOrderService.CollectDrinks();
+            return drinks;
 
         }
     }
