@@ -373,8 +373,6 @@ namespace SomerenUI
             ShowDrinksPanel();
         }
 
-
-
         private void RevenueReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlDashboard.Hide();
@@ -404,8 +402,6 @@ namespace SomerenUI
         {
             ShowCashRegisterPanel();
         }
-
-
 
         private void VATToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -463,7 +459,6 @@ namespace SomerenUI
             VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: �{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: �{VAT.High.ToString("0.00")}\nTotal VAT amount payable: �{(VAT.Low + VAT.High).ToString("0.00")}";
         }
 
-
         private List<VATInformation> GetAllVATInformation()
         {
 
@@ -472,8 +467,6 @@ namespace SomerenUI
             return VATInformation;
 
         }
-
-
 
         private void pnlVAT_Paint(object sender, PaintEventArgs e)
         {
@@ -533,6 +526,75 @@ namespace SomerenUI
             List<Drink> drinks = drinkOrderService.CollectDrinks();
             return drinks;
 
+        }
+
+        // Mohamed Opdracht 4
+        private void ShowActivitySupervisor() 
+        {
+            //Hide other Panels
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+            BackButton.Hide();
+
+            // Hide assign
+            lblAssignedSupervisor.Hide();
+            lblSelectActivity.Hide();
+            lblSelectSupervisorCb.Hide();
+            cbAssign.Hide();
+            AssignButton.Hide();
+            lvAssigned.Hide();
+            lvSelectActivity.Hide();
+
+            // Hide Remove
+            lblSelectActivityCb.Hide();
+            cbRemove.Hide();
+            ShowSupervisorButton.Hide();
+            lvRemove.Hide();
+            RemoveButton.Hide();
+
+            // show main panel
+            pnlSupervisor.Show();
+        }
+
+        private void ShowSupervisorButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainAssignButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainRemoveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AssignButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activitySupervisorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitySupervisor();
         }
     }
 }
