@@ -1304,7 +1304,7 @@
             // 
             this.lblActivitySupervisor.AutoSize = true;
             this.lblActivitySupervisor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblActivitySupervisor.Location = new System.Drawing.Point(13, 9);
+            this.lblActivitySupervisor.Location = new System.Drawing.Point(75, 9);
             this.lblActivitySupervisor.Name = "lblActivitySupervisor";
             this.lblActivitySupervisor.Size = new System.Drawing.Size(211, 32);
             this.lblActivitySupervisor.TabIndex = 4;

@@ -599,24 +599,77 @@ namespace SomerenUI
 
             cbAssign.SelectedIndex = -1;
 
-            /*try
+            try
             {
                 List<Activities> activities = GetActivities();
                 List<Teacher> teachers = GetTeachers();
-                *//*List<Supervisor> supervisors = GetSupervisors();*/
+                /*List<Supervisor> supervisors = GetSupervisors();*/
 
-            /*displayActivity(activities);
-            displayTeachers(teachers);
-            displaySupervisor(supervisors);*//*
+                /*displayActivity(activities);
+                displayTeachers(teachers);
+                displaySupervisor(supervisors);*/
 
 
 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
         }
-        catch (Exception e)
+
+        private void ShowActivitySupervisorRemove()
         {
-            MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
-        }*/
+            //Hide other Panels
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+
+            // hide assign/main
+            lblAssignedSupervisor.Hide();
+            lblSelectActivity.Hide();
+            lblSelectSupervisorCb.Hide();
+            cbAssign.Hide();
+            AssignButton.Hide();
+            lvAssigned.Hide();
+            lvSelectActivity.Hide();
+            lblMainAssign.Hide();
+            lblMainRemove.Hide();
+            MainAssignButton.Hide();
+            MainRemoveButton.Hide();
+
+            // show remove
+            BackButton.Show();
+            lblSelectActivityCb.Show();
+            cbRemove.Show();
+            ShowSupervisorButton.Show();
+            lvRemove.Show();
+            RemoveButton.Show();
+            lblRemoveSupervisor.Show();
+
+            cbRemove.SelectedIndex = -1;
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                List<Teacher> teachers = GetTeachers();
+
+                /*displayActivity(activities);
+                displayTeachers(teachers);*/
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
         }
+
 
         private void ShowSupervisorButton_Click(object sender, EventArgs e)
         {
@@ -630,7 +683,7 @@ namespace SomerenUI
 
         private void MainRemoveButton_Click(object sender, EventArgs e)
         {
-
+            ShowActivitySupervisorRemove();
         }
 
         private void AssignButton_Click(object sender, EventArgs e)
@@ -645,7 +698,7 @@ namespace SomerenUI
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-
+            ShowActivitySupervisor();
         }
 
         private void activitySupervisorsToolStripMenuItem_Click(object sender, EventArgs e)
