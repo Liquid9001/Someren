@@ -1,12 +1,8 @@
-using SomerenService;
 using SomerenModel;
-using System.Windows.Forms;
-using System.Collections.Generic;
+using SomerenService;
 using System;
-using System.Text;
-using SomerenDAL;
-using System.Security.Cryptography.Pkcs;
-using Microsoft.VisualBasic;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace SomerenUI
