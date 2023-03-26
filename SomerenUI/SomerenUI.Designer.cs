@@ -156,7 +156,7 @@
             this.lblSelectActivity = new System.Windows.Forms.Label();
             this.cbRemove = new System.Windows.Forms.ComboBox();
             this.lvRemove = new System.Windows.Forms.ListView();
-            this.Name = new System.Windows.Forms.ColumnHeader();
+            this.SupervisorName = new System.Windows.Forms.ColumnHeader();
             this.lvAssigned = new System.Windows.Forms.ListView();
             this.Activity = new System.Windows.Forms.ColumnHeader();
             this.Supervisor = new System.Windows.Forms.ColumnHeader();
@@ -1178,9 +1178,9 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(10, 7);
+            this.BackButton.Location = new System.Drawing.Point(16, 14);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(61, 37);
+            this.BackButton.Size = new System.Drawing.Size(61, 32);
             this.BackButton.TabIndex = 14;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -1234,7 +1234,7 @@
             // lvRemove
             // 
             this.lvRemove.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name});
+            this.SupervisorName});
             this.lvRemove.Location = new System.Drawing.Point(300, 244);
             this.lvRemove.Name = "lvRemove";
             this.lvRemove.Size = new System.Drawing.Size(305, 179);
@@ -1242,11 +1242,10 @@
             this.lvRemove.UseCompatibleStateImageBehavior = false;
             this.lvRemove.View = System.Windows.Forms.View.Details;
             // 
-            // Name
+            // SupervisorName
             // 
-            this.Name.Name = "SomerenUI";
-            this.Name.Text = "Name";
-            this.Name.Width = 120;
+            this.SupervisorName.Name = "SomerenUI";
+            this.SupervisorName.Text = "Name";
             // 
             // lvAssigned
             // 
@@ -1304,7 +1303,7 @@
             // 
             this.lblActivitySupervisor.AutoSize = true;
             this.lblActivitySupervisor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblActivitySupervisor.Location = new System.Drawing.Point(75, 9);
+            this.lblActivitySupervisor.Location = new System.Drawing.Point(16, 14);
             this.lblActivitySupervisor.Name = "lblActivitySupervisor";
             this.lblActivitySupervisor.Size = new System.Drawing.Size(211, 32);
             this.lblActivitySupervisor.TabIndex = 4;
@@ -1592,7 +1591,7 @@
         private System.Windows.Forms.Label lblSelectActivity;
         private System.Windows.Forms.ComboBox cbRemove;
         private System.Windows.Forms.ListView lvRemove;
-        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader SupervisorName;
         private System.Windows.Forms.ListView lvAssigned;
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader Supervisor;

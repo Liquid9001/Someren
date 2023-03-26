@@ -2,6 +2,7 @@ using SomerenModel;
 using SomerenService;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -106,6 +107,20 @@ namespace SomerenUI
         {
             // clear the listview before filling it
             dataGridViewActivities.DataSource = activities;
+
+            lvSelectActivity.Items.Clear();
+            cbRemove.Items.Clear();
+
+            foreach (Activities activity in activities) 
+            {
+                ListViewItem item = new ListViewItem(activity.Activity);
+                item.SubItems.Add(activity.dateTime.ToString("dd/MM/yyyy"));
+                item.Tag = activity;
+                lvSelectActivity.Items.Add(item);
+
+                cbRemove.Items.Add(activity);
+                cbRemove.DisplayMember = "activity";
+            }
         }
         private void ShowRoomsPanel()
         {
@@ -175,6 +190,19 @@ namespace SomerenUI
         private void DisplayTeachers(List<Teacher> teachers)
         {
             dataGridViewTeacher.DataSource = teachers;
+
+            cbAssign.Items.Clear();
+            lvRemove.Items.Clear();
+
+            foreach (Teacher teacher in teachers)
+            {
+                cbAssign.Items.Add(teacher);
+                cbAssign.DisplayMember = "Fname";
+
+                ListViewItem item = new ListViewItem(teacher.FName);
+                item.Tag = teacher;
+                lvRemove.Items.Add(item);
+            }
         }
         private void ShowDrinksPanel()
         {
@@ -529,8 +557,19 @@ namespace SomerenUI
         }
 
         // Mohamed Opdracht 4
+
+        // Supervisors Loading
+        private List<Supervisor> GetSupervisors()
+        {
+            SupervisorService supervisorServices = new SupervisorService();
+            List<Supervisor> supervisors = supervisorServices.GetSupervisors();
+            return supervisors;
+        }
+
+        // Show And Hide
         private void ShowActivitySupervisor() 
         {
+            lblActivitySupervisor.Location = new Point(16, 14);
             //Hide other Panels
             pnlStudents.Hide();
             pnlActivities.Hide();
@@ -561,6 +600,10 @@ namespace SomerenUI
 
             // show main panel
             pnlSupervisor.Show();
+            MainAssignButton.Show();
+            MainRemoveButton.Show();
+            lblMainAssign.Show();
+            lblMainRemove.Show();
         }
 
         private void ShowActivitySupervisorAssign()
@@ -598,16 +641,17 @@ namespace SomerenUI
             BackButton.Show();
 
             cbAssign.SelectedIndex = -1;
+            lblActivitySupervisor.Location = new Point(77, 14);
 
             try
             {
                 List<Activities> activities = GetActivities();
                 List<Teacher> teachers = GetTeachers();
-                /*List<Supervisor> supervisors = GetSupervisors();*/
+                List<Supervisor> supervisors = GetSupervisors();
 
-                /*displayActivity(activities);
-                displayTeachers(teachers);
-                displaySupervisor(supervisors);*/
+                DisplayActivities(activities);
+                DisplayTeachers(teachers);
+                displaySupervisor(supervisors);
 
 
 
@@ -653,14 +697,15 @@ namespace SomerenUI
             lblRemoveSupervisor.Show();
 
             cbRemove.SelectedIndex = -1;
+            lblActivitySupervisor.Location = new Point(77, 14);
 
             try
             {
                 List<Activities> activities = GetActivities();
                 List<Teacher> teachers = GetTeachers();
 
-                /*displayActivity(activities);
-                displayTeachers(teachers);*/
+                DisplayActivities(activities);
+                DisplayTeachers(teachers);
 
 
             }
@@ -670,10 +715,87 @@ namespace SomerenUI
             }
         }
 
+        // Display Data
+        public void displaySupervisor(List<Supervisor> supervisors)
+        {
+            lvAssigned.Items.Clear();
+            foreach (Supervisor supervisor in supervisors)
+            {
+                ListViewItem item = new ListViewItem(supervisor.activities.Activity);
+                item.SubItems.Add(supervisor.teacher.FName);
+                lvAssigned.Items.Add(item);
+            }
 
+
+        }
+        // Buttons Functions
+        private void assignSupervisor()
+        {
+            Activities activities = new();
+            if (lvSelectActivity.SelectedItems.Count > 0 && cbAssign.SelectedIndex != -1)
+            {
+                ListViewItem selectedItem = lvSelectActivity.SelectedItems[0];
+                activities = selectedItem.Tag as Activities;
+
+                Teacher teacher = cbAssign.SelectedItem as Teacher;
+
+                SupervisorService supervisorServices = new SupervisorService();
+                supervisorServices.Assignsupervisor(teacher, activities);
+            }
+            else
+                MessageBox.Show("Make sure you select an Activity and Supervisor.");
+
+
+            ShowActivitySupervisorAssign();
+        }
+
+        private void ShowSupervisorsForSpecificActivity()
+        {
+            Activities activities = cbRemove.SelectedItem as Activities;
+            SupervisorService supervisorServices = new();
+
+            List<Teacher> teachers = supervisorServices.GetSpecificSupervisors(activities);
+            DisplayTeachers(teachers);
+
+            lvRemove.Show();
+            RemoveButton.Show();
+
+            if (teachers.Count <= 0)
+            {
+                RemoveButton.Enabled = false;
+            }
+            else
+            {
+                RemoveButton.Enabled = true;
+            }
+        }
+
+        public void DeleteSupervisor()
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to continue?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Activities activities = cbRemove.SelectedItem as Activities;
+
+                SupervisorService supervisorServices = new SupervisorService();
+                supervisorServices.DeleteSupervisor(activities);
+
+                ShowActivitySupervisorRemove();
+
+
+            }
+            else
+            {
+                // User cancelled, stop the operation
+            }
+
+        }
+
+        // Click Events
         private void ShowSupervisorButton_Click(object sender, EventArgs e)
         {
-
+            ShowSupervisorsForSpecificActivity();
         }
 
         private void MainAssignButton_Click(object sender, EventArgs e)
@@ -688,12 +810,12 @@ namespace SomerenUI
 
         private void AssignButton_Click(object sender, EventArgs e)
         {
-
+            assignSupervisor();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-
+            DeleteSupervisor();
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -705,5 +827,6 @@ namespace SomerenUI
         {
             ShowActivitySupervisor();
         }
+        // End Mohamed Opdracht 4
     }
 }
