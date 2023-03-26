@@ -557,9 +557,65 @@ namespace SomerenUI
             ShowSupervisorButton.Hide();
             lvRemove.Hide();
             RemoveButton.Hide();
+            lblRemoveSupervisor.Hide();
 
             // show main panel
             pnlSupervisor.Show();
+        }
+
+        private void ShowActivitySupervisorAssign()
+        {
+            //Hide other Panels
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+
+            // hide Remove/Main
+            lblSelectActivityCb.Hide();
+            cbRemove.Hide();
+            ShowSupervisorButton.Hide();
+            lvRemove.Hide();
+            RemoveButton.Hide();
+            lblRemoveSupervisor.Hide();
+            lblMainAssign.Hide();
+            lblMainRemove.Hide();
+            MainAssignButton.Hide();
+            MainRemoveButton.Hide();
+
+            // show Assign
+            lblAssignedSupervisor.Show();
+            lblSelectActivity.Show();
+            lblSelectSupervisorCb.Show();
+            cbAssign.Show();
+            AssignButton.Show();
+            lvAssigned.Show();
+            lvSelectActivity.Show();
+            BackButton.Show();
+
+            cbAssign.SelectedIndex = -1;
+
+            /*try
+            {
+                List<Activities> activities = GetActivities();
+                List<Teacher> teachers = GetTeachers();
+                *//*List<Supervisor> supervisors = GetSupervisors();*/
+
+            /*displayActivity(activities);
+            displayTeachers(teachers);
+            displaySupervisor(supervisors);*//*
+
+
+
+        }
+        catch (Exception e)
+        {
+            MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+        }*/
         }
 
         private void ShowSupervisorButton_Click(object sender, EventArgs e)
@@ -569,7 +625,7 @@ namespace SomerenUI
 
         private void MainAssignButton_Click(object sender, EventArgs e)
         {
-
+            ShowActivitySupervisorAssign();
         }
 
         private void MainRemoveButton_Click(object sender, EventArgs e)

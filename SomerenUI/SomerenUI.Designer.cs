@@ -48,12 +48,12 @@
             this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activitySupervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.barServicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DrinkSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RevenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activitySupervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.pnlStudents = new System.Windows.Forms.Panel();
@@ -364,13 +364,6 @@
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.activitiesToolStripMenuItem.Text = "Activities";
             // 
-            // activitySupervisorsToolStripMenuItem
-            // 
-            this.activitySupervisorsToolStripMenuItem.Name = "activitySupervisorsToolStripMenuItem";
-            this.activitySupervisorsToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
-            this.activitySupervisorsToolStripMenuItem.Text = "Activity Supervisors";
-            this.activitySupervisorsToolStripMenuItem.Click += new System.EventHandler(this.activitySupervisorsToolStripMenuItem_Click);
-            // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
@@ -405,6 +398,13 @@
             this.RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
             this.RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.RevenueReportToolStripMenuItem.Text = "Revenue report";
+            // 
+            // activitySupervisorsToolStripMenuItem
+            // 
+            this.activitySupervisorsToolStripMenuItem.Name = "activitySupervisorsToolStripMenuItem";
+            this.activitySupervisorsToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.activitySupervisorsToolStripMenuItem.Text = "Activity Supervisors";
+            this.activitySupervisorsToolStripMenuItem.Click += new System.EventHandler(this.activitySupervisorsToolStripMenuItem_Click);
             // 
             // pnlDashboard
             // 
@@ -1244,6 +1244,7 @@
             // 
             // Name
             // 
+            this.Name.Name = "SomerenUI";
             this.Name.Text = "Name";
             this.Name.Width = 120;
             // 
@@ -1303,7 +1304,7 @@
             // 
             this.lblActivitySupervisor.AutoSize = true;
             this.lblActivitySupervisor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblActivitySupervisor.Location = new System.Drawing.Point(77, 9);
+            this.lblActivitySupervisor.Location = new System.Drawing.Point(13, 9);
             this.lblActivitySupervisor.Name = "lblActivitySupervisor";
             this.lblActivitySupervisor.Size = new System.Drawing.Size(211, 32);
             this.lblActivitySupervisor.TabIndex = 4;
