@@ -156,7 +156,6 @@
             this.lblSelectActivity = new System.Windows.Forms.Label();
             this.cbRemove = new System.Windows.Forms.ComboBox();
             this.lvRemove = new System.Windows.Forms.ListView();
-            this.SupervisorName = new System.Windows.Forms.ColumnHeader();
             this.lvAssigned = new System.Windows.Forms.ListView();
             this.Activity = new System.Windows.Forms.ColumnHeader();
             this.Supervisor = new System.Windows.Forms.ColumnHeader();
@@ -169,6 +168,7 @@
             this.MainAssignButton = new System.Windows.Forms.Button();
             this.lblMainRemove = new System.Windows.Forms.Label();
             this.lblMainAssign = new System.Windows.Forms.Label();
+            this.SupervisorFullName = new System.Windows.Forms.ColumnHeader();
             this.pnlVAT.SuspendLayout();
             this.VATSelectQuartermenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -213,6 +213,7 @@
             this.VATToolStripMenuItem.Name = "VATToolStripMenuItem";
             this.VATToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.VATToolStripMenuItem.Text = "VAT";
+            this.VATToolStripMenuItem.Click += new System.EventHandler(this.VATToolStripMenuItem_Click);
             // 
             // pnlVAT
             // 
@@ -289,24 +290,28 @@
             this.Q1VatToolStripMenuItem.Name = "Q1VatToolStripMenuItem";
             this.Q1VatToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.Q1VatToolStripMenuItem.Text = "Q1";
+            this.Q1VatToolStripMenuItem.Click += new System.EventHandler(this.Q1VatToolStripMenuItem_Click);
             // 
             // Q2VatToolStripMenuItem
             // 
             this.Q2VatToolStripMenuItem.Name = "Q2VatToolStripMenuItem";
             this.Q2VatToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.Q2VatToolStripMenuItem.Text = "Q2";
+            this.Q2VatToolStripMenuItem.Click += new System.EventHandler(this.Q2VatToolStripMenuItem_Click);
             // 
             // Q3VatToolStripMenuItem
             // 
             this.Q3VatToolStripMenuItem.Name = "Q3VatToolStripMenuItem";
             this.Q3VatToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.Q3VatToolStripMenuItem.Text = "Q3";
+            this.Q3VatToolStripMenuItem.Click += new System.EventHandler(this.Q3VatToolStripMenuItem_Click);
             // 
             // Q4VatToolStripMenuItem
             // 
             this.Q4VatToolStripMenuItem.Name = "Q4VatToolStripMenuItem";
             this.Q4VatToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.Q4VatToolStripMenuItem.Text = "Q4";
+            this.Q4VatToolStripMenuItem.Click += new System.EventHandler(this.Q4VatToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -339,36 +344,42 @@
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
             this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
+            this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
             this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.studentsToolStripMenuItem.Text = "Students";
+            this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
             this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
+            this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
             this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.activitiesToolStripMenuItem.Text = "Activities";
+            this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // barServicesToolStripMenuItem
             // 
@@ -386,18 +397,21 @@
             this.DrinkSuppliesToolStripMenuItem.Name = "DrinkSuppliesToolStripMenuItem";
             this.DrinkSuppliesToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.DrinkSuppliesToolStripMenuItem.Text = "Drink Supplies";
+            this.DrinkSuppliesToolStripMenuItem.Click += new System.EventHandler(this.DrinkSuppliesToolStripMenuItem_Click);
             // 
             // CashRegisterToolStripMenuItem
             // 
             this.CashRegisterToolStripMenuItem.Name = "CashRegisterToolStripMenuItem";
             this.CashRegisterToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.CashRegisterToolStripMenuItem.Text = "Cash register";
+            this.CashRegisterToolStripMenuItem.Click += new System.EventHandler(this.CashRegisterToolStripMenuItem_Click);
             // 
             // RevenueReportToolStripMenuItem
             // 
             this.RevenueReportToolStripMenuItem.Name = "RevenueReportToolStripMenuItem";
             this.RevenueReportToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.RevenueReportToolStripMenuItem.Text = "Revenue report";
+            this.RevenueReportToolStripMenuItem.Click += new System.EventHandler(this.RevenueReportToolStripMenuItem_Click);
             // 
             // activitySupervisorsToolStripMenuItem
             // 
@@ -842,6 +856,7 @@
             this.buttonUpdateDrink.TabIndex = 1;
             this.buttonUpdateDrink.Text = "&Update";
             this.buttonUpdateDrink.UseVisualStyleBackColor = true;
+            this.buttonUpdateDrink.Click += new System.EventHandler(this.buttonUpdateDrink_Click);
             // 
             // dataGridViewDrinks
             // 
@@ -934,6 +949,7 @@
             this.Submit.TabIndex = 6;
             this.Submit.Text = "Submit";
             this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // lvRev
             // 
@@ -1022,6 +1038,7 @@
             this.CheckOutButton.TabIndex = 5;
             this.CheckOutButton.Text = "&Check Out";
             this.CheckOutButton.UseVisualStyleBackColor = true;
+            this.CheckOutButton.Click += new System.EventHandler(this.CheckOutButton_Click);
             // 
             // PriceLabelPlaceholder
             // 
@@ -1068,6 +1085,7 @@
             this.listViewDrinks.TabIndex = 1;
             this.listViewDrinks.UseCompatibleStateImageBehavior = false;
             this.listViewDrinks.View = System.Windows.Forms.View.Details;
+            this.listViewDrinks.SelectedIndexChanged += new System.EventHandler(this.listViewDrinks_SelectedIndexChanged);
             // 
             // DrinkId
             // 
@@ -1234,18 +1252,13 @@
             // lvRemove
             // 
             this.lvRemove.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.SupervisorName});
+            this.SupervisorFullName});
             this.lvRemove.Location = new System.Drawing.Point(300, 244);
             this.lvRemove.Name = "lvRemove";
             this.lvRemove.Size = new System.Drawing.Size(305, 179);
             this.lvRemove.TabIndex = 8;
             this.lvRemove.UseCompatibleStateImageBehavior = false;
             this.lvRemove.View = System.Windows.Forms.View.Details;
-            // 
-            // SupervisorName
-            // 
-            this.SupervisorName.Name = "SomerenUI";
-            this.SupervisorName.Text = "Name";
             // 
             // lvAssigned
             // 
@@ -1355,6 +1368,11 @@
             this.lblMainAssign.Text = "Assign Supervisor\r\nto Activity";
             this.lblMainAssign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // SupervisorFullName
+            // 
+            this.SupervisorFullName.Text = "Name";
+            this.SupervisorFullName.Width = 150;
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1425,6 +1443,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void LecturersToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         private void ButtonUpdateDrink_Click(object sender, System.EventArgs e)
@@ -1591,7 +1614,6 @@
         private System.Windows.Forms.Label lblSelectActivity;
         private System.Windows.Forms.ComboBox cbRemove;
         private System.Windows.Forms.ListView lvRemove;
-        private System.Windows.Forms.ColumnHeader SupervisorName;
         private System.Windows.Forms.ListView lvAssigned;
         private System.Windows.Forms.ColumnHeader Activity;
         private System.Windows.Forms.ColumnHeader Supervisor;
@@ -1608,5 +1630,6 @@
         private System.Windows.Forms.Button AssignButton;
         private System.Windows.Forms.Label lblSelectSupervisorCb;
         private System.Windows.Forms.Label lblSelectActivityCb;
+        private System.Windows.Forms.ColumnHeader SupervisorFullName;
     }
 }

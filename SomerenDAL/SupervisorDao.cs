@@ -14,7 +14,7 @@ namespace SomerenDAL
         public void AssignSupervisor(Teacher teacher, Activities activities)
         {
 
-            string query = "INSERT INTO ActivitySupervisor (lecturerid, activityid) " +
+            string query = "INSERT INTO Supervise (teacherid, activityid) " +
                             "VALUES (@teacherid, @activityid);";
             SqlCommand command = new SqlCommand();
             command.Connection = OpenConnection();
@@ -28,9 +28,9 @@ namespace SomerenDAL
         public List<Teacher> GetActivitySupervisors(Activities activities)
         {
             List<Teacher> list = new List<Teacher>();
-            string query = "SELECT ActivitySupervisor.lecturerid, lecturer.name  " +
-                "FROM ActivitySupervisor " +
-                "JOIN lecturer ON ActivitySupervisor.lecturerid = lecturer.lecturerid " +
+            string query = "SELECT Supervise.teacherid, teacher.firstname  " +
+                "FROM Supervise " +
+                "JOIN teacher ON Supervise.teacherid = teacher.teacherid " +
                 "WHERE activityid = @activityid";
             SqlCommand command = new SqlCommand();
             command.Connection = OpenConnection();
@@ -41,8 +41,8 @@ namespace SomerenDAL
             while (reader.Read())
             {
                 Teacher teacher = new Teacher();
-                teacher.Id = (int)reader["lecturerid"];
-                teacher.FName = (string)reader["name"];
+                teacher.Id = (int)reader["teacherid"];
+                teacher.FName = (string)reader["firstname"];
                 list.Add(teacher);
             }
 
@@ -52,16 +52,16 @@ namespace SomerenDAL
         public List<Supervisor> GetAllSupervisors()
         {
             string query = "SELECT * " +
-                           "from ActivitySupervisor " +
-                           "JOIN Lecturer ON ActivitySupervisor.lecturerid = lecturer.lecturerid " +
-                           "JOIN activities ON ActivitySupervisor.activityid = activities.id";
+                           "from Supervise " +
+                           "JOIN teacher ON Supervise.teacherid = teacher.teacherid " +
+                           "JOIN activity ON Supervise.activityid = activity.activityid";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
         public void DeleteSupervisors(Activities activities)
         {
-            string query = "delete from ActivitySupervisor WHERE activityid = @activityid";
+            string query = "delete from Supervise WHERE activityid = @activityid";
             SqlCommand command = new SqlCommand();
             command.Connection = OpenConnection();
             command.CommandText = query;
@@ -78,14 +78,14 @@ namespace SomerenDAL
                 Supervisor supervisor = new();
 
                 Teacher teacher = new Teacher();
-                teacher.Id = (int)dr["lecturerid"];
-                teacher.FName = (string)dr["name"];
+                teacher.Id = (int)dr["teacherid"];
+                teacher.FName = (string)dr["firstname"];
 
                 supervisor.teacher = teacher;
 
                 Activities activities = new Activities();
                 activities.activityId = (int)dr["activityid"];
-                activities.Activity = (string)dr["activity"];
+                activities.Activity = (string)dr["Name"];
 
                 supervisor.activities = activities;
 
