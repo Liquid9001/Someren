@@ -156,6 +156,7 @@
             this.lblSelectActivity = new System.Windows.Forms.Label();
             this.cbRemove = new System.Windows.Forms.ComboBox();
             this.lvRemove = new System.Windows.Forms.ListView();
+            this.SupervisorFullName = new System.Windows.Forms.ColumnHeader();
             this.lvAssigned = new System.Windows.Forms.ListView();
             this.Activity = new System.Windows.Forms.ColumnHeader();
             this.Supervisor = new System.Windows.Forms.ColumnHeader();
@@ -168,7 +169,6 @@
             this.MainAssignButton = new System.Windows.Forms.Button();
             this.lblMainRemove = new System.Windows.Forms.Label();
             this.lblMainAssign = new System.Windows.Forms.Label();
-            this.SupervisorFullName = new System.Windows.Forms.ColumnHeader();
             this.pnlVAT.SuspendLayout();
             this.VATSelectQuartermenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -1260,6 +1260,11 @@
             this.lvRemove.UseCompatibleStateImageBehavior = false;
             this.lvRemove.View = System.Windows.Forms.View.Details;
             // 
+            // SupervisorFullName
+            // 
+            this.SupervisorFullName.Text = "Name";
+            this.SupervisorFullName.Width = 150;
+            // 
             // lvAssigned
             // 
             this.lvAssigned.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1368,17 +1373,11 @@
             this.lblMainAssign.Text = "Assign Supervisor\r\nto Activity";
             this.lblMainAssign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SupervisorFullName
-            // 
-            this.SupervisorFullName.Text = "Name";
-            this.SupervisorFullName.Width = 150;
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 508);
-            this.Controls.Add(this.pnlSupervisor);
             this.Controls.Add(this.pnlDashboard);
             this.Controls.Add(this.pnlActivities);
             this.Controls.Add(this.pnlRooms);
@@ -1389,6 +1388,7 @@
             this.Controls.Add(this.pnlStudents);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlRevRepo);
+            this.Controls.Add(this.pnlSupervisor);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "SomerenUI";
             this.Text = "SomerenApp";
