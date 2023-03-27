@@ -1,12 +1,9 @@
-using SomerenService;
 using SomerenModel;
-using System.Windows.Forms;
-using System.Collections.Generic;
+using SomerenService;
 using System;
-using System.Text;
-using SomerenDAL;
-using System.Security.Cryptography.Pkcs;
-using Microsoft.VisualBasic;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 namespace SomerenUI
@@ -32,6 +29,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlSupervisor.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -46,6 +44,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlSupervisor.Hide();
 
             // show students
             pnlStudents.Show();
@@ -71,6 +70,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlSupervisor.Hide();
 
 
             // show dashboard
@@ -110,6 +110,20 @@ namespace SomerenUI
         {
             // clear the listview before filling it
             dataGridViewActivities.DataSource = activities;
+
+            lvSelectActivity.Items.Clear();
+            cbRemove.Items.Clear();
+
+            foreach (Activities activity in activities) 
+            {
+                ListViewItem item = new ListViewItem(activity.Activity);
+                item.SubItems.Add(activity.dateTime.ToString("dd/MM/yyyy"));
+                item.Tag = activity;
+                lvSelectActivity.Items.Add(item);
+
+                cbRemove.Items.Add(activity);
+                cbRemove.DisplayMember = "activity";
+            }
         }
         private void ShowRoomsPanel()
         {
@@ -120,6 +134,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlSupervisor.Hide();
 
             pnlRooms.Show();
 
@@ -156,6 +171,8 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlSupervisor.Hide();
+
             // show teachers
             pnlTeacher.Show();
 
@@ -179,6 +196,19 @@ namespace SomerenUI
         private void DisplayTeachers(List<Teacher> teachers)
         {
             dataGridViewTeacher.DataSource = teachers;
+
+            cbAssign.Items.Clear();
+            lvRemove.Items.Clear();
+
+            foreach (Teacher teacher in teachers)
+            {
+                cbAssign.Items.Add(teacher);
+                cbAssign.DisplayMember = "Fname";
+
+                ListViewItem item = new ListViewItem(teacher.FName + " " + teacher.LName);
+                item.Tag = teacher;
+                lvRemove.Items.Add(item);
+            }
         }
         private void ShowDrinksPanel()
         {
@@ -190,6 +220,8 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlSupervisor.Hide();
+
             // show drinks
             pnlDrinks.Show();
 
@@ -288,6 +320,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlVAT.Hide();
             pnlDrinks.Hide();
+            pnlSupervisor.Hide();
             pnlRevRepo.Hide();
 
             // show Cash Register panel
@@ -340,23 +373,23 @@ namespace SomerenUI
             }
         }
 
-        private void dashboardToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        private void dashboardToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ShowDashboardPanel();
         }
-        private void studentsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
         }
-        private void lecturersToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowTeachersPanel();
         }
-        private void activitiesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowActivitiesPanel();
         }
-        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -377,8 +410,6 @@ namespace SomerenUI
             ShowDrinksPanel();
         }
 
-
-
         private void RevenueReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlDashboard.Hide();
@@ -389,6 +420,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlVAT.Hide();
             pnlCashRegister.Hide();
+            pnlSupervisor.Hide();
 
             pnlRevRepo.Show();
 
@@ -408,8 +440,6 @@ namespace SomerenUI
         {
             ShowCashRegisterPanel();
         }
-
-
 
         private void VATToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -467,7 +497,6 @@ namespace SomerenUI
             VATTotalLabel.Text = $"Total VAT (low tariff, 6%) amount payable: �{VAT.Low.ToString("0.00")} \nTotal VAT(high tariff, 21 %) amount payable: �{VAT.High.ToString("0.00")}\nTotal VAT amount payable: �{(VAT.Low + VAT.High).ToString("0.00")}";
         }
 
-
         private List<VATInformation> GetAllVATInformation()
         {
 
@@ -475,12 +504,6 @@ namespace SomerenUI
 
             return VATInformation;
 
-        }
-
-
-
-        private void pnlVAT_Paint(object sender, PaintEventArgs e)
-        {
         }
 
         private void CheckOutButton_Click(object sender, EventArgs e)
@@ -521,16 +544,7 @@ namespace SomerenUI
             }
             TotalPriceTextBox.Text = total.ToString("\u20AC 0.00");
         }
-        private void dataGridViewDrinks_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
         private List<Drink> CollectDrinks()
         {
             DrinkOrderService drinkOrderService = new DrinkOrderService();
@@ -538,5 +552,295 @@ namespace SomerenUI
             return drinks;
 
         }
+
+        // Mohamed Opdracht 4
+
+        // Supervisors Loading
+        private List<Supervisor> GetSupervisors()
+        {
+            SupervisorService supervisorServices = new SupervisorService();
+            List<Supervisor> supervisors = supervisorServices.GetSupervisors();
+            return supervisors;
+        }
+
+        // Show And Hide
+        private void ShowActivitySupervisor() 
+        {
+            lblActivitySupervisor.Location = new Point(16, 14);
+
+            //Hide other Panels
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+            BackButton.Hide();
+            pnlDashboard.Hide();
+
+            // Hide assign
+            lblAssignedSupervisor.Hide();
+            lblSelectActivity.Hide();
+            lblSelectSupervisorCb.Hide();
+            cbAssign.Hide();
+            AssignButton.Hide();
+            lvAssigned.Hide();
+            lvSelectActivity.Hide();
+
+            // Hide Remove
+            lblSelectActivityCb.Hide();
+            cbRemove.Hide();
+            ShowSupervisorButton.Hide();
+            lvRemove.Hide();
+            RemoveButton.Hide();
+            lblRemoveSupervisor.Hide();
+
+            // show main panel
+            pnlSupervisor.Show();
+            MainAssignButton.Show();
+            MainRemoveButton.Show();
+            lblMainAssign.Show();
+            lblMainRemove.Show();
+        }
+
+        private void ShowActivitySupervisorAssign()
+        {
+            cbAssign.SelectedIndex = -1;
+            lblActivitySupervisor.Location = new Point(77, 14);
+
+            //Hide other Panels
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+
+            // hide Remove/Main
+            lblSelectActivityCb.Hide();
+            cbRemove.Hide();
+            ShowSupervisorButton.Hide();
+            lvRemove.Hide();
+            RemoveButton.Hide();
+            lblRemoveSupervisor.Hide();
+            lblMainAssign.Hide();
+            lblMainRemove.Hide();
+            MainAssignButton.Hide();
+            MainRemoveButton.Hide();
+
+            // show Assign
+            lblAssignedSupervisor.Show();
+            lblSelectActivity.Show();
+            lblSelectSupervisorCb.Show();
+            cbAssign.Show();
+            AssignButton.Show();
+            lvAssigned.Show();
+            lvSelectActivity.Show();
+            BackButton.Show();
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                List<Teacher> teachers = GetTeachers();
+                List<Supervisor> supervisors = GetSupervisors();
+
+                DisplayActivities(activities);
+                DisplayTeachers(teachers);
+                displaySupervisor(supervisors);
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+        }
+
+        private void ShowActivitySupervisorRemove()
+        {
+            cbRemove.SelectedIndex = -1;
+            lblActivitySupervisor.Location = new Point(77, 14);
+
+            //Hide other Panels
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlTeacher.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+
+            // hide assign/main
+            lblAssignedSupervisor.Hide();
+            lblSelectActivity.Hide();
+            lblSelectSupervisorCb.Hide();
+            cbAssign.Hide();
+            AssignButton.Hide();
+            lvAssigned.Hide();
+            lvSelectActivity.Hide();
+            lblMainAssign.Hide();
+            lblMainRemove.Hide();
+            MainAssignButton.Hide();
+            MainRemoveButton.Hide();
+
+            // show remove
+            BackButton.Show();
+            lblSelectActivityCb.Show();
+            cbRemove.Show();
+            ShowSupervisorButton.Show();
+
+            lvRemove.Hide();
+            RemoveButton.Hide();
+            lblRemoveSupervisor.Hide();
+
+            try
+            {
+                List<Activities> activities = GetActivities();
+                List<Teacher> teachers = GetTeachers();
+
+                DisplayActivities(activities);
+                DisplayTeachers(teachers);
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+        }
+
+        // Display Data
+        public void displaySupervisor(List<Supervisor> supervisors)
+        {
+            lvAssigned.Items.Clear();
+            foreach (Supervisor supervisor in supervisors)
+            {
+                ListViewItem item = new ListViewItem(supervisor.activities.Activity);
+                item.SubItems.Add(supervisor.teacher.FName);
+                lvAssigned.Items.Add(item);
+            }
+
+        }
+        // Buttons Functions
+        private void assignSupervisor()
+        {
+            Activities activities = new();
+            if (lvSelectActivity.SelectedItems.Count > 0 && cbAssign.SelectedIndex != -1)
+            {
+                ListViewItem selectedItem = lvSelectActivity.SelectedItems[0];
+                activities = selectedItem.Tag as Activities;
+
+                Teacher teacher = cbAssign.SelectedItem as Teacher;
+
+                SupervisorService supervisorServices = new SupervisorService();
+                supervisorServices.Assignsupervisor(teacher, activities);
+            }
+            else
+                MessageBox.Show("Make sure you select an Activity and Supervisor.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+
+            ShowActivitySupervisorAssign();
+        }
+
+        private void ShowSupervisorsForSpecificActivity()
+        {
+            List<Teacher> teachers = new();
+
+            if (cbRemove.SelectedIndex != -1)
+            {
+                Activities activities = cbRemove.SelectedItem as Activities;
+                SupervisorService supervisorServices = new();
+
+                teachers = supervisorServices.GetSpecificSupervisors(activities);
+                DisplayTeachers(teachers);
+
+                if (teachers.Count <= 0)
+                {
+                    DialogResult result = MessageBox.Show("There are No Supervisors for this Activity. " +
+                                     "Do you want to assign a supervisor for this activity ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        ShowActivitySupervisorAssign();
+                    }
+                    else
+                    {
+                        RemoveButton.Enabled = false;
+                        lvRemove.Show();
+                        RemoveButton.Show();
+                        lblRemoveSupervisor.Show();
+                    }
+                }
+                else 
+                {
+                    lvRemove.Show();
+                    RemoveButton.Show();
+                    lblRemoveSupervisor.Show();
+
+                    RemoveButton.Enabled = true;
+                }
+            }
+            else
+                MessageBox.Show("Please select an Activity.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+        }
+
+        public void DeleteSupervisor()
+        {
+            DialogResult result = MessageBox.Show("Are you sure you wish to remove this supervisor?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Activities activities = cbRemove.SelectedItem as Activities;
+
+                SupervisorService supervisorServices = new SupervisorService();
+                supervisorServices.DeleteSupervisor(activities);
+
+                ShowActivitySupervisorRemove();
+
+            }
+
+        }
+
+        // Click Events
+        private void ShowSupervisorButton_Click(object sender, EventArgs e)
+        {
+            ShowSupervisorsForSpecificActivity();
+        }
+
+        private void MainAssignButton_Click(object sender, EventArgs e)
+        {
+            ShowActivitySupervisorAssign();
+        }
+
+        private void MainRemoveButton_Click(object sender, EventArgs e)
+        {
+            ShowActivitySupervisorRemove();
+        }
+
+        private void AssignButton_Click(object sender, EventArgs e)
+        {
+            assignSupervisor();
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            DeleteSupervisor();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            ShowActivitySupervisor();
+        }
+
+        private void activitySupervisorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitySupervisor();
+        }
+        // End Mohamed Opdracht 4
     }
 }
