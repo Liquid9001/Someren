@@ -114,7 +114,7 @@ namespace SomerenUI
             lvSelectActivity.Items.Clear();
             cbRemove.Items.Clear();
 
-            foreach (Activities activity in activities) 
+            foreach (Activities activity in activities)
             {
                 ListViewItem item = new ListViewItem(activity.Activity);
                 item.SubItems.Add(activity.dateTime.ToString("dd/MM/yyyy"));
@@ -564,7 +564,7 @@ namespace SomerenUI
         }
 
         // Show And Hide
-        private void ShowActivitySupervisor() 
+        private void ShowActivitySupervisor()
         {
             lblActivitySupervisor.Location = new Point(16, 14);
 
@@ -776,7 +776,7 @@ namespace SomerenUI
                         lblRemoveSupervisor.Show();
                     }
                 }
-                else 
+                else
                 {
                     lvRemove.Show();
                     RemoveButton.Show();
