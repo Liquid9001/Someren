@@ -32,6 +32,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlParticipants.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -46,6 +47,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlParticipants.Hide();
 
             // show students
             pnlStudents.Show();
@@ -71,6 +73,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlParticipants.Hide();
 
 
             // show dashboard
@@ -120,6 +123,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlParticipants.Hide();
 
             pnlRooms.Show();
 
@@ -156,6 +160,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlParticipants.Hide();
             // show teachers
             pnlTeacher.Show();
 
@@ -190,6 +195,7 @@ namespace SomerenUI
             pnlTeacher.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlParticipants.Hide();
             // show drinks
             pnlDrinks.Show();
 
@@ -289,6 +295,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlDrinks.Hide();
             pnlRevRepo.Hide();
+            pnlParticipants.Hide();
 
             // show Cash Register panel
             pnlCashRegister.Show();
@@ -337,6 +344,84 @@ namespace SomerenUI
                 li.SubItems.Add(drink.Stock.ToString());
                 li.Tag = drink;   // link student object to listview item
                 listViewDrinks.Items.Add(li);
+            }
+        }
+
+        private void ShowParticipantsPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+            pnlTeacher.Hide();
+            // shows participants
+            pnlParticipants.Show();
+
+            try
+            {
+                // get and display all participants
+                List<Participants> participants = GetParticipants();
+                DisplayParticipants(participants);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the particiants: " + e.Message);
+            }
+        }
+
+        private List<Participants> GetParticipants()
+        {
+            ParticipantsService participantsService = new ParticipantsService();
+            List<Participants> participants = participantsService.GetParticipants();
+            return participants;
+        }
+        private void DisplayParticipants(List<Participants> participants)
+        {
+            listViewParticipants.Items.Clear();
+
+            foreach (Participants participant in participants)
+            {
+                ListViewItem li = new ListViewItem(participant.ActivityId.ToString());
+                li.SubItems.Add(participant.Activity);
+                li.Tag = participant;
+                listViewParticipants.Items.Add(li);
+            }
+        }
+        private void ShowStudentsParticipating()
+        {
+
+            try
+            {
+                // get and display all participants
+                List<StudentParticipating> participants = GetParticipatingStudents();
+                DisplayParticipating(participants);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the particiants: " + e.Message);
+            }
+        }
+        private List<StudentParticipating> GetParticipatingStudents()
+        {
+            StudentParticipatingService participatingService = new StudentParticipatingService();
+            List<StudentParticipating> participants = participatingService.GetAllParticipatingStudents();
+            return participants;
+        }
+        private void DisplayParticipating(List<StudentParticipating> studentsParticipating)
+        {
+            listViewParticipatingStudents.Items.Clear();
+
+            foreach (StudentParticipating participant in studentsParticipating)
+            {
+                ListViewItem li = new ListViewItem(participant.StudentId.ToString());
+                li.SubItems.Add(participant.FirstName);
+                li.SubItems.Add(participant.LastName);
+                li.Tag = participant;
+                listViewParticipatingStudents.Items.Add(li);
             }
         }
 
@@ -537,6 +622,28 @@ namespace SomerenUI
             List<Drink> drinks = drinkOrderService.CollectDrinks();
             return drinks;
 
+        }
+
+        private void participantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowParticipantsPanel();
+
+        }
+
+        private void pnlParticipants_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewParticipants_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+        private void listViewParticipants_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowStudentsParticipating();
         }
     }
 }
