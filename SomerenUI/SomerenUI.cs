@@ -322,6 +322,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlSupervisor.Hide();
             pnlRevRepo.Hide();
+            pnlListOfActivitys.Hide();
 
             // show Cash Register panel
             pnlCashRegister.Show();
