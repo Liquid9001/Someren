@@ -579,6 +579,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             BackButton.Hide();
             pnlDashboard.Hide();
+            pnlListOfActivitys.Hide();
 
             // Hide assign
             lblAssignedSupervisor.Hide();
@@ -619,6 +620,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlListOfActivitys.Hide();
 
             // hide Remove/Main
             lblSelectActivityCb.Hide();
@@ -675,6 +677,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlListOfActivitys.Hide();
 
             // hide assign/main
             lblAssignedSupervisor.Hide();

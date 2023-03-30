@@ -54,6 +54,7 @@
             CashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             RevenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             activitySupervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            listOfActivitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pnlDashboard = new System.Windows.Forms.Panel();
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
@@ -148,8 +149,7 @@
             MainAssignButton = new System.Windows.Forms.Button();
             lblMainRemove = new System.Windows.Forms.Label();
             lblMainAssign = new System.Windows.Forms.Label();
-            listOfActivitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ListOfActivitysPanel = new System.Windows.Forms.Panel();
+            pnlListOfActivitys = new System.Windows.Forms.Panel();
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -382,6 +382,12 @@
             activitySupervisorsToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             activitySupervisorsToolStripMenuItem.Text = "Activity Supervisors";
             activitySupervisorsToolStripMenuItem.Click += activitySupervisorsToolStripMenuItem_Click;
+            // 
+            // listOfActivitiesToolStripMenuItem
+            // 
+            listOfActivitiesToolStripMenuItem.Name = "listOfActivitiesToolStripMenuItem";
+            listOfActivitiesToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            listOfActivitiesToolStripMenuItem.Text = "List of Activities";
             // 
             // pnlDashboard
             // 
@@ -1122,35 +1128,29 @@
             lblMainAssign.Text = "Assign Supervisor\r\nto Activity";
             lblMainAssign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listOfActivitiesToolStripMenuItem
+            // pnlListOfActivitys
             // 
-            listOfActivitiesToolStripMenuItem.Name = "listOfActivitiesToolStripMenuItem";
-            listOfActivitiesToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            listOfActivitiesToolStripMenuItem.Text = "List of Activities";
-            // 
-            // ListOfActivitysPanel
-            // 
-            ListOfActivitysPanel.Location = new System.Drawing.Point(10, 27);
-            ListOfActivitysPanel.Name = "ListOfActivitysPanel";
-            ListOfActivitysPanel.Size = new System.Drawing.Size(951, 469);
-            ListOfActivitysPanel.TabIndex = 1;
+            pnlListOfActivitys.Location = new System.Drawing.Point(10, 27);
+            pnlListOfActivitys.Name = "pnlListOfActivitys";
+            pnlListOfActivitys.Size = new System.Drawing.Size(951, 469);
+            pnlListOfActivitys.TabIndex = 1;
             // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(973, 508);
-            Controls.Add(ListOfActivitysPanel);
+            Controls.Add(pnlListOfActivitys);
             Controls.Add(pnlDashboard);
             Controls.Add(pnlActivities);
             Controls.Add(pnlRooms);
             Controls.Add(pnlTeacher);
             Controls.Add(pnlDrinks);
+            Controls.Add(pnlSupervisor);
             Controls.Add(pnlVAT);
             Controls.Add(pnlCashRegister);
             Controls.Add(pnlStudents);
             Controls.Add(menuStrip1);
-            Controls.Add(pnlSupervisor);
             Controls.Add(pnlRevRepo);
             MainMenuStrip = menuStrip1;
             Name = "SomerenUI";
@@ -1394,6 +1394,6 @@
         private System.Windows.Forms.Label lblSelectActivityCb;
         private System.Windows.Forms.ColumnHeader SupervisorFullName;
         private System.Windows.Forms.ToolStripMenuItem listOfActivitiesToolStripMenuItem;
-        private System.Windows.Forms.Panel ListOfActivitysPanel;
+        private System.Windows.Forms.Panel pnlListOfActivitys;
     }
 }
