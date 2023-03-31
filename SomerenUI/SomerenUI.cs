@@ -30,6 +30,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -45,6 +46,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
             // show students
             pnlStudents.Show();
@@ -71,6 +73,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
 
             // show dashboard
@@ -135,6 +138,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
             pnlRooms.Show();
 
@@ -172,6 +176,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
             // show teachers
             pnlTeacher.Show();
@@ -221,6 +226,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
             // show drinks
             pnlDrinks.Show();
@@ -323,6 +329,7 @@ namespace SomerenUI
             pnlSupervisor.Hide();
             pnlRevRepo.Hide();
             pnlListOfActivitys.Hide();
+            pnlParticipants.Hide();
 
             // show Cash Register panel
             pnlCashRegister.Show();
@@ -373,7 +380,87 @@ namespace SomerenUI
                 listViewDrinks.Items.Add(li);
             }
         }
+        private void ShowParticipantsPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlDrinks.Hide();
+            pnlCashRegister.Hide();
+            pnlVAT.Hide();
+            pnlTeacher.Hide();
+            pnlListOfActivitys.Hide();
+            pnlRevRepo.Hide();
+            pnlSupervisor.Hide();
 
+            // shows participants
+            pnlParticipants.Show();
+
+            try
+            {
+                // get and display all participants
+                List<Participants> participants = GetParticipants();
+                DisplayParticipants(participants);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the particiants: " + e.Message);
+            }
+        }
+
+        private List<Participants> GetParticipants()
+        {
+            ParticipantsService participantsService = new ParticipantsService();
+            List<Participants> participants = participantsService.GetParticipants();
+            return participants;
+        }
+        private void DisplayParticipants(List<Participants> participants)
+        {
+            listViewParticipants.Items.Clear();
+
+            foreach (Participants participant in participants)
+            {
+                ListViewItem li = new ListViewItem(participant.ActivityId.ToString());
+                li.SubItems.Add(participant.Activity);
+                li.Tag = participant;
+                listViewParticipants.Items.Add(li);
+            }
+        }
+        private void ShowStudentsParticipating()
+        {
+
+            try
+            {
+                // get and display all participants
+                List<StudentParticipating> participants = GetParticipatingStudents();
+                DisplayParticipating(participants);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the particiants: " + e.Message);
+            }
+        }
+        private List<StudentParticipating> GetParticipatingStudents()
+        {
+            StudentParticipatingService participatingService = new StudentParticipatingService();
+            List<StudentParticipating> participants = participatingService.GetAllParticipatingStudents();
+            return participants;
+        }
+        private void DisplayParticipating(List<StudentParticipating> studentsParticipating)
+        {
+            listViewParticipatingStudents.Items.Clear();
+
+            foreach (StudentParticipating participant in studentsParticipating)
+            {
+                ListViewItem li = new ListViewItem(participant.StudentId.ToString());
+                li.SubItems.Add(participant.FirstName);
+                li.SubItems.Add(participant.LastName);
+                li.Tag = participant;
+                listViewParticipatingStudents.Items.Add(li);
+            }
+        }
         private void dashboardToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ShowDashboardPanel();
@@ -422,6 +509,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlCashRegister.Hide();
             pnlSupervisor.Hide();
+            pnlParticipants.Hide();
 
             pnlRevRepo.Show();
 
@@ -452,6 +540,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlRevRepo.Hide();
             pnlCashRegister.Hide();
+            pnlParticipants.Hide();
 
             pnlVAT.Show();
 
@@ -581,6 +670,7 @@ namespace SomerenUI
             BackButton.Hide();
             pnlDashboard.Hide();
             pnlListOfActivitys.Hide();
+            pnlParticipants.Hide();
 
             // Hide assign
             lblAssignedSupervisor.Hide();
@@ -622,6 +712,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlListOfActivitys.Hide();
+            pnlParticipants.Hide();
 
             // hide Remove/Main
             lblSelectActivityCb.Hide();
@@ -679,6 +770,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlVAT.Hide();
             pnlListOfActivitys.Hide();
+            pnlParticipants.Hide();
 
             // hide assign/main
             lblAssignedSupervisor.Hide();
@@ -846,5 +938,20 @@ namespace SomerenUI
             ShowActivitySupervisor();
         }
         // End Mohamed Opdracht 4
+        private void participantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowParticipantsPanel();
+            ShowStudentsParticipating();
+        }
+
+        private void listViewParticipants_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /* ShowStudentsParticipating();*/
+        }
+
+        private void listViewParticipatingStudents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
