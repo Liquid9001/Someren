@@ -151,10 +151,17 @@
             lblMainRemove = new System.Windows.Forms.Label();
             lblMainAssign = new System.Windows.Forms.Label();
             pnlListOfActivitys = new System.Windows.Forms.Panel();
-            dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            NameTextBox = new System.Windows.Forms.TextBox();
+            EndDateLabel = new System.Windows.Forms.Label();
+            StartDateLabel = new System.Windows.Forms.Label();
+            DeleteButton = new System.Windows.Forms.Button();
+            UpdateButton = new System.Windows.Forms.Button();
+            AddButton = new System.Windows.Forms.Button();
+            label2 = new System.Windows.Forms.Label();
+            EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            NameActivityTextBox = new System.Windows.Forms.TextBox();
             ActivtyListLabel = new System.Windows.Forms.Label();
-            listView1 = new System.Windows.Forms.ListView();
+            ActivitiesListView = new System.Windows.Forms.ListView();
             ActivtyID = new System.Windows.Forms.ColumnHeader();
             NameActivity = new System.Windows.Forms.ColumnHeader();
             StartDateActivity = new System.Windows.Forms.ColumnHeader();
@@ -413,6 +420,7 @@
             listOfActivitiesToolStripMenuItem.Name = "listOfActivitiesToolStripMenuItem";
             listOfActivitiesToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
             listOfActivitiesToolStripMenuItem.Text = "List of Activities";
+            listOfActivitiesToolStripMenuItem.Click += listOfActivitiesToolStripMenuItem_Click;
             // 
             // participantsToolStripMenuItem
             // 
@@ -1162,28 +1170,108 @@
             // 
             // pnlListOfActivitys
             // 
-            pnlListOfActivitys.Controls.Add(dateTimePicker1);
-            pnlListOfActivitys.Controls.Add(NameTextBox);
+            pnlListOfActivitys.Controls.Add(EndDateLabel);
+            pnlListOfActivitys.Controls.Add(StartDateLabel);
+            pnlListOfActivitys.Controls.Add(DeleteButton);
+            pnlListOfActivitys.Controls.Add(UpdateButton);
+            pnlListOfActivitys.Controls.Add(AddButton);
+            pnlListOfActivitys.Controls.Add(label2);
+            pnlListOfActivitys.Controls.Add(EndDateTimePicker);
+            pnlListOfActivitys.Controls.Add(StartDateTimePicker);
+            pnlListOfActivitys.Controls.Add(NameActivityTextBox);
             pnlListOfActivitys.Controls.Add(ActivtyListLabel);
-            pnlListOfActivitys.Controls.Add(listView1);
+            pnlListOfActivitys.Controls.Add(ActivitiesListView);
             pnlListOfActivitys.Location = new System.Drawing.Point(10, 27);
             pnlListOfActivitys.Name = "pnlListOfActivitys";
             pnlListOfActivitys.Size = new System.Drawing.Size(951, 469);
             pnlListOfActivitys.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // EndDateLabel
             // 
-            dateTimePicker1.Location = new System.Drawing.Point(700, 157);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new System.Drawing.Size(196, 23);
-            dateTimePicker1.TabIndex = 3;
+            EndDateLabel.AutoSize = true;
+            EndDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            EndDateLabel.Location = new System.Drawing.Point(538, 202);
+            EndDateLabel.Name = "EndDateLabel";
+            EndDateLabel.Size = new System.Drawing.Size(126, 21);
+            EndDateLabel.TabIndex = 10;
+            EndDateLabel.Text = "End date activity:";
             // 
-            // NameTextBox
+            // StartDateLabel
             // 
-            NameTextBox.Location = new System.Drawing.Point(700, 106);
-            NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new System.Drawing.Size(196, 23);
-            NameTextBox.TabIndex = 2;
+            StartDateLabel.AutoSize = true;
+            StartDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            StartDateLabel.Location = new System.Drawing.Point(537, 159);
+            StartDateLabel.Name = "StartDateLabel";
+            StartDateLabel.Size = new System.Drawing.Size(132, 21);
+            StartDateLabel.TabIndex = 9;
+            StartDateLabel.Text = "Start date activity:";
+            // 
+            // DeleteButton
+            // 
+            DeleteButton.Location = new System.Drawing.Point(772, 388);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new System.Drawing.Size(115, 63);
+            DeleteButton.TabIndex = 8;
+            DeleteButton.Text = "Delete";
+            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
+            // 
+            // UpdateButton
+            // 
+            UpdateButton.Location = new System.Drawing.Point(633, 388);
+            UpdateButton.Name = "UpdateButton";
+            UpdateButton.Size = new System.Drawing.Size(115, 63);
+            UpdateButton.TabIndex = 7;
+            UpdateButton.Text = "Update";
+            UpdateButton.UseVisualStyleBackColor = true;
+            UpdateButton.Click += UpdateButton_Click;
+            // 
+            // AddButton
+            // 
+            AddButton.Location = new System.Drawing.Point(498, 388);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new System.Drawing.Size(115, 63);
+            AddButton.TabIndex = 6;
+            AddButton.Text = "ADD";
+            AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(538, 108);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(126, 21);
+            label2.TabIndex = 5;
+            label2.Text = "Name of activity:";
+            // 
+            // EndDateTimePicker
+            // 
+            EndDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+            EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            EndDateTimePicker.Location = new System.Drawing.Point(700, 200);
+            EndDateTimePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            EndDateTimePicker.Name = "EndDateTimePicker";
+            EndDateTimePicker.Size = new System.Drawing.Size(196, 23);
+            EndDateTimePicker.TabIndex = 4;
+            // 
+            // StartDateTimePicker
+            // 
+            StartDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+            StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            StartDateTimePicker.Location = new System.Drawing.Point(700, 157);
+            StartDateTimePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            StartDateTimePicker.Name = "StartDateTimePicker";
+            StartDateTimePicker.Size = new System.Drawing.Size(196, 23);
+            StartDateTimePicker.TabIndex = 3;
+            // 
+            // NameActivityTextBox
+            // 
+            NameActivityTextBox.Location = new System.Drawing.Point(700, 110);
+            NameActivityTextBox.Name = "NameActivityTextBox";
+            NameActivityTextBox.Size = new System.Drawing.Size(196, 23);
+            NameActivityTextBox.TabIndex = 2;
             // 
             // ActivtyListLabel
             // 
@@ -1195,15 +1283,17 @@
             ActivtyListLabel.TabIndex = 1;
             ActivtyListLabel.Text = "List Of Activity's";
             // 
-            // listView1
+            // ActivitiesListView
             // 
-            listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { ActivtyID, NameActivity, StartDateActivity, EndDateActivity });
-            listView1.Location = new System.Drawing.Point(20, 77);
-            listView1.Name = "listView1";
-            listView1.Size = new System.Drawing.Size(448, 374);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = System.Windows.Forms.View.Details;
+            ActivitiesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { ActivtyID, NameActivity, StartDateActivity, EndDateActivity });
+            ActivitiesListView.FullRowSelect = true;
+            ActivitiesListView.Location = new System.Drawing.Point(20, 77);
+            ActivitiesListView.Name = "ActivitiesListView";
+            ActivitiesListView.Size = new System.Drawing.Size(448, 374);
+            ActivitiesListView.TabIndex = 0;
+            ActivitiesListView.UseCompatibleStateImageBehavior = false;
+            ActivitiesListView.View = System.Windows.Forms.View.Details;
+            ActivitiesListView.SelectedIndexChanged += ActivitiesListView_SelectedIndexChanged;
             // 
             // ActivtyID
             // 
@@ -1614,13 +1704,20 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.DateTimePicker StartDateTimePicker;
+        private System.Windows.Forms.TextBox NameActivityTextBox;
         private System.Windows.Forms.Label ActivtyListLabel;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView ActivitiesListView;
         private System.Windows.Forms.ColumnHeader ActivtyID;
         private System.Windows.Forms.ColumnHeader NameActivity;
         private System.Windows.Forms.ColumnHeader StartDateActivity;
         private System.Windows.Forms.ColumnHeader EndDateActivity;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker EndDateTimePicker;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Label EndDateLabel;
+        private System.Windows.Forms.Label StartDateLabel;
     }
 }

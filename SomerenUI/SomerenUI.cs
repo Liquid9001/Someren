@@ -376,7 +376,7 @@ namespace SomerenUI
                 li.SubItems.Add(drink.DrinkName);
                 li.SubItems.Add(drink.Price.ToString());
                 li.SubItems.Add(drink.Stock.ToString());
-                li.Tag = drink;   // link student object to listview item
+                li.Tag = drink;   // link drink object to listview item
                 listViewDrinks.Items.Add(li);
             }
         }
@@ -902,6 +902,68 @@ namespace SomerenUI
 
         }
 
+        private void ShowListOfActivities()
+        {
+            //hide other panels
+            pnlActivities.Hide();
+            pnlCashRegister.Hide();
+            pnlDashboard.Hide();
+            pnlDrinks.Hide();
+            pnlParticipants.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlStudents.Hide();
+            pnlSupervisor.Hide();
+            pnlTeacher.Hide();
+            pnlVAT.Hide();
+
+            //show list of activities panel
+            pnlListOfActivitys.Show();
+
+            try
+            {
+                // get and display all activities
+                List<Activities> activities = GetListOfActivities();
+                ActivitiesDisplay(activities);
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+
+
+
+        }
+
+
+
+        // adds students to a listview
+        private void ActivitiesDisplay(List<Activities> activities)
+        {
+            // clear the listview items before filling it
+            ActivitiesListView.Items.Clear();
+
+            foreach (Activities activity in activities)
+            {
+                ListViewItem li = new ListViewItem(activity.activityId.ToString());
+                li.SubItems.Add(activity.Activity);
+                li.SubItems.Add(activity.dateTime.ToString());
+                li.SubItems.Add(activity.EndDateTime.ToString());
+                li.Tag = activity;   // link student object to listview item
+                ActivitiesListView.Items.Add(li);
+
+            }
+        }
+
+        private List<Activities> GetListOfActivities()
+        {
+            ListOfActivitiesService ListOfActivitiesService = new ListOfActivitiesService();
+            List<Activities> activities = ListOfActivitiesService.GetActivities();
+            return activities;
+        }
+
+
         // Click Events
         private void ShowSupervisorButton_Click(object sender, EventArgs e)
         {
@@ -951,6 +1013,71 @@ namespace SomerenUI
 
         private void listViewParticipatingStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void listOfActivitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowListOfActivities();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            Activities activitie = new Activities();
+            ListOfActivitiesService ListOfActivitiesService = new ListOfActivitiesService();
+
+            activitie.Activity = NameActivityTextBox.Text;
+            activitie.dateTime = StartDateTimePicker.Value;
+            activitie.EndDateTime = EndDateTimePicker.Value;
+
+            ListOfActivitiesService.AddActivity(activitie);
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ActivitiesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListViewItem selectedItem = ActivitiesListView.SelectedItems[0];
+
+
+
+            /* ListViewItem selectedItem = lvSelectActivity.SelectedItems[0];
+         activities = selectedItem.Tag as Activities;*/
+
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure that you wish to remove this activity?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (result == DialogResult.Yes) 
+            {
+                try
+                {
+                    ListOfActivitiesService listOfActivitiesService = new ListOfActivitiesService();
+                    Activities activities = new Activities();
+                    if (ActivitiesListView.SelectedItems.Count == 0)
+                    {
+                        return;
+                    }
+                    ListViewItem activitie = ActivitiesListView.SelectedItems[0];
+                    foreach (ListViewItem activity in ActivitiesListView.SelectedItems)
+                    {
+                        activities.activityId = int.Parse(activitie.Text);
+                        listOfActivitiesService.DeleteActivity(activities);
+                    }
+                    List<Activities> activitys = GetListOfActivities();
+                    ActivitiesDisplay(activitys);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something went Wrong " + ex);
+                    throw;
+                }
+            }
 
         }
     }
