@@ -114,7 +114,7 @@ namespace SomerenUI
             lvSelectActivity.Items.Clear();
             cbRemove.Items.Clear();
 
-            foreach (Activities activity in activities) 
+            foreach (Activities activity in activities)
             {
                 ListViewItem item = new ListViewItem(activity.Activity);
                 item.SubItems.Add(activity.dateTime.ToString("dd/MM/yyyy"));
@@ -322,6 +322,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlSupervisor.Hide();
             pnlRevRepo.Hide();
+            pnlListOfActivitys.Hide();
 
             // show Cash Register panel
             pnlCashRegister.Show();
@@ -564,7 +565,7 @@ namespace SomerenUI
         }
 
         // Show And Hide
-        private void ShowActivitySupervisor() 
+        private void ShowActivitySupervisor()
         {
             lblActivitySupervisor.Location = new Point(16, 14);
 
@@ -579,6 +580,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             BackButton.Hide();
             pnlDashboard.Hide();
+            pnlListOfActivitys.Hide();
 
             // Hide assign
             lblAssignedSupervisor.Hide();
@@ -619,6 +621,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlListOfActivitys.Hide();
 
             // hide Remove/Main
             lblSelectActivityCb.Hide();
@@ -675,6 +678,7 @@ namespace SomerenUI
             pnlDrinks.Hide();
             pnlCashRegister.Hide();
             pnlVAT.Hide();
+            pnlListOfActivitys.Hide();
 
             // hide assign/main
             lblAssignedSupervisor.Hide();
@@ -776,7 +780,7 @@ namespace SomerenUI
                         lblRemoveSupervisor.Show();
                     }
                 }
-                else 
+                else
                 {
                     lvRemove.Show();
                     RemoveButton.Show();

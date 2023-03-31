@@ -30,7 +30,7 @@ namespace SomerenDAL
         //this method collects drinks for drinkorder signed by Enes
         public List<Drink> CollectAllDrinks()
         {
-            string query = "SELECT DrinkId, Drinkname, Stock, Price FROM [Drink] WHERE Stock > 1";
+            string query = "SELECT DrinkId, Drinkname, Stock, Price FROM [Drink]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
