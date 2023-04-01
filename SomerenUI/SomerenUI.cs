@@ -2,6 +2,7 @@ using SomerenModel;
 using SomerenService;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -376,7 +377,7 @@ namespace SomerenUI
                 li.SubItems.Add(drink.DrinkName);
                 li.SubItems.Add(drink.Price.ToString());
                 li.SubItems.Add(drink.Stock.ToString());
-                li.Tag = drink;   // link student object to listview item
+                li.Tag = drink;   // link drink object to listview item
                 listViewDrinks.Items.Add(li);
             }
         }
@@ -902,6 +903,67 @@ namespace SomerenUI
 
         }
 
+        private void ShowListOfActivities()
+        {
+            //hide other panels
+            pnlActivities.Hide();
+            pnlCashRegister.Hide();
+            pnlDashboard.Hide();
+            pnlDrinks.Hide();
+            pnlParticipants.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlStudents.Hide();
+            pnlSupervisor.Hide();
+            pnlTeacher.Hide();
+            pnlVAT.Hide();
+
+            //show list of activities panel
+            pnlListOfActivitys.Show();
+
+            try
+            {
+                // get and display all activities
+                List<Activities> activities = GetListOfActivities();
+                ActivitiesDisplay(activities);
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+
+
+        }
+
+
+
+        // adds activities to a listview
+        private void ActivitiesDisplay(List<Activities> activities)
+        {
+            // clear the listview items before filling it
+            ActivitiesListView.Items.Clear();
+
+            foreach (Activities activity in activities)
+            {
+                ListViewItem li = new ListViewItem(activity.activityId.ToString());
+                li.SubItems.Add(activity.Activity);
+                li.SubItems.Add(activity.dateTime.ToString());
+                li.SubItems.Add(activity.EndDateTime.ToString());
+                li.Tag = activity;   // link activities object to listview item
+                ActivitiesListView.Items.Add(li);
+
+            }
+        }
+
+        private List<Activities> GetListOfActivities()
+        {
+            ListOfActivitiesService ListOfActivitiesService = new ListOfActivitiesService();
+            List<Activities> activities = ListOfActivitiesService.GetActivities();
+            return activities;
+        }
+
+
         // Click Events
         private void ShowSupervisorButton_Click(object sender, EventArgs e)
         {
@@ -952,6 +1014,143 @@ namespace SomerenUI
         private void listViewParticipatingStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listOfActivitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowListOfActivities();
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            Activities activitie = new Activities();
+            ListOfActivitiesService ListOfActivitiesService = new ListOfActivitiesService();
+
+            if (ValidateDates(StartDateTimePicker.Value, EndDateTimePicker.Value) && ValidatActivtyNames())
+            {
+                activitie.Activity = NameActivityTextBox.Text;
+                activitie.dateTime = StartDateTimePicker.Value;
+                activitie.EndDateTime = EndDateTimePicker.Value;
+
+                ListOfActivitiesService.AddActivity(activitie);
+            }
+
+            List<Activities> activities = GetListOfActivities();
+            ActivitiesDisplay(activities);
+
+        }
+
+        private bool ValidatActivtyNames()
+        {
+            //loops true the list and looks for the same name in the tekst
+            //Enes
+            foreach (ListViewItem item in ActivitiesListView.Items)
+            {
+                if (item.SubItems[1].Text == NameActivityTextBox.Text)
+                {
+                    MessageBox.Show("Make sure you Enter a unique activity name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            Activities activity = new Activities();
+            ListOfActivitiesService listOfActivitiesService = new ListOfActivitiesService();
+            if (ActivitiesListView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ActivitiesListView.SelectedItems[0];
+
+                activity.activityId = int.Parse(selectedItem.Text);
+                activity.Activity = NameActivityTextBox.Text;
+
+                if (ValidateDates(StartDateTimePicker.Value, EndDateTimePicker.Value))
+                {
+                    activity.dateTime = StartDateTimePicker.Value;
+                    activity.EndDateTime = EndDateTimePicker.Value;
+                    listOfActivitiesService.UpdateActivity(activity);
+                }
+
+                List<Activities> activities = GetListOfActivities();
+                ActivitiesDisplay(activities);
+
+            }
+            else
+            {
+                MessageBox.Show("Make sure you have selected an Activity", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool ValidateDates(DateTime startDateTime, DateTime endDateTime)
+        {
+            if (startDateTime < DateTime.Now || endDateTime < DateTime.Now)
+            {
+                MessageBox.Show("Make sure you select a date in the future", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (startDateTime > endDateTime)
+            {
+                MessageBox.Show("It's not posible to End an activity before you start it", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private void ActivitiesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //adds the activity name to the textbox and adds start - end date to there respective places
+            //for the user to see
+            if (ActivitiesListView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ActivitiesListView.SelectedItems[0];
+                NameActivityTextBox.Text = selectedItem.SubItems[1].Text;
+                StartDateTimePicker.Value = DateTime.Parse(selectedItem.SubItems[2].Text);
+                EndDateTimePicker.Value = DateTime.Parse(selectedItem.SubItems[3].Text);
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            //checks if user has selected an activity
+            if (ActivitiesListView.SelectedItems.Count == 0 || ActivitiesListView.SelectedItems.Count > 0)
+            {
+                MessageBox.Show("Make sure you select an activity you want to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure that you wish to remove this activity?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteActivity();
+                }
+            }
+        }
+
+        private void DeleteActivity()
+        {
+            try
+            {
+                ListOfActivitiesService listOfActivitiesService = new ListOfActivitiesService();
+                Activities activities = new Activities();
+                if (ActivitiesListView.SelectedItems.Count == 0)
+                {
+                    return;
+                }
+                ListViewItem activitie = ActivitiesListView.SelectedItems[0];
+                activities.activityId = int.Parse(activitie.Text);
+                listOfActivitiesService.DeleteActivity(activities);
+
+                List<Activities> activitys = GetListOfActivities();
+                ActivitiesDisplay(activitys);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went Wrong " + ex);
+                throw;
+            }
         }
     }
 }
