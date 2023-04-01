@@ -1251,7 +1251,7 @@
             EndDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             EndDateTimePicker.Location = new System.Drawing.Point(700, 200);
-            EndDateTimePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            EndDateTimePicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             EndDateTimePicker.Name = "EndDateTimePicker";
             EndDateTimePicker.Size = new System.Drawing.Size(196, 23);
             EndDateTimePicker.TabIndex = 4;
@@ -1261,7 +1261,7 @@
             StartDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             StartDateTimePicker.Location = new System.Drawing.Point(700, 157);
-            StartDateTimePicker.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            StartDateTimePicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             StartDateTimePicker.Name = "StartDateTimePicker";
             StartDateTimePicker.Size = new System.Drawing.Size(196, 23);
             StartDateTimePicker.TabIndex = 3;
@@ -1288,6 +1288,7 @@
             ActivitiesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { ActivtyID, NameActivity, StartDateActivity, EndDateActivity });
             ActivitiesListView.FullRowSelect = true;
             ActivitiesListView.Location = new System.Drawing.Point(20, 77);
+            ActivitiesListView.MultiSelect = false;
             ActivitiesListView.Name = "ActivitiesListView";
             ActivitiesListView.Size = new System.Drawing.Size(448, 374);
             ActivitiesListView.TabIndex = 0;
@@ -1430,9 +1431,9 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(973, 508);
+            Controls.Add(pnlDashboard);
             Controls.Add(pnlListOfActivitys);
             Controls.Add(pnlParticipants);
-            Controls.Add(pnlDashboard);
             Controls.Add(pnlActivities);
             Controls.Add(pnlRooms);
             Controls.Add(pnlTeacher);

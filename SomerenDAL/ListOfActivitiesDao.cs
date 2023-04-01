@@ -65,7 +65,7 @@ namespace SomerenDAL
 
         public void UpdateActivity(Activities activities)
         {
-            string querry = "UPDATE Activity SET (ActivityId=@ActivityId, [Name]=@Name, StartTimeActivity=@StartTimeActivity, EndTimeActivity=@EndTimeActivity)";
+            string querry = "UPDATE Activity SET [Name]=@Name, StartTimeActivity=@StartTimeActivity, EndTimeActivity=@EndTimeActivity WHERE ActivityId=@ActivityId";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("@ActivityId",activities.activityId),
