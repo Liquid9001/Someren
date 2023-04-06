@@ -98,7 +98,12 @@
             pnlDrinks = new System.Windows.Forms.Panel();
             buttonUpdateDrink = new System.Windows.Forms.Button();
             dataGridViewDrinks = new System.Windows.Forms.DataGridView();
-            Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            idDataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            tokenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            drinkBindingSource2 = new System.Windows.Forms.BindingSource(components);
             drinkBindingSource = new System.Windows.Forms.BindingSource(components);
             drinkBindingSource1 = new System.Windows.Forms.BindingSource(components);
             pnlRevRepo = new System.Windows.Forms.Panel();
@@ -152,7 +157,17 @@
             lblMainAssign = new System.Windows.Forms.Label();
             pnlListOfActivitys = new System.Windows.Forms.Panel();
             pnlParticipants = new System.Windows.Forms.Panel();
+            labelAddParticipant = new System.Windows.Forms.Label();
+            labelRemoveParticipant = new System.Windows.Forms.Label();
+            labelListOfStudents = new System.Windows.Forms.Label();
+            labelListOfParticipants = new System.Windows.Forms.Label();
+            labelListOfActivities = new System.Windows.Forms.Label();
             listViewStudentActivity = new System.Windows.Forms.ListView();
+            columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            columnHeader5 = new System.Windows.Forms.ColumnHeader();
             listViewParticipatingStudents = new System.Windows.Forms.ListView();
             id = new System.Windows.Forms.ColumnHeader();
             StudentFirstName = new System.Windows.Forms.ColumnHeader();
@@ -162,9 +177,6 @@
             ActivityName = new System.Windows.Forms.ColumnHeader();
             buttonParticipantsRemove = new System.Windows.Forms.Button();
             buttonParticipantsAdd = new System.Windows.Forms.Button();
-            columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            columnHeader3 = new System.Windows.Forms.ColumnHeader();
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -197,6 +209,7 @@
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).BeginInit();
             pnlDrinks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)drinkBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource1).BeginInit();
             pnlRevRepo.SuspendLayout();
@@ -701,8 +714,8 @@
             // 
             dataGridViewDrinks.AutoGenerateColumns = false;
             dataGridViewDrinks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDrinks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Token });
-            dataGridViewDrinks.DataSource = drinkBindingSource;
+            dataGridViewDrinks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn11, dataGridViewTextBoxColumn20, dataGridViewTextBoxColumn21, dataGridViewTextBoxColumn22, tokenDataGridViewTextBoxColumn });
+            dataGridViewDrinks.DataSource = drinkBindingSource2;
             dataGridViewDrinks.Location = new System.Drawing.Point(0, 0);
             dataGridViewDrinks.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             dataGridViewDrinks.Name = "dataGridViewDrinks";
@@ -711,13 +724,49 @@
             dataGridViewDrinks.Size = new System.Drawing.Size(794, 576);
             dataGridViewDrinks.TabIndex = 0;
             // 
-            // Token
+            // idDataGridViewTextBoxColumn11
             // 
-            Token.DataPropertyName = "Token";
-            Token.HeaderText = "Token";
-            Token.MinimumWidth = 6;
-            Token.Name = "Token";
-            Token.Width = 125;
+            idDataGridViewTextBoxColumn11.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn11.HeaderText = "Id";
+            idDataGridViewTextBoxColumn11.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn11.Name = "idDataGridViewTextBoxColumn11";
+            idDataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            dataGridViewTextBoxColumn20.DataPropertyName = "DrinkName";
+            dataGridViewTextBoxColumn20.HeaderText = "DrinkName";
+            dataGridViewTextBoxColumn20.MinimumWidth = 6;
+            dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            dataGridViewTextBoxColumn20.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            dataGridViewTextBoxColumn21.DataPropertyName = "Stock";
+            dataGridViewTextBoxColumn21.HeaderText = "Stock";
+            dataGridViewTextBoxColumn21.MinimumWidth = 6;
+            dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            dataGridViewTextBoxColumn21.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            dataGridViewTextBoxColumn22.DataPropertyName = "Price";
+            dataGridViewTextBoxColumn22.HeaderText = "Price";
+            dataGridViewTextBoxColumn22.MinimumWidth = 6;
+            dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            dataGridViewTextBoxColumn22.Width = 125;
+            // 
+            // tokenDataGridViewTextBoxColumn
+            // 
+            tokenDataGridViewTextBoxColumn.DataPropertyName = "Token";
+            tokenDataGridViewTextBoxColumn.HeaderText = "Token";
+            tokenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            tokenDataGridViewTextBoxColumn.Name = "tokenDataGridViewTextBoxColumn";
+            tokenDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // drinkBindingSource2
+            // 
+            drinkBindingSource2.DataSource = typeof(SomerenModel.Drink);
             // 
             // pnlRevRepo
             // 
@@ -1180,6 +1229,11 @@
             // 
             // pnlParticipants
             // 
+            pnlParticipants.Controls.Add(labelAddParticipant);
+            pnlParticipants.Controls.Add(labelRemoveParticipant);
+            pnlParticipants.Controls.Add(labelListOfStudents);
+            pnlParticipants.Controls.Add(labelListOfParticipants);
+            pnlParticipants.Controls.Add(labelListOfActivities);
             pnlParticipants.Controls.Add(listViewStudentActivity);
             pnlParticipants.Controls.Add(listViewParticipatingStudents);
             pnlParticipants.Controls.Add(listViewParticipants);
@@ -1190,21 +1244,98 @@
             pnlParticipants.Size = new System.Drawing.Size(1083, 623);
             pnlParticipants.TabIndex = 2;
             // 
+            // labelAddParticipant
+            // 
+            labelAddParticipant.AutoSize = true;
+            labelAddParticipant.Location = new System.Drawing.Point(629, 150);
+            labelAddParticipant.Name = "labelAddParticipant";
+            labelAddParticipant.Size = new System.Drawing.Size(353, 20);
+            labelAddParticipant.TabIndex = 10;
+            labelAddParticipant.Text = "Select an activity and student to add to participants:";
+            // 
+            // labelRemoveParticipant
+            // 
+            labelRemoveParticipant.AutoSize = true;
+            labelRemoveParticipant.Location = new System.Drawing.Point(582, 443);
+            labelRemoveParticipant.Name = "labelRemoveParticipant";
+            labelRemoveParticipant.Size = new System.Drawing.Size(200, 20);
+            labelRemoveParticipant.TabIndex = 9;
+            labelRemoveParticipant.Text = "Select participant to remove:";
+            // 
+            // labelListOfStudents
+            // 
+            labelListOfStudents.AutoSize = true;
+            labelListOfStudents.Location = new System.Drawing.Point(257, 19);
+            labelListOfStudents.Name = "labelListOfStudents";
+            labelListOfStudents.Size = new System.Drawing.Size(119, 20);
+            labelListOfStudents.TabIndex = 8;
+            labelListOfStudents.Text = "List Of Students: ";
+            // 
+            // labelListOfParticipants
+            // 
+            labelListOfParticipants.AutoSize = true;
+            labelListOfParticipants.Location = new System.Drawing.Point(16, 323);
+            labelListOfParticipants.Name = "labelListOfParticipants";
+            labelListOfParticipants.Size = new System.Drawing.Size(138, 20);
+            labelListOfParticipants.TabIndex = 7;
+            labelListOfParticipants.Text = "List Of Participants: ";
+            // 
+            // labelListOfActivities
+            // 
+            labelListOfActivities.AutoSize = true;
+            labelListOfActivities.Location = new System.Drawing.Point(17, 11);
+            labelListOfActivities.Name = "labelListOfActivities";
+            labelListOfActivities.Size = new System.Drawing.Size(118, 20);
+            labelListOfActivities.TabIndex = 6;
+            labelListOfActivities.Text = "List Of Activities:";
+            labelListOfActivities.Click += labelListOfActivities_Click;
+            // 
             // listViewStudentActivity
             // 
-            listViewStudentActivity.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listViewStudentActivity.Location = new System.Drawing.Point(450, 13);
+            listViewStudentActivity.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader4, columnHeader1, columnHeader2, columnHeader3, columnHeader5 });
+            listViewStudentActivity.FullRowSelect = true;
+            listViewStudentActivity.Location = new System.Drawing.Point(16, 352);
+            listViewStudentActivity.MultiSelect = false;
             listViewStudentActivity.Name = "listViewStudentActivity";
-            listViewStudentActivity.Size = new System.Drawing.Size(382, 225);
+            listViewStudentActivity.Size = new System.Drawing.Size(560, 225);
             listViewStudentActivity.TabIndex = 5;
             listViewStudentActivity.UseCompatibleStateImageBehavior = false;
             listViewStudentActivity.View = System.Windows.Forms.View.Details;
+            listViewStudentActivity.SelectedIndexChanged += listViewStudentActivity_SelectedIndexChanged;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Student Id";
+            columnHeader4.Width = 100;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Activity";
+            columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.DisplayIndex = 3;
+            columnHeader2.Text = "First Name";
+            columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.DisplayIndex = 4;
+            columnHeader3.Text = "Last Name";
+            columnHeader3.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.DisplayIndex = 2;
+            columnHeader5.Text = "Activity Id";
+            columnHeader5.Width = 100;
             // 
             // listViewParticipatingStudents
             // 
             listViewParticipatingStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { id, StudentFirstName, StudentLastName });
             listViewParticipatingStudents.FullRowSelect = true;
-            listViewParticipatingStudents.Location = new System.Drawing.Point(17, 292);
+            listViewParticipatingStudents.Location = new System.Drawing.Point(257, 40);
             listViewParticipatingStudents.Name = "listViewParticipatingStudents";
             listViewParticipatingStudents.Size = new System.Drawing.Size(366, 272);
             listViewParticipatingStudents.TabIndex = 4;
@@ -1231,7 +1362,7 @@
             // 
             listViewParticipants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { Activity_ID, ActivityName });
             listViewParticipants.FullRowSelect = true;
-            listViewParticipants.Location = new System.Drawing.Point(17, 13);
+            listViewParticipants.Location = new System.Drawing.Point(16, 40);
             listViewParticipants.Name = "listViewParticipants";
             listViewParticipants.Size = new System.Drawing.Size(209, 272);
             listViewParticipants.TabIndex = 3;
@@ -1251,36 +1382,23 @@
             // 
             // buttonParticipantsRemove
             // 
-            buttonParticipantsRemove.Location = new System.Drawing.Point(969, 111);
+            buttonParticipantsRemove.Location = new System.Drawing.Point(788, 443);
             buttonParticipantsRemove.Name = "buttonParticipantsRemove";
             buttonParticipantsRemove.Size = new System.Drawing.Size(94, 29);
             buttonParticipantsRemove.TabIndex = 2;
             buttonParticipantsRemove.Text = "&Remove";
             buttonParticipantsRemove.UseVisualStyleBackColor = true;
+            buttonParticipantsRemove.Click += buttonParticipantsRemove_Click;
             // 
             // buttonParticipantsAdd
             // 
-            buttonParticipantsAdd.Location = new System.Drawing.Point(969, 60);
+            buttonParticipantsAdd.Location = new System.Drawing.Point(982, 150);
             buttonParticipantsAdd.Name = "buttonParticipantsAdd";
             buttonParticipantsAdd.Size = new System.Drawing.Size(94, 29);
             buttonParticipantsAdd.TabIndex = 1;
             buttonParticipantsAdd.Text = "&Add";
             buttonParticipantsAdd.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Activity";
-            columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "First Name";
-            columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Last Name";
-            columnHeader3.Width = 100;
+            buttonParticipantsAdd.Click += buttonParticipantsAdd_Click;
             // 
             // SomerenUI
             // 
@@ -1288,13 +1406,13 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1112, 677);
             Controls.Add(pnlParticipants);
+            Controls.Add(pnlSupervisor);
+            Controls.Add(pnlDrinks);
             Controls.Add(pnlListOfActivitys);
             Controls.Add(pnlDashboard);
             Controls.Add(pnlActivities);
             Controls.Add(pnlRooms);
             Controls.Add(pnlTeacher);
-            Controls.Add(pnlDrinks);
-            Controls.Add(pnlSupervisor);
             Controls.Add(pnlVAT);
             Controls.Add(pnlCashRegister);
             Controls.Add(pnlStudents);
@@ -1344,6 +1462,7 @@
             ((System.ComponentModel.ISupportInitialize)teacherBindingSource).EndInit();
             pnlDrinks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewDrinks).EndInit();
+            ((System.ComponentModel.ISupportInitialize)drinkBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource1).EndInit();
             pnlRevRepo.ResumeLayout(false);
@@ -1353,6 +1472,7 @@
             pnlSupervisor.ResumeLayout(false);
             pnlSupervisor.PerformLayout();
             pnlParticipants.ResumeLayout(false);
+            pnlParticipants.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1500,7 +1620,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn drinkNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Token;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
@@ -1560,5 +1679,18 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tokenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource drinkBindingSource2;
+        private System.Windows.Forms.Label labelListOfActivities;
+        private System.Windows.Forms.Label labelListOfStudents;
+        private System.Windows.Forms.Label labelListOfParticipants;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label labelAddParticipant;
+        private System.Windows.Forms.Label labelRemoveParticipant;
     }
 }
