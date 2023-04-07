@@ -171,6 +171,8 @@ namespace SomerenUI
             dataGridViewRooms.DataSource = rooms;
 
         }
+
+
         private void ShowTeachersPanel()
         {
             // hide all other panels
@@ -1302,5 +1304,80 @@ namespace SomerenUI
 
         }
 
+
+
+        private void ShowListOfWeeklyTimetable()
+        {
+            //hide other panels
+            pnlActivities.Hide();
+            pnlCashRegister.Hide();
+            pnlDashboard.Hide();
+            pnlDrinks.Hide();
+            pnlParticipants.Hide();
+            pnlRevRepo.Hide();
+            pnlRooms.Hide();
+            pnlStudents.Hide();
+            pnlSupervisor.Hide();
+            pnlTeacher.Hide();
+            pnlVAT.Hide();
+            pnlListOfActivitys.Hide();
+
+            pnlWeeklyTimetable.Show();
+
+            try
+            {
+
+                List<WeeklyTimetable> weeklyTimeTable = GetListOfWeeklyTimetable();
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
+            }
+
+        }
+
+        private List<WeeklyTimetable> GetListOfWeeklyTimetable()
+        {
+            WeeklyTimetableService weeklyTimetableService = new WeeklyTimetableService();
+            List<WeeklyTimetable> weeklyTimetables = weeklyTimetableService.GetActivitiesWeeklyTimetable();
+            return weeklyTimetables;
+
+        }
+        private void pnlWeeklyTimetable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MondayWeeklyTableLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WeeklyTimetabeltextBox_TextChanged(object sender, EventArgs e)
+        {
+            int week = 30;
+                //int.Parse(WeeklyTimetabeltextBox.Text);
+            List<WeeklyTimetable> weeklyTimetables = GetListOfWeeklyTimetable();
+            WeeklyTimetableService Date = new WeeklyTimetableService();
+            
+            List<WeeklyTimetable> weekInformations = Date.GetWeekData(weeklyTimetables, week);
+            weekInformations.Sort();
+
+            
+            if (weekInformations.Count >= 0)
+            {
+                foreach (WeeklyTimetable weekInformation in weekInformations)
+                {
+                    MondayWeeklyTableLabel.Text = $"{weekInformation}";
+
+                }
+            }
+            
+            
+
+            
+        }
     }
 }
