@@ -8,6 +8,8 @@ namespace SomerenModel
 {
     public class ActivityStudent
     {
+        public int ActivityId { get; set; }
+        public int StudentId { get; set; }
         public string ActivityName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
