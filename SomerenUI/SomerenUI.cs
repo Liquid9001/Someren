@@ -33,6 +33,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -49,6 +50,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // show students
             pnlStudents.Show();
@@ -76,6 +78,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
 
             // show dashboard
@@ -141,6 +144,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             pnlRooms.Show();
 
@@ -179,6 +183,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // show teachers
             pnlTeacher.Show();
@@ -229,6 +234,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // show drinks
             pnlDrinks.Show();
@@ -332,6 +338,7 @@ namespace SomerenUI
             pnlRevRepo.Hide();
             pnlListOfActivitys.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // show Cash Register panel
             pnlCashRegister.Show();
@@ -396,6 +403,7 @@ namespace SomerenUI
             pnlListOfActivitys.Hide();
             pnlRevRepo.Hide();
             pnlSupervisor.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // shows Activities
             pnlParticipants.Show();
@@ -547,6 +555,7 @@ namespace SomerenUI
             pnlCashRegister.Hide();
             pnlSupervisor.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             pnlRevRepo.Show();
 
@@ -578,6 +587,7 @@ namespace SomerenUI
             pnlRevRepo.Hide();
             pnlCashRegister.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             pnlVAT.Show();
 
@@ -708,6 +718,7 @@ namespace SomerenUI
             pnlDashboard.Hide();
             pnlListOfActivitys.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // Hide assign
             lblAssignedSupervisor.Hide();
@@ -750,6 +761,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlListOfActivitys.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // hide Remove/Main
             lblSelectActivityCb.Hide();
@@ -808,6 +820,7 @@ namespace SomerenUI
             pnlVAT.Hide();
             pnlListOfActivitys.Hide();
             pnlParticipants.Hide();
+            pnlWeeklyTimetable.Hide();
 
             // hide assign/main
             lblAssignedSupervisor.Hide();
@@ -953,6 +966,7 @@ namespace SomerenUI
             pnlSupervisor.Hide();
             pnlTeacher.Hide();
             pnlVAT.Hide();
+            pnlWeeklyTimetable.Hide();
 
             //show list of activities panel
             pnlListOfActivitys.Show();
