@@ -11,5 +11,9 @@ namespace SomerenModel
         public int activityId { get; set; }
         public string Activity { get; set; }
         public DateTime dateTime { get; set; }
+        //
+        //Added end time for list of activities by Enes
+        //
+        public DateTime EndDateTime { get; set; }
     }
 }

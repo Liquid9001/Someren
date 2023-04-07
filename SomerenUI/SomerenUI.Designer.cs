@@ -53,16 +53,13 @@
             DrinkSuppliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             CashRegisterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             RevenueReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            activitySupervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            listOfActivitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            participantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pnlDashboard = new System.Windows.Forms.Panel();
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
             dataGridViewStudents = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            birthDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             studentBindingSource1 = new System.Windows.Forms.BindingSource(components);
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label1 = new System.Windows.Forms.Label();
@@ -73,9 +70,6 @@
             studentBindingSource = new System.Windows.Forms.BindingSource(components);
             pnlActivities = new System.Windows.Forms.Panel();
             dataGridViewActivities = new System.Windows.Forms.DataGridView();
-            dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             activitiesBindingSource4 = new System.Windows.Forms.BindingSource(components);
             pictureBoxActivities = new System.Windows.Forms.PictureBox();
             lblActivities = new System.Windows.Forms.Label();
@@ -85,10 +79,6 @@
             activitiesBindingSource = new System.Windows.Forms.BindingSource(components);
             pnlRooms = new System.Windows.Forms.Panel();
             dataGridViewRooms = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             roomBindingSource3 = new System.Windows.Forms.BindingSource(components);
             RoomLabel = new System.Windows.Forms.Label();
             pictureBoxRooms = new System.Windows.Forms.PictureBox();
@@ -100,10 +90,6 @@
             Capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             pnlTeacher = new System.Windows.Forms.Panel();
             dataGridViewTeacher = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            fNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            lNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            numberDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             teacherBindingSource2 = new System.Windows.Forms.BindingSource(components);
             labelTeacher = new System.Windows.Forms.Label();
             pictureBoxTeachers = new System.Windows.Forms.PictureBox();
@@ -112,10 +98,6 @@
             pnlDrinks = new System.Windows.Forms.Panel();
             buttonUpdateDrink = new System.Windows.Forms.Button();
             dataGridViewDrinks = new System.Windows.Forms.DataGridView();
-            idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            drinkNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
             drinkBindingSource = new System.Windows.Forms.BindingSource(components);
             drinkBindingSource1 = new System.Windows.Forms.BindingSource(components);
@@ -143,6 +125,61 @@
             listViewStudents = new System.Windows.Forms.ListView();
             StudentId = new System.Windows.Forms.ColumnHeader();
             StudentName = new System.Windows.Forms.ColumnHeader();
+            pnlSupervisor = new System.Windows.Forms.Panel();
+            lblSelectSupervisorCb = new System.Windows.Forms.Label();
+            lblSelectActivityCb = new System.Windows.Forms.Label();
+            RemoveButton = new System.Windows.Forms.Button();
+            AssignButton = new System.Windows.Forms.Button();
+            BackButton = new System.Windows.Forms.Button();
+            ShowSupervisorButton = new System.Windows.Forms.Button();
+            lblRemoveSupervisor = new System.Windows.Forms.Label();
+            lblAssignedSupervisor = new System.Windows.Forms.Label();
+            lblSelectActivity = new System.Windows.Forms.Label();
+            cbRemove = new System.Windows.Forms.ComboBox();
+            lvRemove = new System.Windows.Forms.ListView();
+            SupervisorFullName = new System.Windows.Forms.ColumnHeader();
+            lvAssigned = new System.Windows.Forms.ListView();
+            Activity = new System.Windows.Forms.ColumnHeader();
+            Supervisor = new System.Windows.Forms.ColumnHeader();
+            lvSelectActivity = new System.Windows.Forms.ListView();
+            ActivityColumn = new System.Windows.Forms.ColumnHeader();
+            StartTime = new System.Windows.Forms.ColumnHeader();
+            cbAssign = new System.Windows.Forms.ComboBox();
+            lblActivitySupervisor = new System.Windows.Forms.Label();
+            MainRemoveButton = new System.Windows.Forms.Button();
+            MainAssignButton = new System.Windows.Forms.Button();
+            lblMainRemove = new System.Windows.Forms.Label();
+            lblMainAssign = new System.Windows.Forms.Label();
+            pnlListOfActivitys = new System.Windows.Forms.Panel();
+            EndDateLabel = new System.Windows.Forms.Label();
+            StartDateLabel = new System.Windows.Forms.Label();
+            DeleteButton = new System.Windows.Forms.Button();
+            UpdateButton = new System.Windows.Forms.Button();
+            AddButton = new System.Windows.Forms.Button();
+            label2 = new System.Windows.Forms.Label();
+            EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            NameActivityTextBox = new System.Windows.Forms.TextBox();
+            ActivtyListLabel = new System.Windows.Forms.Label();
+            ActivitiesListView = new System.Windows.Forms.ListView();
+            ActivtyID = new System.Windows.Forms.ColumnHeader();
+            NameActivity = new System.Windows.Forms.ColumnHeader();
+            StartDateActivity = new System.Windows.Forms.ColumnHeader();
+            EndDateActivity = new System.Windows.Forms.ColumnHeader();
+            pnlParticipants = new System.Windows.Forms.Panel();
+            listViewStudentActivity = new System.Windows.Forms.ListView();
+            columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            listViewParticipatingStudents = new System.Windows.Forms.ListView();
+            id = new System.Windows.Forms.ColumnHeader();
+            StudentFirstName = new System.Windows.Forms.ColumnHeader();
+            StudentLastName = new System.Windows.Forms.ColumnHeader();
+            listViewParticipants = new System.Windows.Forms.ListView();
+            Activity_ID = new System.Windows.Forms.ColumnHeader();
+            ActivityName = new System.Windows.Forms.ColumnHeader();
+            buttonParticipantsRemove = new System.Windows.Forms.Button();
+            buttonParticipantsAdd = new System.Windows.Forms.Button();
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -179,6 +216,9 @@
             ((System.ComponentModel.ISupportInitialize)drinkBindingSource1).BeginInit();
             pnlRevRepo.SuspendLayout();
             pnlCashRegister.SuspendLayout();
+            pnlSupervisor.SuspendLayout();
+            pnlListOfActivitys.SuspendLayout();
+            pnlParticipants.SuspendLayout();
             SuspendLayout();
             // 
             // VATToolStripMenuItem
@@ -199,7 +239,6 @@
             pnlVAT.Name = "pnlVAT";
             pnlVAT.Size = new System.Drawing.Size(1524, 746);
             pnlVAT.TabIndex = 1;
-            pnlVAT.Paint += pnlVAT_Paint;
             // 
             // VATTotalLabel
             // 
@@ -285,7 +324,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem, studentsToolStripMenuItem, lecturersToolStripMenuItem, activitiesToolStripMenuItem, roomsToolStripMenuItem, barServicesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem, studentsToolStripMenuItem, lecturersToolStripMenuItem, activitiesToolStripMenuItem, roomsToolStripMenuItem, barServicesToolStripMenuItem, activitySupervisorsToolStripMenuItem, listOfActivitiesToolStripMenuItem, participantsToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new System.Drawing.Size(973, 24);
@@ -304,35 +343,35 @@
             dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
             dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             dashboardToolStripMenuItem1.Text = "Dashboard";
-            dashboardToolStripMenuItem1.Click += dashboardToolStripMenuItem1_Click_1;
+            dashboardToolStripMenuItem1.Click += dashboardToolStripMenuItem1_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click_1;
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // studentsToolStripMenuItem
             // 
             studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
             studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             studentsToolStripMenuItem.Text = "Students";
-            studentsToolStripMenuItem.Click += studentsToolStripMenuItem_Click_1;
+            studentsToolStripMenuItem.Click += studentsToolStripMenuItem_Click;
             // 
             // lecturersToolStripMenuItem
             // 
             lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
             lecturersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             lecturersToolStripMenuItem.Text = "Lecturers";
-            lecturersToolStripMenuItem.Click += lecturersToolStripMenuItem_Click_1;
+            lecturersToolStripMenuItem.Click += lecturersToolStripMenuItem_Click;
             // 
             // activitiesToolStripMenuItem
             // 
             activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
             activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             activitiesToolStripMenuItem.Text = "Activities";
-            activitiesToolStripMenuItem.Click += activitiesToolStripMenuItem_Click_1;
+            activitiesToolStripMenuItem.Click += activitiesToolStripMenuItem_Click;
             // 
             // roomsToolStripMenuItem
             // 
@@ -369,6 +408,27 @@
             RevenueReportToolStripMenuItem.Text = "Revenue report";
             RevenueReportToolStripMenuItem.Click += RevenueReportToolStripMenuItem_Click;
             // 
+            // activitySupervisorsToolStripMenuItem
+            // 
+            activitySupervisorsToolStripMenuItem.Name = "activitySupervisorsToolStripMenuItem";
+            activitySupervisorsToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            activitySupervisorsToolStripMenuItem.Text = "Activity Supervisors";
+            activitySupervisorsToolStripMenuItem.Click += activitySupervisorsToolStripMenuItem_Click;
+            // 
+            // listOfActivitiesToolStripMenuItem
+            // 
+            listOfActivitiesToolStripMenuItem.Name = "listOfActivitiesToolStripMenuItem";
+            listOfActivitiesToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            listOfActivitiesToolStripMenuItem.Text = "List of Activities";
+            listOfActivitiesToolStripMenuItem.Click += listOfActivitiesToolStripMenuItem_Click;
+            // 
+            // participantsToolStripMenuItem
+            // 
+            participantsToolStripMenuItem.Name = "participantsToolStripMenuItem";
+            participantsToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            participantsToolStripMenuItem.Text = "Participants";
+            participantsToolStripMenuItem.Click += participantsToolStripMenuItem_Click;
+            // 
             // pnlDashboard
             // 
             pnlDashboard.Controls.Add(lblDashboard);
@@ -402,7 +462,6 @@
             dataGridViewStudents.AutoGenerateColumns = false;
             dataGridViewStudents.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn1, fNameDataGridViewTextBoxColumn, lNameDataGridViewTextBoxColumn, numberDataGridViewTextBoxColumn1, birthDateDataGridViewTextBoxColumn, fullNameDataGridViewTextBoxColumn });
             dataGridViewStudents.DataSource = studentBindingSource1;
             dataGridViewStudents.Location = new System.Drawing.Point(6, 41);
             dataGridViewStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -412,52 +471,6 @@
             dataGridViewStudents.RowTemplate.Height = 29;
             dataGridViewStudents.Size = new System.Drawing.Size(720, 286);
             dataGridViewStudents.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn.HeaderText = "FName";
-            fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn.HeaderText = "LName";
-            lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn1
-            // 
-            numberDataGridViewTextBoxColumn1.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn1.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn1.Name = "numberDataGridViewTextBoxColumn1";
-            numberDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // birthDateDataGridViewTextBoxColumn
-            // 
-            birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
-            birthDateDataGridViewTextBoxColumn.HeaderText = "BirthDate";
-            birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
-            birthDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fullNameDataGridViewTextBoxColumn
-            // 
-            fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
-            fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
-            fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
-            fullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentBindingSource1
-            // 
-            studentBindingSource1.DataSource = typeof(SomerenModel.Student);
             // 
             // pictureBox1
             // 
@@ -533,7 +546,6 @@
             dataGridViewActivities.AutoGenerateColumns = false;
             dataGridViewActivities.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewActivities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewTextBoxColumn19 });
             dataGridViewActivities.DataSource = activitiesBindingSource4;
             dataGridViewActivities.Location = new System.Drawing.Point(14, 42);
             dataGridViewActivities.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -542,28 +554,6 @@
             dataGridViewActivities.RowTemplate.Height = 25;
             dataGridViewActivities.Size = new System.Drawing.Size(777, 350);
             dataGridViewActivities.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            dataGridViewTextBoxColumn17.DataPropertyName = "activityId";
-            dataGridViewTextBoxColumn17.HeaderText = "activityId";
-            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            dataGridViewTextBoxColumn18.DataPropertyName = "Activity";
-            dataGridViewTextBoxColumn18.HeaderText = "Activity";
-            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            dataGridViewTextBoxColumn19.DataPropertyName = "dateTime";
-            dataGridViewTextBoxColumn19.HeaderText = "dateTime";
-            dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // activitiesBindingSource4
-            // 
-            activitiesBindingSource4.DataSource = typeof(SomerenModel.Activities);
             // 
             // pictureBoxActivities
             // 
@@ -602,7 +592,6 @@
             dataGridViewRooms.AutoGenerateColumns = false;
             dataGridViewRooms.BackgroundColor = System.Drawing.SystemColors.Window;
             dataGridViewRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn10, numberDataGridViewTextBoxColumn9, dataGridViewTextBoxColumn16, dataGridViewCheckBoxColumn3 });
             dataGridViewRooms.DataSource = roomBindingSource3;
             dataGridViewRooms.Location = new System.Drawing.Point(16, 42);
             dataGridViewRooms.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -612,38 +601,6 @@
             dataGridViewRooms.RowTemplate.Height = 41;
             dataGridViewRooms.Size = new System.Drawing.Size(764, 305);
             dataGridViewRooms.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn10
-            // 
-            idDataGridViewTextBoxColumn10.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn10.HeaderText = "Id";
-            idDataGridViewTextBoxColumn10.Name = "idDataGridViewTextBoxColumn10";
-            idDataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn9
-            // 
-            numberDataGridViewTextBoxColumn9.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn9.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn9.Name = "numberDataGridViewTextBoxColumn9";
-            numberDataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            dataGridViewTextBoxColumn16.DataPropertyName = "Capacity";
-            dataGridViewTextBoxColumn16.HeaderText = "Capacity";
-            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            dataGridViewCheckBoxColumn3.DataPropertyName = "Type";
-            dataGridViewCheckBoxColumn3.HeaderText = "Type";
-            dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            dataGridViewCheckBoxColumn3.ReadOnly = true;
-            // 
-            // roomBindingSource3
-            // 
-            roomBindingSource3.DataSource = typeof(SomerenModel.Room);
             // 
             // RoomLabel
             // 
@@ -705,7 +662,6 @@
             dataGridViewTeacher.AutoGenerateColumns = false;
             dataGridViewTeacher.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn9, fNameDataGridViewTextBoxColumn2, lNameDataGridViewTextBoxColumn2, numberDataGridViewTextBoxColumn8 });
             dataGridViewTeacher.DataSource = teacherBindingSource2;
             dataGridViewTeacher.Location = new System.Drawing.Point(8, 42);
             dataGridViewTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -715,38 +671,6 @@
             dataGridViewTeacher.RowTemplate.Height = 29;
             dataGridViewTeacher.Size = new System.Drawing.Size(740, 260);
             dataGridViewTeacher.TabIndex = 5;
-            // 
-            // idDataGridViewTextBoxColumn9
-            // 
-            idDataGridViewTextBoxColumn9.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn9.HeaderText = "Id";
-            idDataGridViewTextBoxColumn9.Name = "idDataGridViewTextBoxColumn9";
-            idDataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // fNameDataGridViewTextBoxColumn2
-            // 
-            fNameDataGridViewTextBoxColumn2.DataPropertyName = "FName";
-            fNameDataGridViewTextBoxColumn2.HeaderText = "FName";
-            fNameDataGridViewTextBoxColumn2.Name = "fNameDataGridViewTextBoxColumn2";
-            fNameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // lNameDataGridViewTextBoxColumn2
-            // 
-            lNameDataGridViewTextBoxColumn2.DataPropertyName = "LName";
-            lNameDataGridViewTextBoxColumn2.HeaderText = "LName";
-            lNameDataGridViewTextBoxColumn2.Name = "lNameDataGridViewTextBoxColumn2";
-            lNameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // numberDataGridViewTextBoxColumn8
-            // 
-            numberDataGridViewTextBoxColumn8.DataPropertyName = "Number";
-            numberDataGridViewTextBoxColumn8.HeaderText = "Number";
-            numberDataGridViewTextBoxColumn8.Name = "numberDataGridViewTextBoxColumn8";
-            numberDataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // teacherBindingSource2
-            // 
-            teacherBindingSource2.DataSource = typeof(SomerenModel.Teacher);
             // 
             // labelTeacher
             // 
@@ -794,7 +718,7 @@
             // 
             dataGridViewDrinks.AutoGenerateColumns = false;
             dataGridViewDrinks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewDrinks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { idDataGridViewTextBoxColumn8, drinkNameDataGridViewTextBoxColumn, stockDataGridViewTextBoxColumn, priceDataGridViewTextBoxColumn, Token });
+            dataGridViewDrinks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Token });
             dataGridViewDrinks.DataSource = drinkBindingSource;
             dataGridViewDrinks.Location = new System.Drawing.Point(0, 0);
             dataGridViewDrinks.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -803,41 +727,6 @@
             dataGridViewDrinks.RowTemplate.Height = 29;
             dataGridViewDrinks.Size = new System.Drawing.Size(695, 432);
             dataGridViewDrinks.TabIndex = 0;
-            dataGridViewDrinks.CellContentClick += dataGridViewDrinks_CellContentClick;
-            // 
-            // idDataGridViewTextBoxColumn8
-            // 
-            idDataGridViewTextBoxColumn8.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn8.HeaderText = "Id";
-            idDataGridViewTextBoxColumn8.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn8.Name = "idDataGridViewTextBoxColumn8";
-            idDataGridViewTextBoxColumn8.ReadOnly = true;
-            idDataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // drinkNameDataGridViewTextBoxColumn
-            // 
-            drinkNameDataGridViewTextBoxColumn.DataPropertyName = "DrinkName";
-            drinkNameDataGridViewTextBoxColumn.HeaderText = "DrinkName";
-            drinkNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            drinkNameDataGridViewTextBoxColumn.Name = "drinkNameDataGridViewTextBoxColumn";
-            drinkNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            stockDataGridViewTextBoxColumn.MinimumWidth = 6;
-            stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            stockDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            priceDataGridViewTextBoxColumn.ReadOnly = true;
-            priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // Token
             // 
@@ -846,14 +735,6 @@
             Token.MinimumWidth = 6;
             Token.Name = "Token";
             Token.Width = 125;
-            // 
-            // drinkBindingSource
-            // 
-            drinkBindingSource.DataSource = typeof(SomerenModel.Drink);
-            // 
-            // drinkBindingSource1
-            // 
-            drinkBindingSource1.DataSource = typeof(SomerenModel.Drink);
             // 
             // pnlRevRepo
             // 
@@ -1049,16 +930,515 @@
             StudentName.Text = "Student Name";
             StudentName.Width = 150;
             // 
+            // pnlSupervisor
+            // 
+            pnlSupervisor.Controls.Add(lblSelectSupervisorCb);
+            pnlSupervisor.Controls.Add(lblSelectActivityCb);
+            pnlSupervisor.Controls.Add(RemoveButton);
+            pnlSupervisor.Controls.Add(AssignButton);
+            pnlSupervisor.Controls.Add(BackButton);
+            pnlSupervisor.Controls.Add(ShowSupervisorButton);
+            pnlSupervisor.Controls.Add(lblRemoveSupervisor);
+            pnlSupervisor.Controls.Add(lblAssignedSupervisor);
+            pnlSupervisor.Controls.Add(lblSelectActivity);
+            pnlSupervisor.Controls.Add(cbRemove);
+            pnlSupervisor.Controls.Add(lvRemove);
+            pnlSupervisor.Controls.Add(lvAssigned);
+            pnlSupervisor.Controls.Add(lvSelectActivity);
+            pnlSupervisor.Controls.Add(cbAssign);
+            pnlSupervisor.Controls.Add(lblActivitySupervisor);
+            pnlSupervisor.Controls.Add(MainRemoveButton);
+            pnlSupervisor.Controls.Add(MainAssignButton);
+            pnlSupervisor.Controls.Add(lblMainRemove);
+            pnlSupervisor.Controls.Add(lblMainAssign);
+            pnlSupervisor.Location = new System.Drawing.Point(10, 26);
+            pnlSupervisor.Name = "pnlSupervisor";
+            pnlSupervisor.Size = new System.Drawing.Size(942, 470);
+            pnlSupervisor.TabIndex = 1;
+            // 
+            // lblSelectSupervisorCb
+            // 
+            lblSelectSupervisorCb.AutoSize = true;
+            lblSelectSupervisorCb.Location = new System.Drawing.Point(300, 85);
+            lblSelectSupervisorCb.Name = "lblSelectSupervisorCb";
+            lblSelectSupervisorCb.Size = new System.Drawing.Size(96, 15);
+            lblSelectSupervisorCb.TabIndex = 18;
+            lblSelectSupervisorCb.Text = "Select Supervisor";
+            // 
+            // lblSelectActivityCb
+            // 
+            lblSelectActivityCb.AutoSize = true;
+            lblSelectActivityCb.Location = new System.Drawing.Point(300, 85);
+            lblSelectActivityCb.Name = "lblSelectActivityCb";
+            lblSelectActivityCb.Size = new System.Drawing.Size(81, 15);
+            lblSelectActivityCb.TabIndex = 17;
+            lblSelectActivityCb.Text = "Select Activity";
+            // 
+            // RemoveButton
+            // 
+            RemoveButton.Location = new System.Drawing.Point(351, 429);
+            RemoveButton.Name = "RemoveButton";
+            RemoveButton.Size = new System.Drawing.Size(218, 23);
+            RemoveButton.TabIndex = 16;
+            RemoveButton.Text = "Remove";
+            RemoveButton.UseVisualStyleBackColor = true;
+            RemoveButton.Click += RemoveButton_Click;
+            // 
+            // AssignButton
+            // 
+            AssignButton.Location = new System.Drawing.Point(351, 168);
+            AssignButton.Name = "AssignButton";
+            AssignButton.Size = new System.Drawing.Size(218, 23);
+            AssignButton.TabIndex = 15;
+            AssignButton.Text = "Assign";
+            AssignButton.UseVisualStyleBackColor = true;
+            AssignButton.Click += AssignButton_Click;
+            // 
+            // BackButton
+            // 
+            BackButton.Location = new System.Drawing.Point(16, 14);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new System.Drawing.Size(61, 32);
+            BackButton.TabIndex = 14;
+            BackButton.Text = "Back";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += BackButton_Click;
+            // 
+            // ShowSupervisorButton
+            // 
+            ShowSupervisorButton.Location = new System.Drawing.Point(351, 168);
+            ShowSupervisorButton.Name = "ShowSupervisorButton";
+            ShowSupervisorButton.Size = new System.Drawing.Size(218, 23);
+            ShowSupervisorButton.TabIndex = 13;
+            ShowSupervisorButton.Text = "Show Supervisor";
+            ShowSupervisorButton.UseVisualStyleBackColor = true;
+            ShowSupervisorButton.Click += ShowSupervisorButton_Click;
+            // 
+            // lblRemoveSupervisor
+            // 
+            lblRemoveSupervisor.AutoSize = true;
+            lblRemoveSupervisor.Location = new System.Drawing.Point(300, 224);
+            lblRemoveSupervisor.Name = "lblRemoveSupervisor";
+            lblRemoveSupervisor.Size = new System.Drawing.Size(62, 15);
+            lblRemoveSupervisor.TabIndex = 12;
+            lblRemoveSupervisor.Text = "Supervisor";
+            // 
+            // lblAssignedSupervisor
+            // 
+            lblAssignedSupervisor.AutoSize = true;
+            lblAssignedSupervisor.Location = new System.Drawing.Point(710, 82);
+            lblAssignedSupervisor.Name = "lblAssignedSupervisor";
+            lblAssignedSupervisor.Size = new System.Drawing.Size(113, 15);
+            lblAssignedSupervisor.TabIndex = 11;
+            lblAssignedSupervisor.Text = "Assigned Supervisor";
+            // 
+            // lblSelectActivity
+            // 
+            lblSelectActivity.AutoSize = true;
+            lblSelectActivity.Location = new System.Drawing.Point(15, 82);
+            lblSelectActivity.Name = "lblSelectActivity";
+            lblSelectActivity.Size = new System.Drawing.Size(81, 15);
+            lblSelectActivity.TabIndex = 10;
+            lblSelectActivity.Text = "Select Activity";
+            // 
+            // cbRemove
+            // 
+            cbRemove.FormattingEnabled = true;
+            cbRemove.Location = new System.Drawing.Point(300, 131);
+            cbRemove.Name = "cbRemove";
+            cbRemove.Size = new System.Drawing.Size(305, 23);
+            cbRemove.TabIndex = 9;
+            // 
+            // lvRemove
+            // 
+            lvRemove.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { SupervisorFullName });
+            lvRemove.Location = new System.Drawing.Point(300, 244);
+            lvRemove.Name = "lvRemove";
+            lvRemove.Size = new System.Drawing.Size(305, 179);
+            lvRemove.TabIndex = 8;
+            lvRemove.UseCompatibleStateImageBehavior = false;
+            lvRemove.View = System.Windows.Forms.View.Details;
+            // 
+            // SupervisorFullName
+            // 
+            SupervisorFullName.Text = "Name";
+            SupervisorFullName.Width = 150;
+            // 
+            // lvAssigned
+            // 
+            lvAssigned.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { Activity, Supervisor });
+            lvAssigned.Location = new System.Drawing.Point(710, 100);
+            lvAssigned.Name = "lvAssigned";
+            lvAssigned.Size = new System.Drawing.Size(213, 339);
+            lvAssigned.TabIndex = 7;
+            lvAssigned.UseCompatibleStateImageBehavior = false;
+            lvAssigned.View = System.Windows.Forms.View.Details;
+            // 
+            // Activity
+            // 
+            Activity.Text = "Activity";
+            Activity.Width = 100;
+            // 
+            // Supervisor
+            // 
+            Supervisor.Text = "Supervisor";
+            Supervisor.Width = 100;
+            // 
+            // lvSelectActivity
+            // 
+            lvSelectActivity.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { ActivityColumn, StartTime });
+            lvSelectActivity.Location = new System.Drawing.Point(16, 100);
+            lvSelectActivity.Name = "lvSelectActivity";
+            lvSelectActivity.Size = new System.Drawing.Size(205, 339);
+            lvSelectActivity.TabIndex = 6;
+            lvSelectActivity.UseCompatibleStateImageBehavior = false;
+            lvSelectActivity.View = System.Windows.Forms.View.Details;
+            // 
+            // ActivityColumn
+            // 
+            ActivityColumn.Text = "Activity";
+            ActivityColumn.Width = 100;
+            // 
+            // StartTime
+            // 
+            StartTime.Text = "Start Time";
+            StartTime.Width = 100;
+            // 
+            // cbAssign
+            // 
+            cbAssign.FormattingEnabled = true;
+            cbAssign.Location = new System.Drawing.Point(300, 131);
+            cbAssign.Name = "cbAssign";
+            cbAssign.Size = new System.Drawing.Size(305, 23);
+            cbAssign.TabIndex = 5;
+            // 
+            // lblActivitySupervisor
+            // 
+            lblActivitySupervisor.AutoSize = true;
+            lblActivitySupervisor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblActivitySupervisor.Location = new System.Drawing.Point(16, 14);
+            lblActivitySupervisor.Name = "lblActivitySupervisor";
+            lblActivitySupervisor.Size = new System.Drawing.Size(211, 32);
+            lblActivitySupervisor.TabIndex = 4;
+            lblActivitySupervisor.Text = "Activity Supervisor";
+            // 
+            // MainRemoveButton
+            // 
+            MainRemoveButton.Location = new System.Drawing.Point(538, 236);
+            MainRemoveButton.Name = "MainRemoveButton";
+            MainRemoveButton.Size = new System.Drawing.Size(75, 23);
+            MainRemoveButton.TabIndex = 3;
+            MainRemoveButton.Text = "Remove";
+            MainRemoveButton.UseVisualStyleBackColor = true;
+            MainRemoveButton.Click += MainRemoveButton_Click;
+            // 
+            // MainAssignButton
+            // 
+            MainAssignButton.Location = new System.Drawing.Point(311, 236);
+            MainAssignButton.Name = "MainAssignButton";
+            MainAssignButton.Size = new System.Drawing.Size(75, 23);
+            MainAssignButton.TabIndex = 2;
+            MainAssignButton.Text = "Assign";
+            MainAssignButton.UseVisualStyleBackColor = true;
+            MainAssignButton.Click += MainAssignButton_Click;
+            // 
+            // lblMainRemove
+            // 
+            lblMainRemove.AutoSize = true;
+            lblMainRemove.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            lblMainRemove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMainRemove.Location = new System.Drawing.Point(494, 150);
+            lblMainRemove.Name = "lblMainRemove";
+            lblMainRemove.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            lblMainRemove.Size = new System.Drawing.Size(158, 74);
+            lblMainRemove.TabIndex = 1;
+            lblMainRemove.Text = "Remove Supervisor\r\nfrom Activity";
+            lblMainRemove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMainAssign
+            // 
+            lblMainAssign.AutoSize = true;
+            lblMainAssign.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            lblMainAssign.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMainAssign.Location = new System.Drawing.Point(275, 150);
+            lblMainAssign.Name = "lblMainAssign";
+            lblMainAssign.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            lblMainAssign.Size = new System.Drawing.Size(147, 74);
+            lblMainAssign.TabIndex = 0;
+            lblMainAssign.Text = "Assign Supervisor\r\nto Activity";
+            lblMainAssign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlListOfActivitys
+            // 
+            pnlListOfActivitys.Controls.Add(EndDateLabel);
+            pnlListOfActivitys.Controls.Add(StartDateLabel);
+            pnlListOfActivitys.Controls.Add(DeleteButton);
+            pnlListOfActivitys.Controls.Add(UpdateButton);
+            pnlListOfActivitys.Controls.Add(AddButton);
+            pnlListOfActivitys.Controls.Add(label2);
+            pnlListOfActivitys.Controls.Add(EndDateTimePicker);
+            pnlListOfActivitys.Controls.Add(StartDateTimePicker);
+            pnlListOfActivitys.Controls.Add(NameActivityTextBox);
+            pnlListOfActivitys.Controls.Add(ActivtyListLabel);
+            pnlListOfActivitys.Controls.Add(ActivitiesListView);
+            pnlListOfActivitys.Location = new System.Drawing.Point(10, 27);
+            pnlListOfActivitys.Name = "pnlListOfActivitys";
+            pnlListOfActivitys.Size = new System.Drawing.Size(951, 469);
+            pnlListOfActivitys.TabIndex = 1;
+            // 
+            // EndDateLabel
+            // 
+            EndDateLabel.AutoSize = true;
+            EndDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            EndDateLabel.Location = new System.Drawing.Point(538, 202);
+            EndDateLabel.Name = "EndDateLabel";
+            EndDateLabel.Size = new System.Drawing.Size(126, 21);
+            EndDateLabel.TabIndex = 10;
+            EndDateLabel.Text = "End date activity:";
+            // 
+            // StartDateLabel
+            // 
+            StartDateLabel.AutoSize = true;
+            StartDateLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            StartDateLabel.Location = new System.Drawing.Point(537, 159);
+            StartDateLabel.Name = "StartDateLabel";
+            StartDateLabel.Size = new System.Drawing.Size(132, 21);
+            StartDateLabel.TabIndex = 9;
+            StartDateLabel.Text = "Start date activity:";
+            // 
+            // DeleteButton
+            // 
+            DeleteButton.Location = new System.Drawing.Point(772, 388);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new System.Drawing.Size(115, 63);
+            DeleteButton.TabIndex = 8;
+            DeleteButton.Text = "Delete";
+            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
+            // 
+            // UpdateButton
+            // 
+            UpdateButton.Location = new System.Drawing.Point(633, 388);
+            UpdateButton.Name = "UpdateButton";
+            UpdateButton.Size = new System.Drawing.Size(115, 63);
+            UpdateButton.TabIndex = 7;
+            UpdateButton.Text = "Update";
+            UpdateButton.UseVisualStyleBackColor = true;
+            UpdateButton.Click += UpdateButton_Click;
+            // 
+            // AddButton
+            // 
+            AddButton.Location = new System.Drawing.Point(498, 388);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new System.Drawing.Size(115, 63);
+            AddButton.TabIndex = 6;
+            AddButton.Text = "ADD";
+            AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(538, 108);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(126, 21);
+            label2.TabIndex = 5;
+            label2.Text = "Name of activity:";
+            // 
+            // EndDateTimePicker
+            // 
+            EndDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+            EndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            EndDateTimePicker.Location = new System.Drawing.Point(700, 200);
+            EndDateTimePicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            EndDateTimePicker.Name = "EndDateTimePicker";
+            EndDateTimePicker.Size = new System.Drawing.Size(196, 23);
+            EndDateTimePicker.TabIndex = 4;
+            // 
+            // StartDateTimePicker
+            // 
+            StartDateTimePicker.CustomFormat = "MM/dd/yyyy HH:mm:ss";
+            StartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            StartDateTimePicker.Location = new System.Drawing.Point(700, 157);
+            StartDateTimePicker.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            StartDateTimePicker.Name = "StartDateTimePicker";
+            StartDateTimePicker.Size = new System.Drawing.Size(196, 23);
+            StartDateTimePicker.TabIndex = 3;
+            // 
+            // NameActivityTextBox
+            // 
+            NameActivityTextBox.Location = new System.Drawing.Point(700, 110);
+            NameActivityTextBox.Name = "NameActivityTextBox";
+            NameActivityTextBox.Size = new System.Drawing.Size(196, 23);
+            NameActivityTextBox.TabIndex = 2;
+            // 
+            // ActivtyListLabel
+            // 
+            ActivtyListLabel.AutoSize = true;
+            ActivtyListLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ActivtyListLabel.Location = new System.Drawing.Point(32, 30);
+            ActivtyListLabel.Name = "ActivtyListLabel";
+            ActivtyListLabel.Size = new System.Drawing.Size(121, 21);
+            ActivtyListLabel.TabIndex = 1;
+            ActivtyListLabel.Text = "List Of Activity's";
+            // 
+            // ActivitiesListView
+            // 
+            ActivitiesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { ActivtyID, NameActivity, StartDateActivity, EndDateActivity });
+            ActivitiesListView.FullRowSelect = true;
+            ActivitiesListView.Location = new System.Drawing.Point(20, 77);
+            ActivitiesListView.MultiSelect = false;
+            ActivitiesListView.Name = "ActivitiesListView";
+            ActivitiesListView.Size = new System.Drawing.Size(448, 374);
+            ActivitiesListView.TabIndex = 0;
+            ActivitiesListView.UseCompatibleStateImageBehavior = false;
+            ActivitiesListView.View = System.Windows.Forms.View.Details;
+            ActivitiesListView.SelectedIndexChanged += ActivitiesListView_SelectedIndexChanged;
+            // 
+            // ActivtyID
+            // 
+            ActivtyID.Text = "ActivityId";
+            ActivtyID.Width = 80;
+            // 
+            // NameActivity
+            // 
+            NameActivity.Text = "Activity Name";
+            NameActivity.Width = 120;
+            // 
+            // StartDateActivity
+            // 
+            StartDateActivity.Text = "Start Date Activity";
+            StartDateActivity.Width = 120;
+            // 
+            // EndDateActivity
+            // 
+            EndDateActivity.Text = "End Date Activity";
+            EndDateActivity.Width = 120;
+            // 
+            // pnlParticipants
+            // 
+            pnlParticipants.Controls.Add(listViewStudentActivity);
+            pnlParticipants.Controls.Add(listViewParticipatingStudents);
+            pnlParticipants.Controls.Add(listViewParticipants);
+            pnlParticipants.Controls.Add(buttonParticipantsRemove);
+            pnlParticipants.Controls.Add(buttonParticipantsAdd);
+            pnlParticipants.Location = new System.Drawing.Point(10, 27);
+            pnlParticipants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            pnlParticipants.Name = "pnlParticipants";
+            pnlParticipants.Size = new System.Drawing.Size(948, 467);
+            pnlParticipants.TabIndex = 2;
+            // 
+            // listViewStudentActivity
+            // 
+            listViewStudentActivity.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listViewStudentActivity.Location = new System.Drawing.Point(394, 10);
+            listViewStudentActivity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            listViewStudentActivity.Name = "listViewStudentActivity";
+            listViewStudentActivity.Size = new System.Drawing.Size(335, 170);
+            listViewStudentActivity.TabIndex = 5;
+            listViewStudentActivity.UseCompatibleStateImageBehavior = false;
+            listViewStudentActivity.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Activity";
+            columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "First Name";
+            columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Last Name";
+            columnHeader3.Width = 100;
+            // 
+            // listViewParticipatingStudents
+            // 
+            listViewParticipatingStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { id, StudentFirstName, StudentLastName });
+            listViewParticipatingStudents.FullRowSelect = true;
+            listViewParticipatingStudents.Location = new System.Drawing.Point(15, 219);
+            listViewParticipatingStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            listViewParticipatingStudents.Name = "listViewParticipatingStudents";
+            listViewParticipatingStudents.Size = new System.Drawing.Size(321, 205);
+            listViewParticipatingStudents.TabIndex = 4;
+            listViewParticipatingStudents.UseCompatibleStateImageBehavior = false;
+            listViewParticipatingStudents.View = System.Windows.Forms.View.Details;
+            listViewParticipatingStudents.SelectedIndexChanged += listViewParticipatingStudents_SelectedIndexChanged;
+            // 
+            // id
+            // 
+            id.Text = "ID";
+            id.Width = 50;
+            // 
+            // StudentFirstName
+            // 
+            StudentFirstName.Text = "First Name";
+            StudentFirstName.Width = 150;
+            // 
+            // StudentLastName
+            // 
+            StudentLastName.Text = "Last Name";
+            StudentLastName.Width = 150;
+            // 
+            // listViewParticipants
+            // 
+            listViewParticipants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { Activity_ID, ActivityName });
+            listViewParticipants.FullRowSelect = true;
+            listViewParticipants.Location = new System.Drawing.Point(15, 10);
+            listViewParticipants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            listViewParticipants.Name = "listViewParticipants";
+            listViewParticipants.Size = new System.Drawing.Size(183, 205);
+            listViewParticipants.TabIndex = 3;
+            listViewParticipants.UseCompatibleStateImageBehavior = false;
+            listViewParticipants.View = System.Windows.Forms.View.Details;
+            listViewParticipants.SelectedIndexChanged += listViewParticipants_SelectedIndexChanged;
+            // 
+            // Activity_ID
+            // 
+            Activity_ID.Text = "ID";
+            Activity_ID.Width = 50;
+            // 
+            // ActivityName
+            // 
+            ActivityName.Text = "Activity";
+            ActivityName.Width = 150;
+            // 
+            // buttonParticipantsRemove
+            // 
+            buttonParticipantsRemove.Location = new System.Drawing.Point(848, 83);
+            buttonParticipantsRemove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            buttonParticipantsRemove.Name = "buttonParticipantsRemove";
+            buttonParticipantsRemove.Size = new System.Drawing.Size(82, 22);
+            buttonParticipantsRemove.TabIndex = 2;
+            buttonParticipantsRemove.Text = "&Remove";
+            buttonParticipantsRemove.UseVisualStyleBackColor = true;
+            // 
+            // buttonParticipantsAdd
+            // 
+            buttonParticipantsAdd.Location = new System.Drawing.Point(848, 45);
+            buttonParticipantsAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            buttonParticipantsAdd.Name = "buttonParticipantsAdd";
+            buttonParticipantsAdd.Size = new System.Drawing.Size(82, 22);
+            buttonParticipantsAdd.TabIndex = 1;
+            buttonParticipantsAdd.Text = "&Add";
+            buttonParticipantsAdd.UseVisualStyleBackColor = true;
+            // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(973, 508);
             Controls.Add(pnlDashboard);
+            Controls.Add(pnlListOfActivitys);
+            Controls.Add(pnlParticipants);
             Controls.Add(pnlActivities);
             Controls.Add(pnlRooms);
             Controls.Add(pnlTeacher);
             Controls.Add(pnlDrinks);
+            Controls.Add(pnlSupervisor);
             Controls.Add(pnlVAT);
             Controls.Add(pnlCashRegister);
             Controls.Add(pnlStudents);
@@ -1113,8 +1493,18 @@
             pnlRevRepo.PerformLayout();
             pnlCashRegister.ResumeLayout(false);
             pnlCashRegister.PerformLayout();
+            pnlSupervisor.ResumeLayout(false);
+            pnlSupervisor.PerformLayout();
+            pnlListOfActivitys.ResumeLayout(false);
+            pnlListOfActivitys.PerformLayout();
+            pnlParticipants.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void LecturersToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         private void ButtonUpdateDrink_Click(object sender, System.EventArgs e)
@@ -1272,5 +1662,63 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn8;
         private System.Windows.Forms.BindingSource teacherBindingSource2;
+        private System.Windows.Forms.ToolStripMenuItem activitySupervisorsToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlSupervisor;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button ShowSupervisorButton;
+        private System.Windows.Forms.Label lblRemoveSupervisor;
+        private System.Windows.Forms.Label lblAssignedSupervisor;
+        private System.Windows.Forms.Label lblSelectActivity;
+        private System.Windows.Forms.ComboBox cbRemove;
+        private System.Windows.Forms.ListView lvRemove;
+        private System.Windows.Forms.ListView lvAssigned;
+        private System.Windows.Forms.ColumnHeader Activity;
+        private System.Windows.Forms.ColumnHeader Supervisor;
+        private System.Windows.Forms.ListView lvSelectActivity;
+        private System.Windows.Forms.ColumnHeader ActivityColumn;
+        private System.Windows.Forms.ColumnHeader StartTime;
+        private System.Windows.Forms.ComboBox cbAssign;
+        private System.Windows.Forms.Label lblActivitySupervisor;
+        private System.Windows.Forms.Button MainRemoveButton;
+        private System.Windows.Forms.Button MainAssignButton;
+        private System.Windows.Forms.Label lblMainRemove;
+        private System.Windows.Forms.Label lblMainAssign;
+        private System.Windows.Forms.Button RemoveButton;
+        private System.Windows.Forms.Button AssignButton;
+        private System.Windows.Forms.Label lblSelectSupervisorCb;
+        private System.Windows.Forms.Label lblSelectActivityCb;
+        private System.Windows.Forms.ColumnHeader SupervisorFullName;
+        private System.Windows.Forms.ToolStripMenuItem listOfActivitiesToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlListOfActivitys;
+        private System.Windows.Forms.ToolStripMenuItem participantsToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlParticipants;
+        private System.Windows.Forms.ListView listViewParticipatingStudents;
+        private System.Windows.Forms.ColumnHeader id;
+        private System.Windows.Forms.ColumnHeader StudentFirstName;
+        private System.Windows.Forms.ColumnHeader StudentLastName;
+        private System.Windows.Forms.ListView listViewParticipants;
+        private System.Windows.Forms.ColumnHeader Activity_ID;
+        private System.Windows.Forms.ColumnHeader ActivityName;
+        private System.Windows.Forms.Button buttonParticipantsRemove;
+        private System.Windows.Forms.Button buttonParticipantsAdd;
+        private System.Windows.Forms.ListView listViewStudentActivity;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.DateTimePicker StartDateTimePicker;
+        private System.Windows.Forms.TextBox NameActivityTextBox;
+        private System.Windows.Forms.Label ActivtyListLabel;
+        private System.Windows.Forms.ListView ActivitiesListView;
+        private System.Windows.Forms.ColumnHeader ActivtyID;
+        private System.Windows.Forms.ColumnHeader NameActivity;
+        private System.Windows.Forms.ColumnHeader StartDateActivity;
+        private System.Windows.Forms.ColumnHeader EndDateActivity;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker EndDateTimePicker;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Label EndDateLabel;
+        private System.Windows.Forms.Label StartDateLabel;
     }
 }
