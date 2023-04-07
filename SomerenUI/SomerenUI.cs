@@ -1253,7 +1253,7 @@ namespace SomerenUI
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             //checks if user has selected an activity
-            if (ActivitiesListView.SelectedItems.Count == 0 || ActivitiesListView.SelectedItems.Count > 0)
+            if (ActivitiesListView.SelectedItems.Count == 0 || ActivitiesListView.SelectedItems.Count < 0)
             {
                 MessageBox.Show("Make sure you select an activity you want to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
