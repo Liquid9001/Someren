@@ -180,6 +180,8 @@
             ActivityName = new System.Windows.Forms.ColumnHeader();
             buttonParticipantsRemove = new System.Windows.Forms.Button();
             buttonParticipantsAdd = new System.Windows.Forms.Button();
+            weeklyTimetableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            pnlWeeklyTimetable = new System.Windows.Forms.Panel();
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -324,7 +326,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem, studentsToolStripMenuItem, lecturersToolStripMenuItem, activitiesToolStripMenuItem, roomsToolStripMenuItem, barServicesToolStripMenuItem, activitySupervisorsToolStripMenuItem, listOfActivitiesToolStripMenuItem, participantsToolStripMenuItem });
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem, studentsToolStripMenuItem, lecturersToolStripMenuItem, activitiesToolStripMenuItem, roomsToolStripMenuItem, barServicesToolStripMenuItem, activitySupervisorsToolStripMenuItem, listOfActivitiesToolStripMenuItem, participantsToolStripMenuItem, weeklyTimetableToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new System.Drawing.Size(973, 24);
@@ -1426,11 +1428,25 @@
             buttonParticipantsAdd.Text = "&Add";
             buttonParticipantsAdd.UseVisualStyleBackColor = true;
             // 
+            // weeklyTimetableToolStripMenuItem
+            // 
+            weeklyTimetableToolStripMenuItem.Name = "weeklyTimetableToolStripMenuItem";
+            weeklyTimetableToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            weeklyTimetableToolStripMenuItem.Text = "Weekly Timetable";
+            // 
+            // pnlWeeklyTimetable
+            // 
+            pnlWeeklyTimetable.Location = new System.Drawing.Point(10, 26);
+            pnlWeeklyTimetable.Name = "pnlWeeklyTimetable";
+            pnlWeeklyTimetable.Size = new System.Drawing.Size(951, 470);
+            pnlWeeklyTimetable.TabIndex = 1;
+            // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(973, 508);
+            Controls.Add(pnlWeeklyTimetable);
             Controls.Add(pnlDashboard);
             Controls.Add(pnlListOfActivitys);
             Controls.Add(pnlParticipants);
@@ -1720,5 +1736,7 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label EndDateLabel;
         private System.Windows.Forms.Label StartDateLabel;
+        private System.Windows.Forms.ToolStripMenuItem weeklyTimetableToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlWeeklyTimetable;
     }
 }
