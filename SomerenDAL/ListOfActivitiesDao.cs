@@ -28,7 +28,8 @@ namespace SomerenDAL
                 {
                     activityId = (int)dr["ActivityId"],
                     Activity = dr["Name"].ToString(),
-                    dateTime = (DateTime)dr["StartTimeActivity"]
+                    dateTime = (DateTime)dr["StartTimeActivity"],
+                    EndDateTime= (DateTime)dr["EndTimeActivity"]
                 };
                 activities.Add(activity);
             }
@@ -37,11 +38,10 @@ namespace SomerenDAL
 
         public void AddActivity(Activities activities)
         {
-            string querry = "INSERT INTO Activity (ActivityId, [Name], StartTimeActivity, EndTimeActivity)" +
-                                "VALUES (@ActivityId, @Name, @StartTimeActivity, @EndTimeActivity)";
+            string querry = "INSERT INTO Activity ([Name], StartTimeActivity, EndTimeActivity)" +
+                                "VALUES (@Name, @StartTimeActivity, @EndTimeActivity)";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
-                new SqlParameter("@ActivityId",activities.activityId),
                 new SqlParameter("@Name",activities.Activity),
                 new SqlParameter("@StartTimeActivity",activities.dateTime),
                 new SqlParameter("@EndTimeActivity", activities.EndDateTime)
@@ -65,7 +65,7 @@ namespace SomerenDAL
 
         public void UpdateActivity(Activities activities)
         {
-            string querry = "UPDATE Activity SET (ActivityId=@ActivityId, [Name]=@Name, StartTimeActivity=@StartTimeActivity, EndTimeActivity=@EndTimeActivity)";
+            string querry = "UPDATE Activity SET [Name]=@Name, StartTimeActivity=@StartTimeActivity, EndTimeActivity=@EndTimeActivity WHERE ActivityId=@ActivityId";
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("@ActivityId",activities.activityId),
