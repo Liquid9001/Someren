@@ -14,15 +14,7 @@ namespace SomerenDAL
 {
     public class DrinksDao : BaseDao
     {
-        private SqlConnection dbConnection;
-
-        public DrinksDao()
-        {
-            string connString = ConfigurationManager
-            .ConnectionStrings["SomerenDatabase"]
-           .ConnectionString;
-            dbConnection = new SqlConnection(connString);
-        }
+       
         public List<Drink> GetAllDrinks()
         {
             string query = "SELECT DrinkId, Drinkname, Stock, Price, Token FROM [Drink] WHERE Stock > 1 AND Token > 1 ORDER BY Stock";
@@ -58,16 +50,15 @@ namespace SomerenDAL
         }
         public void UpdateDrink(Drink drink)
         {
-
-            dbConnection.Open();
-            SqlCommand command = new SqlCommand("UPDATE Drink SET DrinkName=@DrinkName, Stock=@Stock WHERE DrinkId=@DrinkId ", dbConnection);
-
-            command.Parameters.AddWithValue("@DrinkName", drink.DrinkName);
-            command.Parameters.AddWithValue("@Stock", drink.Stock);
-            command.Parameters.AddWithValue("@DrinkId", drink.Id);
-
-            command.ExecuteNonQuery();
-            dbConnection.Close();
+            string query = "UPDATE Drink SET DrinkName=@DrinkName, Stock=@Stock WHERE DrinkId=@DrinkId";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@DrinkName", drink.DrinkName),
+                new SqlParameter("@Stock", drink.Stock),
+                new SqlParameter("@DrinkId", drink.Id)
+            };
+            OpenConnection();
+            ExecuteEditQuery(query, sqlParameters);
         }
     }
 }

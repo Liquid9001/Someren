@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace SomerenUI
@@ -396,12 +397,12 @@ namespace SomerenUI
             pnlRevRepo.Hide();
             pnlSupervisor.Hide();
 
-            // shows participants
+            // shows Activities
             pnlParticipants.Show();
 
             try
             {
-                // get and display all participants
+                // get and display all Activities
                 List<Participants> participants = GetParticipants();
                 DisplayParticipants(participants);
             }
@@ -460,6 +461,41 @@ namespace SomerenUI
                 li.SubItems.Add(participant.LastName);
                 li.Tag = participant;
                 listViewParticipatingStudents.Items.Add(li);
+            }
+        }
+        private void ShowActivityStudents()
+        {
+
+            try
+            {
+                // get and display all students participating in activity
+                List<ActivityStudent> activityStudents = GetActivityStudents();
+                DisplayActivityStudents(activityStudents);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students that are participating in an activity: " + e.Message);
+            }
+        }
+        private List<ActivityStudent> GetActivityStudents()
+        {
+            StudentActivityService studentActivityService = new StudentActivityService();
+            List<ActivityStudent> activityStudents = studentActivityService.GetAllStudentsActivity();
+            return activityStudents;
+        }
+        private void DisplayActivityStudents(List<ActivityStudent> activityStudents)
+        {
+            listViewStudentActivity.Items.Clear();
+
+            foreach (ActivityStudent activityStudent in activityStudents)
+            {
+                ListViewItem li = new ListViewItem(activityStudent.StudentId.ToString());
+                li.SubItems.Add(activityStudent.ActivityName);
+                li.SubItems.Add(activityStudent.FirstName);
+                li.SubItems.Add(activityStudent.LastName);
+                li.SubItems.Add(activityStudent.ActivityId.ToString());
+                li.Tag = activityStudent;
+                listViewStudentActivity.Items.Add(li);
             }
         }
         private void dashboardToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1004,16 +1040,105 @@ namespace SomerenUI
         {
             ShowParticipantsPanel();
             ShowStudentsParticipating();
+            ShowActivityStudents();
         }
 
         private void listViewParticipants_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /* ShowStudentsParticipating();*/
+
         }
 
         private void listViewParticipatingStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonParticipantsRemove_Click(object sender, EventArgs e)
+        {
+            if (listViewStudentActivity.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Make sure you select a participant you want to delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure that you wish to remove this particiant?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    RemoveParticipant();
+                }
+            }
+        }
+        private void RemoveParticipant()
+        {
+            try
+            {
+                StudentActivityService studentActivityService = new StudentActivityService();
+                ActivityStudent activityStudent = new ActivityStudent();
+
+                if (listViewStudentActivity.SelectedItems.Count == 0)
+                {
+                    return;
+                }
+
+                ListViewItem activityStudentItem = listViewStudentActivity.SelectedItems[0];
+                activityStudent.StudentId = int.Parse(activityStudentItem.Text);
+                activityStudent.ActivityId = int.Parse(activityStudentItem.SubItems[4].Text);
+                studentActivityService.RemoveStudentActivity(activityStudent);
+
+                List<ActivityStudent> activityStudents = GetActivityStudents();
+                DisplayActivityStudents(activityStudents);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went Wrong " + ex);
+                throw;
+            }
+        }
+        private void buttonParticipantsAdd_Click(object sender, EventArgs e)
+        {
+            if (listViewParticipants.SelectedItems.Count == 0 && listViewParticipatingStudents.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Make sure you select a student and activity", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure that you wish to add this particiant?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    AddParticipant();
+                }
+            }
+        }
+        private void AddParticipant()
+        {
+            try
+            {
+                StudentActivityService studentActivityService = new StudentActivityService();
+                Student student = new Student();
+                Activities activities = new Activities();
+
+
+                if (listViewParticipants.SelectedItems.Count == 0 && listViewParticipatingStudents.SelectedItems.Count == 0)
+                {
+                    return;
+                }
+
+                ListViewItem selectedItemActivity = listViewParticipants.SelectedItems[0];
+                activities.activityId = int.Parse(selectedItemActivity.Text);
+                ListViewItem selectedItemStudent = listViewParticipatingStudents.SelectedItems[0];
+                student.Id = int.Parse(selectedItemStudent.Text);
+
+                studentActivityService.AddStudentActivity(student,activities);
+                List<ActivityStudent> activityStudents = GetActivityStudents();
+                DisplayActivityStudents(activityStudents);
+                     }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went Wrong " + ex);
+                throw;
+            }
         }
 
         private void listOfActivitiesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1145,12 +1270,23 @@ namespace SomerenUI
 
                 List<Activities> activitys = GetListOfActivities();
                 ActivitiesDisplay(activitys);
-            }
+                     }
             catch (Exception ex)
             {
                 MessageBox.Show("Something went Wrong " + ex);
                 throw;
             }
         }
+
+        private void labelListOfActivities_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewStudentActivity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
