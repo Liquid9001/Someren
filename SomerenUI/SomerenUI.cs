@@ -1130,10 +1130,10 @@ namespace SomerenUI
                 ListViewItem selectedItemStudent = listViewParticipatingStudents.SelectedItems[0];
                 student.Id = int.Parse(selectedItemStudent.Text);
 
-                studentActivityService.AddStudentActivity(student,activities);
+                studentActivityService.AddStudentActivity(student, activities);
                 List<ActivityStudent> activityStudents = GetActivityStudents();
                 DisplayActivityStudents(activityStudents);
-                     }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Something went Wrong " + ex);
@@ -1270,7 +1270,7 @@ namespace SomerenUI
 
                 List<Activities> activitys = GetListOfActivities();
                 ActivitiesDisplay(activitys);
-                     }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Something went Wrong " + ex);

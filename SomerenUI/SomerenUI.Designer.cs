@@ -56,6 +56,7 @@
             activitySupervisorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             listOfActivitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             participantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            weeklyTimetableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pnlDashboard = new System.Windows.Forms.Panel();
             lblDashboard = new System.Windows.Forms.Label();
             pnlStudents = new System.Windows.Forms.Panel();
@@ -192,7 +193,6 @@
             ActivityName = new System.Windows.Forms.ColumnHeader();
             buttonParticipantsRemove = new System.Windows.Forms.Button();
             buttonParticipantsAdd = new System.Windows.Forms.Button();
-            weeklyTimetableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             pnlWeeklyTimetable = new System.Windows.Forms.Panel();
             pnlVAT.SuspendLayout();
             VATSelectQuartermenuStrip.SuspendLayout();
@@ -342,7 +342,7 @@
             menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem, studentsToolStripMenuItem, lecturersToolStripMenuItem, activitiesToolStripMenuItem, roomsToolStripMenuItem, barServicesToolStripMenuItem, activitySupervisorsToolStripMenuItem, listOfActivitiesToolStripMenuItem, participantsToolStripMenuItem, weeklyTimetableToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(973, 24);
+            menuStrip1.Size = new System.Drawing.Size(1014, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -443,6 +443,12 @@
             participantsToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             participantsToolStripMenuItem.Text = "Participants";
             participantsToolStripMenuItem.Click += participantsToolStripMenuItem_Click;
+            // 
+            // weeklyTimetableToolStripMenuItem
+            // 
+            weeklyTimetableToolStripMenuItem.Name = "weeklyTimetableToolStripMenuItem";
+            weeklyTimetableToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            weeklyTimetableToolStripMenuItem.Text = "Weekly Timetable";
             // 
             // pnlDashboard
             // 
@@ -1390,7 +1396,7 @@
             labelAddParticipant.AutoSize = true;
             labelAddParticipant.Location = new System.Drawing.Point(629, 150);
             labelAddParticipant.Name = "labelAddParticipant";
-            labelAddParticipant.Size = new System.Drawing.Size(353, 20);
+            labelAddParticipant.Size = new System.Drawing.Size(280, 15);
             labelAddParticipant.TabIndex = 10;
             labelAddParticipant.Text = "Select an activity and student to add to participants:";
             // 
@@ -1399,7 +1405,7 @@
             labelRemoveParticipant.AutoSize = true;
             labelRemoveParticipant.Location = new System.Drawing.Point(582, 443);
             labelRemoveParticipant.Name = "labelRemoveParticipant";
-            labelRemoveParticipant.Size = new System.Drawing.Size(200, 20);
+            labelRemoveParticipant.Size = new System.Drawing.Size(158, 15);
             labelRemoveParticipant.TabIndex = 9;
             labelRemoveParticipant.Text = "Select participant to remove:";
             // 
@@ -1408,7 +1414,7 @@
             labelListOfStudents.AutoSize = true;
             labelListOfStudents.Location = new System.Drawing.Point(257, 19);
             labelListOfStudents.Name = "labelListOfStudents";
-            labelListOfStudents.Size = new System.Drawing.Size(119, 20);
+            labelListOfStudents.Size = new System.Drawing.Size(96, 15);
             labelListOfStudents.TabIndex = 8;
             labelListOfStudents.Text = "List Of Students: ";
             // 
@@ -1417,7 +1423,7 @@
             labelListOfParticipants.AutoSize = true;
             labelListOfParticipants.Location = new System.Drawing.Point(16, 323);
             labelListOfParticipants.Name = "labelListOfParticipants";
-            labelListOfParticipants.Size = new System.Drawing.Size(138, 20);
+            labelListOfParticipants.Size = new System.Drawing.Size(112, 15);
             labelListOfParticipants.TabIndex = 7;
             labelListOfParticipants.Text = "List Of Participants: ";
             // 
@@ -1426,7 +1432,7 @@
             labelListOfActivities.AutoSize = true;
             labelListOfActivities.Location = new System.Drawing.Point(17, 11);
             labelListOfActivities.Name = "labelListOfActivities";
-            labelListOfActivities.Size = new System.Drawing.Size(118, 20);
+            labelListOfActivities.Size = new System.Drawing.Size(95, 15);
             labelListOfActivities.TabIndex = 6;
             labelListOfActivities.Text = "List Of Activities:";
             labelListOfActivities.Click += labelListOfActivities_Click;
@@ -1452,7 +1458,7 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Activity";
-            columnHeader1.Width = 150;
+            columnHeader1.Width = 100;
             // 
             // columnHeader2
             // 
@@ -1471,21 +1477,6 @@
             columnHeader5.DisplayIndex = 2;
             columnHeader5.Text = "Activity Id";
             columnHeader5.Width = 100;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "Activity";
-            columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "First Name";
-            columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Last Name";
-            columnHeader3.Width = 100;
             // 
             // listViewParticipatingStudents
             // 
@@ -1518,7 +1509,6 @@
             // 
             listViewParticipants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { Activity_ID, ActivityName });
             listViewParticipants.FullRowSelect = true;
-
             listViewParticipants.Location = new System.Drawing.Point(16, 40);
             listViewParticipants.Name = "listViewParticipants";
             listViewParticipants.Size = new System.Drawing.Size(183, 205);
@@ -1539,9 +1529,7 @@
             // 
             // buttonParticipantsRemove
             // 
-
             buttonParticipantsRemove.Location = new System.Drawing.Point(788, 443);
-
             buttonParticipantsRemove.Name = "buttonParticipantsRemove";
             buttonParticipantsRemove.Size = new System.Drawing.Size(82, 22);
             buttonParticipantsRemove.TabIndex = 2;
@@ -1551,23 +1539,13 @@
             // 
             // buttonParticipantsAdd
             // 
-
             buttonParticipantsAdd.Location = new System.Drawing.Point(982, 150);
-
             buttonParticipantsAdd.Name = "buttonParticipantsAdd";
             buttonParticipantsAdd.Size = new System.Drawing.Size(82, 22);
             buttonParticipantsAdd.TabIndex = 1;
             buttonParticipantsAdd.Text = "&Add";
             buttonParticipantsAdd.UseVisualStyleBackColor = true;
-
             buttonParticipantsAdd.Click += buttonParticipantsAdd_Click;
-
-            // 
-            // weeklyTimetableToolStripMenuItem
-            // 
-            weeklyTimetableToolStripMenuItem.Name = "weeklyTimetableToolStripMenuItem";
-            weeklyTimetableToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
-            weeklyTimetableToolStripMenuItem.Text = "Weekly Timetable";
             // 
             // pnlWeeklyTimetable
             // 
@@ -1580,15 +1558,10 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            ClientSize = new System.Drawing.Size(973, 508);
+            ClientSize = new System.Drawing.Size(1014, 549);
             Controls.Add(pnlWeeklyTimetable);
-            ClientSize = new System.Drawing.Size(1112, 677);
-            Controls.Add(pnlParticipants);
             Controls.Add(pnlSupervisor);
             Controls.Add(pnlDrinks);
-            Controls.Add(pnlListOfActivitys);
-
             Controls.Add(pnlDashboard);
             Controls.Add(pnlListOfActivitys);
             Controls.Add(pnlParticipants);
